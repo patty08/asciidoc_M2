@@ -4,47 +4,46 @@
 
 = Springboot
 
-== Spring?
-Spring est un framework Java très populaire pour la construction d'applications Web et d'entreprise. Contrairement à de nombreux autres cadres, qui se concentrent sur un seul domaine, Spring Framework offre une grande variété de fonctionnalités répondant aux besoins commerciaux modernes grâce à ses projets de portefeuille.
+== Spring Framework
+	Spring est un framework Java très populaire pour la construction d'applications Web et d'entreprise. Contrairement à de nombreux autres cadres, qui se concentrent sur un seul domaine, Spring Framework offre une grande variété de fonctionnalités répondant aux besoins commerciaux modernes grâce à ses projets de portefeuille.
 
-Le framework Spring offre une flexibilité pour configurer les beans de plusieurs manières telles que XML , Annotations et JavaConfig . Avec le nombre de fonctionnalités augmentées, la complexité augmente également et la configuration des applications Spring devient fastidieuse et susceptible d'erreurs.
+	Le framework Spring offre une flexibilité pour configurer les beans de plusieurs manières telles que XML , Annotations et JavaConfig . Avec le nombre de fonctionnalités augmentées, la complexité augmente également et la configuration des applications Spring devient fastidieuse et susceptible d'erreurs.
 
-L'équipe Spring a créé SpringBoot pour répondre à la complexité de la configuration.
+	L'équipe Spring a créé SpringBoot pour répondre à la complexité de la configuration.
 
-Mais avant de plonger dans SpringBoot, nous allons jeter un coup d'œil sur le cadre du printemps et voir quel type de problèmes SpringBoot essaie de résoudre.
+	Mais avant de plonger dans SpringBoot, nous allons jeter un coup d'œil sur le cadre du printemps et voir quel type de problèmes SpringBoot essaie de résoudre.
 
-Dans cet article, nous couvrirons:
+	Dans cet article, nous couvrirons:
 
-Vue d'ensemble du cadre de printemps
-Une application Web utilisant Spring MVC et JPA (Hibernate)
-Un exemple rapide de SpringBoot
-Vue d'ensemble de Spring Framework
-Si vous êtes un développeur Java, il y a de fortes chances que vous ayez entendu parler de Spring Framework et l'avez probablement utilisé dans vos projets. Le cadre de printemps a été créé principalement comme un conteneur d'injection de dépendance, mais c'est beaucoup plus que cela.
+	Vue d'ensemble du cadre de printemps
+	Une application Web utilisant Spring MVC et JPA (Hibernate)
+	Un exemple rapide de SpringBoot
+	Vue d'ensemble de Spring Framework
+	Si vous êtes un développeur Java, il y a de fortes chances que vous ayez entendu parler de Spring Framework et l'avez probablement utilisé dans vos projets. Le cadre de printemps a été créé principalement comme un conteneur d'injection de dépendance, mais c'est beaucoup plus que cela.
 
-Le printemps est très populaire en raison de plusieurs raisons:
+Spring est très populaire en raison de plusieurs raisons:
 
-L'approche d'injection de dépendance de Spring encourage l'écriture du code vérifiable
-Fonctionnalités de gestion des transactions de base de données faciles à utiliser mais puissantes
-Spring simplifie l'intégration avec d'autres frameworks Java comme JPA / Hibernate ORM, Struts / JSF / etc. Cadres web
-Cadre Web MVC de pointe pour la construction d'applications Web
-Parallèlement à Spring Framework, il existe de nombreux autres projets Spring Brothers qui aident à créer des applications répondant aux besoins des entreprises modernes:
+	L'approche d'injection de dépendance de Spring encourage l'écriture du code vérifiable
+	Fonctionnalités de gestion des transactions de base de données faciles à utiliser mais puissantes
+	Spring simplifie l'intégration avec d'autres frameworks Java comme JPA / Hibernate ORM, Struts / JSF / etc. Cadres web
+	Cadre Web MVC de pointe pour la construction d'applications Web
+	Parallèlement à Spring Framework, il existe de nombreux autres projets Spring Brothers qui aident à créer des applications répondant aux besoins des entreprises modernes:
 
-Spring Data: simplifie l'accès aux données des magasins de données relationnels et NoSQL.
-Spring Batch: offre un puissant cadre de traitement par lots.
-Spring Security: cadre de sécurité robuste pour sécuriser les applications.
-Spring Social: prend en charge l'intégration avec des sites de réseaux sociaux comme Facebook, Twitter, LinkedIn, GitHub, etc.
-Spring Integration: une implémentation de Patterns d'intégration d'entreprise pour faciliter l'intégration avec d'autres applications d'entreprise utilisant des messagerie légère et des adaptateurs déclaratifs.
-Il existe de nombreux autres projets intéressants abordant divers autres besoins de développement d'applications modernes. Pour plus d'informations, consultez http://spring.io/projects .
+	Spring Data: simplifie l'accès aux données des magasins de données relationnels et NoSQL.
+	Spring Batch: offre un puissant cadre de traitement par lots.
+	Spring Security: cadre de sécurité robuste pour sécuriser les applications.
+	Spring Social: prend en charge l'intégration avec des sites de réseaux sociaux comme Facebook, Twitter, LinkedIn, GitHub, etc.
+	Spring Integration: une implémentation de Patterns d'intégration d'entreprise pour faciliter l'intégration avec d'autres applications d'entreprise utilisant des messagerie légère et des adaptateurs déclaratifs.
+	Il existe de nombreux autres projets intéressants abordant divers autres besoins de développement d'applications modernes. Pour plus d'informations, consultez http://spring.io/projects .
 
-Dans les premiers jours, Spring Framework fournit une approche basée sur XML pour configurer les beans. Plus tard Spring a introduit des DSL basées sur XML, des annotations et des approches basées sur JavaConfig pour configurer des beans.
+	Dans les premiers jours, Spring Framework fournit une approche basée sur XML pour configurer les beans. Plus tard Spring a introduit des DSL basées sur XML, des annotations et des approches basées sur JavaConfig pour configurer des beans.
 
-Permettez-nous de regarder rapidement comment ressemble chacun de ces styles de configuration.
+	Permettez-nous de regarder rapidement comment ressemble chacun de ces styles de configuration.
 
+== Pourquoi Springboot?
+	Spring Boot a été conçu pour rendre la vie du développeur plus simple et lui permettre de se concentrer sur le coeur de l’application et non pas sur les aspects annexes : configuration, tests, sécurité, déploiement…​
 
-== Pourquoi springboot?
-Spring Boot a été conçu pour rendre la vie du développeur plus simple et lui permettre de se concentrer sur le coeur de l’application et non pas sur les aspects annexes : configuration, tests, sécurité, déploiement…​
-
-.Header break list too
+.Les 10 raisons
 . RestController
 . Kiss :  application.yml
 . Plus de script de gestion d'environnement (@Component, @Configuration et possibilité de déclarer dans application.yml ou application.properties)
