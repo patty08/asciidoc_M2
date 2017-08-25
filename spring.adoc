@@ -3,7 +3,7 @@
 :toclevels: 3
 
 == Documentation
-=== Treeptik:
+=== Treeptik
 	Treeptik est une société de service innovante à l’appoint de la technologie nouvelle et acteur majeur de la communauté DevOps.
 	Treeptik adopte des méthodes et des technologies avancées pour produire du service à faible coût avec un bénéfice maximum
 	Treeptik est un pôle d'experts dans les nouvelles technologies et a pour ambition de deve-nir rapidement en région PACA, un acteur incontournable du conseil et de la formation en Java/JEE.
@@ -15,7 +15,7 @@
 		De la R&D : veille, innovation et recherche très appliquée,
 		CloudUnit, 1er PaaS Java open source au monde.
 
-=== IaaS:
+=== IaaS
 	Hyper convergence une approche du Datacenter qui rassemble et banalise des fonctions et services dans une même solution.
 
 	IaaS (Infrastructure as a Service) propose à l'utilisateur un socle d’infrastructure informatique virtualisé, distribué et en grande partie automatisé. Un tel outil permet de mettre en production des applications utilisées par la DSI ou les services métiers.
@@ -26,7 +26,7 @@
 
 	Le bénéfice ? Ces offres permettent aux DSI de se concentrer sur le développement applicatif sans avoir à gérer des infrastructure, et leurs évolutions.
 
-=== Paas:
+=== Paas
 	Pour les développeurs, la mise à disposition d'une plateforme de développement sur une couche initiale d'IaaS permet un gain de temps et des possibilités de test applicatifs, trop complexes à mettre en oeuvre en interne. C'est ce que propose le PaaS (Platform as a Service).
 	Gestion des machines virtuelles, du middleware, du monitoring : tout est pris en charge de manière à assurer à l'utilisateur un confort d'usage digne de... l'énergie électrique. On appuie sur un bouton, et ça marche.
 
@@ -36,7 +36,7 @@
 
 	Alternative directe et crédible au mode de déploiement traditionnel de logiciels, il évite à la DSI d'avoir à mettre en place et à exploiter la solution (mise à jour et installation de correctifs entre autres).
 
-=== Docker:
+=== Docker
 	1- Comment résumer ce qu'est Docker ?
 
 	Docker permet d'embarquer une application dans un container virtuel qui pourra s'exécuter sur n'importe quel machine. D'abord optimisé pour Linux, il l'est désormais pour Windows Server. C'est une technologie qui a pour but de faciliter les déploiements d'application, et la gestion du dimensionnement de l'infrastructure sous-jacente. Elle est en partie proposée en open source (sous licence Apache 2.0) par une société américaine, également appelée Docker, qui a été lancée par un Français : Solomon Hykes.
@@ -60,7 +60,7 @@
 	- du stockage, de la sécurité... Parmi eux figure containerd.
 	Une brique centrale de la technologie Docker puisqu'elle permet l'exécution du container. Considérant la criticité de cette brique en vue de la standardisation des offres de container, Docker en a reversé les droits à une organisation indépendante (la Cloud Native Computing Foundation). En avril 2017, l'éditeur est allé un peu plus loin dans la démarche en lançant Moby : un framework open source dessiné pour construire des systèmes de container. Il comprend 80 composants open source : ceux de Docker (containerd, swarmkit...) mais aussi d'autres projets (Redis, Nginx...). Moby se veut être un projet participatif, à travers lequel tous les acteurs de la communauté Docker construisant des solutions à base de container peuvent partager des briques.
 
-=== Surikator:
+=== Surikator
 	Le projet nommé Surikator est une application open source développée en langage Go et conteneurisé dans un container docker linux c’est-à-dire optimiser pour la plateforme linux. Surikator en un mot est un middleware qui mesure les ressources systèmes, les métriques et les logs d’un container docker pour produire un monitoring. Pour la réalisation du projet, il est nécessaire d’avoir une compétence dans les technologies nouvelles tel que :
 		Une compétence sur Docker,
 		Go langage (Google),
