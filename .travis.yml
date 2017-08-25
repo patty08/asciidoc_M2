@@ -15,7 +15,7 @@ after_failure:
   - docker logs asciidoc-to-html
 
 after_success:
-  - cd output ; mv README.html index.html ; cp -R ../spring_adoc . 
+  - cd output ; mv README.html index.html ;
   - git init
   - git config user.name "${GH_USER_NAME}"
   - git config user.email "{GH_USER_EMAIL}"
