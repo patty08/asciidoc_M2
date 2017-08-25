@@ -12,7 +12,7 @@
 		Du conseil et consulting,
 		De la formation Docker  ,
 		Des services clés en main sur la technologie Docker,
-		De la R&D : veille, innovation et recherche très appliquée, 
+		De la R&D : veille, innovation et recherche très appliquée,
 		CloudUnit, 1er PaaS Java open source au monde.
 
 === IaaS:
@@ -30,14 +30,14 @@
 	Pour les développeurs, la mise à disposition d'une plateforme de développement sur une couche initiale d'IaaS permet un gain de temps et des possibilités de test applicatifs, trop complexes à mettre en oeuvre en interne. C'est ce que propose le PaaS (Platform as a Service).
 	Gestion des machines virtuelles, du middleware, du monitoring : tout est pris en charge de manière à assurer à l'utilisateur un confort d'usage digne de... l'énergie électrique. On appuie sur un bouton, et ça marche.
 
-	Slide SaaS: 
+	Slide SaaS:
 	Un logiciel sans prise de tête
 	Enfin, le SaaS est tout simplement un logiciel mis à disposition à distance par un éditeur. L'utilisateur installe un client sur sa machine pour utiliser la solution, ou y accède via un navigateur web. Il n'a pas a se préoccuper de la plate-forme d’infrastructure ou de la plate-forme logicielle. Là aussi, le client paie l'utilisation de la solution en fonction de sa consommation.
 
 	Alternative directe et crédible au mode de déploiement traditionnel de logiciels, il évite à la DSI d'avoir à mettre en place et à exploiter la solution (mise à jour et installation de correctifs entre autres).
 
-=== Docker: 
-	1- Comment résumer ce qu'est Docker ? 
+=== Docker:
+	1- Comment résumer ce qu'est Docker ?
 
 	Docker permet d'embarquer une application dans un container virtuel qui pourra s'exécuter sur n'importe quel machine. D'abord optimisé pour Linux, il l'est désormais pour Windows Server. C'est une technologie qui a pour but de faciliter les déploiements d'application, et la gestion du dimensionnement de l'infrastructure sous-jacente. Elle est en partie proposée en open source (sous licence Apache 2.0) par une société américaine, également appelée Docker, qui a été lancée par un Français : Solomon Hykes.
 
@@ -55,9 +55,9 @@
 
 	11- Quels sont les composants proposés par Docker en open source ?
 
-	Docker a publié une dizaine de composants sous licence Apache (voir le graphique ci-dessous). Des composants qui recouvrent les principales fonctionnalités nécessaires au pilotage d'une architecture containérisée : 
-	- gestion du réseau, 
-	- du stockage, de la sécurité... Parmi eux figure containerd. 
+	Docker a publié une dizaine de composants sous licence Apache (voir le graphique ci-dessous). Des composants qui recouvrent les principales fonctionnalités nécessaires au pilotage d'une architecture containérisée :
+	- gestion du réseau,
+	- du stockage, de la sécurité... Parmi eux figure containerd.
 	Une brique centrale de la technologie Docker puisqu'elle permet l'exécution du container. Considérant la criticité de cette brique en vue de la standardisation des offres de container, Docker en a reversé les droits à une organisation indépendante (la Cloud Native Computing Foundation). En avril 2017, l'éditeur est allé un peu plus loin dans la démarche en lançant Moby : un framework open source dessiné pour construire des systèmes de container. Il comprend 80 composants open source : ceux de Docker (containerd, swarmkit...) mais aussi d'autres projets (Redis, Nginx...). Moby se veut être un projet participatif, à travers lequel tous les acteurs de la communauté Docker construisant des solutions à base de container peuvent partager des briques.
 
 === Surikator:
