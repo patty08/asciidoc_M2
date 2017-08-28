@@ -8,18 +8,9 @@
 
 TIP: @ComponentScan, @Component, @Autowired, @Qualifier
 
-<div class="listingblock">
-  <div class="content monospaced">
-    <pre>This is an example of a _listing block_.
-The content inside is rendered as &lt;pre&gt; text.</pre>
-  </div>
-</div>
-
-
-
 Dans Sring @ComponentScan representte la configuration de base de `Srping` dans `Spring` l'annotation vamapper `@ComponentScan(basePackages ={"spring.bean"}` ce qui est remplacer par `application.yml ou.properties` dans `Springboot`.
 
-Base:
+	Base:
 @ComponentScan(basePackages ={"spring.bean"} recherche des @Bean pour être utilisé dans la classe `main`.
  @Component : est une classe que va chercher componentScan. Le @component seront des "@bean" dans le `main`
  	@Autowired : injection dans un service.
@@ -82,3 +73,58 @@ exemple:
 On a deux @bean methode de connexion à une base de données.
 1) on peut definir nommé un profil dessus
 2) on peut l'appelé sur une `class` avec @ActiveProfil("nomProfil")
+
+
+[glossary]
+== Glossary
+
+[glossary]
+mud:: wet, cold dirt
+rain::
+	water falling from the sky
+
+
+
+
+= eve(1)
+Andrew Stanton
+v1.0.0
+:doctype: manpage
+:manmanual: EVE
+:mansource: EVE
+:man-linkstyle: pass:[blue R < >]
+
+== NAME
+
+eve - analyzes an image to determine if it's a picture of a life form
+
+== SYNOPSIS
+
+*eve* ['OPTION']... 'FILE'...
+
+== OPTIONS
+
+*-o, --out-file*=_OUT_FILE_::
+  Write result to file _OUT_FILE_.
+
+*-c, --capture*::
+  Capture specimen if it's a picture of a life form.
+
+== EXIT STATUS
+
+*0*::
+  Success.
+  Image is a picture of a life form.
+
+*1*::
+  Failure.
+  Image is not a picture of a life form.
+
+== RESOURCES
+
+*Project web site:* http://eve.example.org
+
+== COPYING
+
+Copyright \(C) 2008 {author}. +
+Free use of this software is granted under the terms of the MIT License.
