@@ -6,7 +6,7 @@
 
 == Injection de dependance (IOC) utilisant XML
 
-IMPORTANT: @ComponentScan, @Component, @Autowired, @Qualifier
+TIP: @ComponentScan, @Component, @Autowired, @Qualifier
 
 <div class="listingblock">
   <div class="content monospaced">
