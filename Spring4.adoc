@@ -1,0 +1,36 @@
+:toc: auto
+:toc-position: left
+:toclevels: 3
+
+= Spring & Springboot
+
+== Injection de dependance (IOC)
+@ComponentScan @Component, @Autowired @Qualifier
+
+Dans Sring @ComponentScan representte la configuration de base de `Srping` dans `Spring` l'annotation vamapper `@ComponentScan(basePackages ={"spring.bean"}` ce qui est remplacer par `application.yml ou.properties` dans `Springboot`.
+
+Base:
+@ComponentScan(basePackages ={"spring.bean"} recherche des @Bean pour être utilisé dans la classe `main`.
+ @Component : est une classe que va chercher componentScan. Le @component seront des "@bean" dans le `main`
+ 	@Autowired : injection dans un service.
+	@Qualifier : moyen pour donner un nom a un component (le nom de la class) qui va être son ID
+
+pacquet `org.springframework.stereotype` est composé de
+ . @Component: une classe candidat dans le but est de scanner les composant de Spring
+ . @Controller: utilisé dans une application Spring MVC
+ . @Repository: utilisé pour définir une classe DAP (Data access object)
+ . @Service: utilisé pour définir le bisiness Services
+Meta-Annotations sont des méthodes de classe mère exemple @Transactionnal
+
+
+ @Autowired
+l'annotation fait de l'injection de dependance, elle peut être appelé sur un constructeur, une classe, une methode.
+exemple sur une classe DAO
+ - classe de configuration de la base de données (DAO) coit être annoté pas @Component
+	 -- l'annotation @Autowired peut être appelé dans cette classe, sur les constructeurs et les méthodes
+
+Question: comment on fait si on veut injecter dans un champ private ?
+- on utilise @Autowird ou @Ressource
+Question: qu'est ce qu'un prefix?
+- Est utile pour mapper et accéder à une ressource. Dans `Spring` on peut utiliser des préfix sur le `classpath`,`file`,`http`,`(none)`
+

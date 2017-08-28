@@ -2,7 +2,7 @@
 :toc-position: left
 :toclevels: 3
 
-= Springboot
+= 10 raisons pour adopter Springboot
 
 == Spring Framework
 	Spring est un framework Java très populaire pour la construction d'applications Web et d'entreprise. Contrairement à de nombreux autres cadres, qui se concentrent sur un seul domaine, Spring Framework offre une grande variété de fonctionnalités répondant aux besoins commerciaux modernes grâce à ses projets de portefeuille.
