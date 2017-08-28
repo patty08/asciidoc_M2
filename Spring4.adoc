@@ -6,7 +6,16 @@
 
 == Injection de dependance (IOC) utilisant XML
 
-	IMPORTANT: @ComponentScan, @Component, @Autowired, @Qualifier
+IMPORTANT: @ComponentScan, @Component, @Autowired, @Qualifier
+
+<div class="listingblock">
+  <div class="content monospaced">
+    <pre>This is an example of a _listing block_.
+The content inside is rendered as &lt;pre&gt; text.</pre>
+  </div>
+</div>
+
+
 
 Dans Sring @ComponentScan representte la configuration de base de `Srping` dans `Spring` l'annotation vamapper `@ComponentScan(basePackages ={"spring.bean"}` ce qui est remplacer par `application.yml ou.properties` dans `Springboot`.
 
