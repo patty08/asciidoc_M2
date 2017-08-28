@@ -21,7 +21,8 @@ pacquet `org.springframework.stereotype` est composé de
  . @Controller: utilisé dans une application Spring MVC
  . @Repository: utilisé pour définir une classe DAP (Data access object)
  . @Service: utilisé pour définir le bisiness Services
-Meta-Annotations sont des méthodes de classe mère exemple @Transactionnal
+
+IMPORTANT: Meta-Annotations sont des méthodes de classe mère exemple @Transactionnal
 
 
  @Autowired
@@ -61,17 +62,19 @@ C'est un moyen de resoudre `${}` dans un fichier XML ou system ou variable d'env
 	4) annoter la classe l'utilisant avec l'annotation @PropertySource
 
 == Scopes (application-context.xml)
-Les scopes sont définis das la balise <bean .. scope="xxx"> soit par singleton, prototype, session, request, global_session, application
-- Singleton: est une et une seule instance d'un objet dans le Springframework
-- Prototype: exemple sur le cas de login, au lieu de redefinir plusieurs fois une configuration, on va écrire dans application.xml la configuration et on l'annote @Prototype
-- Session: environment web dont une instance va être créer à chaque session HTTP
-- Request: environment web dont une instance va être créer à chaque requette
-- Global session:
+Les scopes sont définis das la balise <bean .. scope="xxx"> soit par singleton, prototype, session, request, global_session, application.
+
+	- Singleton: est une et une seule instance d'un objet dans le Springframework
+	- Prototype: exemple sur le cas de login, au lieu de redefinir plusieurs fois une configuration, on va écrire dans application.xml la configuration et on l'annote @Prototype
+	- Session: environment web dont une instance va être créer à chaque session HTTP
+	- Request: environment web dont une instance va être créer à chaque requette
+	- Global session:
 
 == Profil en Spring (@Profil)
 @Profile peut être defini dans un fichier XML ou dans une class. Ca consiste a definir un profil basé sur une configuration.
 exemple:
 On a deux @bean methode de connexion à une base de données.
-1) on peut definir nommé un profil dessus
-2) on peut l'appelé sur une `class` avec @ActiveProfil("nomProfil")
+
+	1) on peut definir nommé un profil dessus
+	2) on peut l'appelé sur une `class` avec @ActiveProfil("nomProfil")
 
