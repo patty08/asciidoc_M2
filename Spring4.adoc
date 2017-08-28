@@ -10,7 +10,7 @@ TIP: @ComponentScan, @Component, @Autowired, @Qualifier
 
 Dans Sring @ComponentScan representte la configuration de base de `Srping` dans `Spring` l'annotation vamapper `@ComponentScan(basePackages ={"spring.bean"}` ce qui est remplacer par `application.yml ou.properties` dans `Springboot`.
 
-	Base:
+Base:
 @ComponentScan(basePackages ={"spring.bean"} recherche des @Bean pour être utilisé dans la classe `main`.
  @Component : est une classe que va chercher componentScan. Le @component seront des "@bean" dans le `main`
  	@Autowired : injection dans un service.
@@ -47,17 +47,17 @@ public DataBaseService data(){
 }
 ---
 
-
 = Spring & Springboot (~/ressouces/)
 - abstract=true bean sert a regrouper des propiété de class dans <bean></bean>
 Question: pourquoi on ne peut pas mettre @Bean sur une methodes final
 	- toutes les classes annotées @Configuration utilisé CGLIB de JavaConfig, en consequence toutes ses occurences ne peuvet être marquées en final ou private, donc @Bean n'ai pas pas accepté non plus en raison de CGLIB.
+
 == PropertyPlaceHolder
 C'est un moyen de resoudre `${}` dans un fichier XML ou system ou variable d'environnement.
-1) déclarer en tant que @Bean dans main
-2) creer un fichier de configuration.properties
-3) mettre les variables dans ce fichier
-4) annoter la classe l'utilisant avec l'annotation @PropertySource
+	1) déclarer en tant que @Bean dans main
+	2) creer un fichier de configuration.properties
+	3) mettre les variables dans ce fichier
+	4) annoter la classe l'utilisant avec l'annotation @PropertySource
 
 == Scopes (application-context.xml)
 Les scopes sont définis das la balise <bean .. scope="xxx"> soit par singleton, prototype, session, request, global_session, application
