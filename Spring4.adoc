@@ -54,6 +54,7 @@ Question: pourquoi on ne peut pas mettre @Bean sur une methodes final
 
 == PropertyPlaceHolder
 C'est un moyen de resoudre `${}` dans un fichier XML ou system ou variable d'environnement.
+
 	1) déclarer en tant que @Bean dans main
 	2) creer un fichier de configuration.properties
 	3) mettre les variables dans ce fichier
