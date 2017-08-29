@@ -12,16 +12,16 @@ Dans Sring @ComponentScan representte la configuration de base de `Srping` dans 
 
 ==Base:
 
-@ComponentScan(basePackages ={"spring.bean"} recherche des @Bean pour être utilisé dans la classe `main`.
- @Component : est une classe que va chercher componentScan. Le @component seront des "@bean" dans le `main`
- 	@Autowired : injection dans un service.
-	@Qualifier : moyen pour donner un nom a un component (le nom de la class) qui va être son ID
+* @ComponentScan(basePackages ={"spring.bean"} recherche des @Bean pour être utilisé dans la classe `main`.
+** @Component : est une classe que va chercher componentScan. Le @component seront des "@bean" dans le `main`
+***	@Autowired : injection dans un service.
+***	@Qualifier : moyen pour donner un nom a un component (le nom de la class) qui va être son ID
 
-pacquet `org.springframework.stereotype` est composé de
- . @Component: une classe candidat dans le but est de scanner les composant de Spring
- . @Controller: utilisé dans une application Spring MVC
- . @Repository: utilisé pour définir une classe DAO (Data Access Object)
- . @Service: utilisé pour définir le bisiness Services
+* pacquet `org.springframework.stereotype` est composé de
+** @Component: une classe candidat dans le but est de scanner les composant de Spring
+** @Controller: utilisé dans une application Spring MVC
+** @Repository: utilisé pour définir une classe DAO (Data Access Object)
+** @Service: utilisé pour définir le bisiness Services
 
 IMPORTANT: Meta-Annotations sont des méthodes de classe mère exemple @Transactionnal
 
