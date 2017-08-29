@@ -19,13 +19,12 @@ Base:
 pacquet `org.springframework.stereotype` est composé de
  . @Component: une classe candidat dans le but est de scanner les composant de Spring
  . @Controller: utilisé dans une application Spring MVC
- . @Repository: utilisé pour définir une classe DAP (Data access object)
+ . @Repository: utilisé pour définir une classe DAO (Data Access Object)
  . @Service: utilisé pour définir le bisiness Services
 
 IMPORTANT: Meta-Annotations sont des méthodes de classe mère exemple @Transactionnal
 
-
- @Autowired
+@Autowired
 l'annotation fait de l'injection de dependance, elle peut être appelé sur un constructeur, une classe, une methode.
 exemple sur une classe DAO
  - classe de configuration de la base de données (DAO) coit être annoté pas @Component
