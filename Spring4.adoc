@@ -10,7 +10,8 @@ TIP: @ComponentScan, @Component, @Autowired, @Qualifier
 
 Dans Sring @ComponentScan representte la configuration de base de `Srping` dans `Spring` l'annotation vamapper `@ComponentScan(basePackages ={"spring.bean"}` ce qui est remplacer par `application.yml ou.properties` dans `Springboot`.
 
-Base:
+==Base:
+
 @ComponentScan(basePackages ={"spring.bean"} recherche des @Bean pour être utilisé dans la classe `main`.
  @Component : est une classe que va chercher componentScan. Le @component seront des "@bean" dans le `main`
  	@Autowired : injection dans un service.
@@ -36,7 +37,7 @@ Question: qu'est ce qu'un prefix?
 - Est utile pour mapper et accéder à une ressource. Dans `Spring` on peut utiliser des préfix sur le `classpath`,`file`,`http`,`(none)`
 
 == Injection de dependance (IOC) en utilisant @Configuration
-`@Configuration` permet d'eviter de rediger un fichier xml. La configuration peut directement être écrit dans le main annoté @Bean.
+`@Configuration` permet d'eviter de rediger un `fichier xml`. La configuration peut directement être écrit dans le main annoté @Bean.
 exemple:
 
 ---
