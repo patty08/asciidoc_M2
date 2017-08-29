@@ -1,0 +1,25 @@
+:toc: auto
+:toc-position: left
+:toclevels: 3
+
+= Partie BackEnd
+
+== BASE DE DONNEES
+
+WARNING: comment configurer Spring avec HSQLDB?
+
+== HSQL DB est embarqué
+C'est une base de données embarqué dans Spring. Il faut juste la configurer. C'est pratique pour une petite application en local au lieu d'utiliser Mysql, Oracle, postgres ....
+
+Exemple: on va creer une base de données avec HSQLDB
+
+1) dans Maven, declerer la dépendance org.hsqldb.
+2) creer un fichier .sql pour la creation et insertion de données dans la table.
+3) dans Spring
+-	declarer un bean configuration de la base de données, c'est à dire, `class="org?springframework.jdbc.datasource.DriverManagerDataSource"` et les `property name=`, driverClassName, url, username, password.
+-	declarer  <jdbc:initialize-database data-source="xxx">, <jdbc:script location="">,
+
+== Hibernate
+WARNING: Comment configurer Hibernate?
+WARNING: Qu'est ce que JPA?
+ - JPA ou Java Persistance API est une interfaces pour correlier Java POJO object avec les tabldes d'une base de données. On peut utiliser JPA ave des annotations ou une configuration XML.
