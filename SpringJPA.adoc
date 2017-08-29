@@ -3,15 +3,25 @@
 :toclevels: 3
 
 = JPA
+
 	De nombreuses applications Web se composent de plusieurs «couches» également appelées «niveaux» de l'application: niveau web ou niveau de présentation pour afficher les pages de votre application, niveau commercial ou niveau intermédiaire pour l'exécution des règles logiques et commerciales de votre application et de votre niveau de données , Ou persistece pour transférer des données vers / depuis votre base de données. Ces niveaux peuvent avoir la configuration suivante:
+
 == Entity
-	Entity Les classes qui contiennent des données dérivées de votre base de données et les plus utilisées de manière plausible par un framework ORM comme Hibernate;
-	DAO Les classes qui seront utilisées pour accéder à la base de données et au moins effectuer des opérations CRUD sur la base de données et surtout pour vos classes d'entités de retour de partie Web pour votre niveau web;
-	Service Les cours qui reflètent les opérations commerciales que la demande prévoit;
+
+	Les classes qui contiennent des données dérivées de votre base de données et les plus utilisées de manière plausible par un framework ORM comme Hibernate;
+
+== 	DAO
+
+Les classes qui seront utilisées pour accéder à la base de données et au moins effectuer des opérations CRUD sur la base de données et surtout pour vos classes d'entités de retour de partie Web pour votre niveau web;
+
+== 	Service
+
+Les cours qui reflètent les opérations commerciales que la demande prévoit;
 	Bean Classes qui sauvegarderont vos vues et contiendront probablement des données, des méthodes d'action, des transformations, etc., utilisés dans vos pages Web.
 	La prochaine étape est le choix du framework pour votre application Web.
 
-	Vous choisissez Spring pour tous les calques, ce qui signifie que vos DAO seront des @Repositorycours, vos Services seront des @Servicecours et vos Beans seront des @Componentcours. Vous utiliserez probablement un cadre ORM comme Hibernate pour gérer la base de données, de sorte que vos Entités seront des @Entityclasses JPA correctement configurées dans le style Hibernate. Votre technologie de vision sera probablement Spring MVC qui a été élaborée pour fonctionner avec Spring core. Par exemple, Mkyong a de nombreux tutoriels simples sur l'utilisation de Spring.
+	Vous choisissez Spring pour tous les calques, ce qui signifie que vos DAO seront des @Repository cours, vos Services seront des @Servicecours et vos Beans seront des @Componentcours. Vous utiliserez probablement un cadre ORM comme Hibernate pour gérer la base de données, de sorte que vos Entités seront des @Entityclasses JPA correctement configurées dans le style Hibernate. Votre technologie de vision sera probablement Spring MVC qui a été élaborée pour fonctionner avec Spring core. Par exemple, Mkyong a de nombreux tutoriels simples sur l'utilisation de Spring.
+
 	Vous choisissez le framework JSF + EJB natif pour tous les calques, ce qui signifie que vos DAO et vos services seront des @EJBclasses, vos beans seront des @ManagedBeanclasses. Vous utiliserez probablement très probablement Hibernate en tant que solution ORM et fournisseur JPA et fera l'accès à la base de données via EntityManager. Votre technologie de visualisation sera JSF car elle était naturellement destinée à être utilisée avec les technologies susmentionnées. Par exemple, BalusC possède de nombreux tutoriels éclairés sur l'utilisation de JSF.
 	Les deux choix ont ses défenseurs et ses adversaires. Certains disent que pourquoi choisir quelque chose qui n'est pas natif de la solution Oracle d' Oracle, d'autres disent qu'il est trop complexe et confus et qui manque de sources à apprendre.
 
