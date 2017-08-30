@@ -5,25 +5,24 @@
 = Test JAVA
 
 1. Java est un langage…
+
  * [] Interprété
-
  * [] Compilé
-
  * [x] Les deux
-
  * [] Ni l' un, ni l'autre
 
 
 2. Quelle phrase au sujet de Java est correcte ?
- [] En Java, les types de base ne sont pas des objets
 
-Java supporte l'héritage multiple entre les classes
-
-En Java, on peut affecter soi-même l'adresse d'un pointeur
-
-Java supporte la surcharge des opérateurs
+* [] En Java, les types de base ne sont pas des objets
+* [x] Java supporte l'héritage multiple entre les classes
+* [] En Java, on peut affecter soi-même l'adresse d'un pointeur
+* [] Java supporte la surcharge des opérateurs
 
 . Quels sont les différents mots-clés du langage Java ?
+	.. public
+	.. private
+	.. protected
 
 . Que signifient les mots-clés public, private et protected ?
 
@@ -58,46 +57,46 @@ Java supporte la surcharge des opérateurs
 
 	Depuis Java 1.5, il est possible d'utiliser le mot-clé for dans une boucle nommée enhanced for loop (boucle for améliorée) également appelée for-each dans d'autres langages. Ce type de boucle effectue une itération automatique sur un ensemble de valeurs ; il n'est donc pas besoin de manipuler un indice manuellement comme dans le for classique. Si un conteneur de données est un tableau ou hérite de l'interface java.lang.Iterable<T>, il est possible de faire une boucle for-each en utilisant la syntaxe suivante :
 
-	Code Java :	Sélectionner tout
+	Code Java :
 	1
 	2
 	3
-	for (valeur : conteneur) { 
-	// Code à exécuter dans la boucle. 
+	for (valeur : conteneur) {
+	// Code à exécuter dans la boucle.
 	}
 
 	Par exemple :
 
-	Code Java :	Sélectionner tout
+	Code Java :
 	1
 	2
 	3
 	4
-	final int[] valeurs = { 1, 2, 3 }; 
-	for (final int valeur : valeurs) { 
-	System.out.println(valeur); 
+	final int[] valeurs = { 1, 2, 3 };
+	for (final int valeur : valeurs) {
+	System.out.println(valeur);
 	}
 
 	Ou encore :
 
-	Code Java :	Sélectionner tout
+	Code Java :
 	1
 	2
 	3
 	4
-	final List<Integer>valeurs = Arrays.asList(1, 2, 3); 
-	for (final int valeur : valeurs) { 
-	System.out.println(valeur); 
+	final List<Integer>valeurs = Arrays.asList(1, 2, 3);
+	for (final int valeur : valeurs) {
+	System.out.println(valeur);
 	}
 
 	Ces deux bouts de code auront comme sortie :
 
-	Code Console :	Sélectionner tout
+	Code Console :
 	1
 	2
 	3
-	1 
-	2 
+	1
+	2
 	3
 
 	Ici, dans le premier code valeurs est un tableau d'entiers tandis que dans le second bout de code c'est un objet de type List<Integer> qui étend donc l'interface Iterable<Integer>. Il est donc possible d'utiliser la syntaxe for-each dans les deux cas.
@@ -108,15 +107,14 @@ Java supporte la surcharge des opérateurs
 
 	Le mot-clé static devant une variable (ou méthode) indique que celle-ci n'appartient pas à une instance particulière de la classe. Les variables ou méthodes statiques appartiennent à la classe elle-même. On peut ainsi les utiliser sans avoir une instance créée. De nombreuses classes ont des membres ou méthodes statiques. Par exemple la classe java.lang.Math :
 
-
-	Code Java :	Sélectionner tout
+	Code Java :
 	1
 	2
 	3
 	4
-	System.out.println(Math.PI); 
-	// Affiche la valeur de PI. 
-	System.out.println(Math.abs(-1)); 
+	System.out.println(Math.PI);
+	// Affiche la valeur de PI.
+	System.out.println(Math.abs(-1));
 	// Affiche la valeur absolue de -1.
 	Voici quelques remarques :
 
@@ -128,7 +126,7 @@ Java supporte la surcharge des opérateurs
 
 	Le mot-clé static devant un bloc de code indique que celui-ci ne sera exécuté qu'une fois. L'exécution se fait lors du chargement de la classe par le ClassLoader. On peut utiliser ces blocs, par exemple, pour initialiser des variables statiques complexes.
 
-	Code Java :	Sélectionner tout
+	Code Java :
 	1
 	2
 	3
@@ -138,14 +136,14 @@ Java supporte la surcharge des opérateurs
 	7
 	8
 	9
-	public class MaClasse { 
-	public static Map<String, String> uneVariableStatique = new HashMap<String, String>(); 
-	static{ 
-	// Initialisation du contenu de uneVariableStatique lors du chargement de la classe. 
-	uneVariableStatique.put("une clef","une valeur"); 
-	uneVariableStatique.put("une autre clef","une autre valeur"); 
-	// Etc . 
-	} 
+	public class MaClasse {
+	public static Map<String, String> uneVariableStatique = new HashMap<String, String>();
+	static{
+	// Initialisation du contenu de uneVariableStatique lors du chargement de la classe.
+	uneVariableStatique.put("une clef","une valeur");
+	uneVariableStatique.put("une autre clef","une autre valeur");
+	// Etc .
+	}
 	}
 
 	Devant une classe interne :
@@ -160,16 +158,16 @@ Java supporte la surcharge des opérateurs
 	Dans l'exemple ci-dessous, une interface Person déclare une méthode statique sayHello().
 
 
-	Code Java :	Sélectionner tout
+	Code Java :
 	1
 	2
 	3
 	4
 	5
-	interface Person { 
-	static void sayHello() { 
-	System.out.println("Hello there!"); 
-	} 
+	interface Person {
+	static void sayHello() {
+	System.out.println("Hello there!");
+	}
 	}
 
 . Que signifie le mot-clé final ?
