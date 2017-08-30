@@ -20,9 +20,10 @@
 * [] Java supporte la surcharge des opérateurs
 
 . Quels sont les différents mots-clés du langage Java ?
-	.. public
-	.. private
-	.. protected
+
+* public
+* private
+* protected
 
 . Que signifient les mots-clés public, private et protected ?
 
