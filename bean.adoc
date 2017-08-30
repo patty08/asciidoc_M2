@@ -5,11 +5,12 @@
 = Spring & Springboot (~/ressouces/)
 
 - abstract=true bean sert a regrouper des propiété de class dans <bean></bean>
-Question: pourquoi on ne peut pas mettre @Bean sur une methodes final
+
+WARNING: pourquoi on ne peut pas mettre @Bean sur une methodes final?
+
 	- toutes les classes annotées @Configuration utilisé CGLIB de JavaConfig, en consequence toutes ses occurences ne peuvet être marquées en final ou private, donc @Bean n'ai pas pas accepté non plus en raison de CGLIB.
 
 == PropertyPlaceHolder
-
 C'est un moyen de resoudre `${}` dans un fichier XML ou system ou variable d'environnement.
 
 1) déclarer en tant que @Bean dans main

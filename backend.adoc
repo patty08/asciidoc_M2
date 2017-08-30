@@ -4,7 +4,7 @@
 
 = Partie BackEnd
 
-== BASE DE DONNEES
+== Spring Data
 
 WARNING: comment configurer Spring avec HSQLDB?
 
@@ -22,10 +22,12 @@ Exemple: on va creer une base de données avec HSQLDB
 == Hibernate
 
 WARNING: C'est quoi Hibernate?
- - Hibernate est un ORM, un fornisseur qui implémente l'interface JPA.
+
+- Hibernate est un ORM, un fornisseur qui implémente l'interface JPA.
 
 WARNING: Qu'est ce que JPA?
- - JPA ou Java Persistance API est une interfaces pour correlier Java POJO object avec les tabldes d'une base de données. On peut utiliser JPA ave des annotations ou une configuration XML.
+
+- JPA ou Java Persistance API est une interfaces pour correlier Java POJO object avec les tabldes d'une base de données. On peut utiliser JPA ave des annotations ou une configuration XML.
 
 === Configuration de Hibernate
 

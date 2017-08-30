@@ -10,8 +10,6 @@ TIP: @ComponentScan, @Component, @Autowired, @Qualifier
 
 Dans Sring @ComponentScan representte la configuration de base de `Srping` dans `Spring` l'annotation vamapper `@ComponentScan(basePackages ={"spring.bean"}` ce qui est remplacer par `application.yml ou.properties` dans `Springboot`.
 
-==Base:
-
 * @ComponentScan(basePackages ={"spring.bean"} recherche des @Bean pour être utilisé dans la classe `main`.
 ** @Component : est une classe que va chercher componentScan. Le @component seront des "@bean" dans le `main`
 ***	@Autowired : injection dans un service.
@@ -25,7 +23,7 @@ Dans Sring @ComponentScan representte la configuration de base de `Srping` dans 
 
 IMPORTANT: Meta-Annotations sont des méthodes de classe mère exemple @Transactionnal
 
-@Autowired
+* @Autowired
 l'annotation fait de l'injection de dependance, elle peut être appelé sur un constructeur, une classe, une methode.
 exemple sur une classe DAO
  - classe de configuration de la base de données (DAO) coit être annoté pas @Component
