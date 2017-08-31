@@ -10,13 +10,13 @@
 
 	Les classes qui contiennent des données dérivées de votre base de données et les plus utilisées de manière plausible par un framework ORM comme Hibernate;
 
-== 	DAO
+== DAO
 
-Les classes qui seront utilisées pour accéder à la base de données et au moins effectuer des opérations CRUD sur la base de données et surtout pour vos classes d'entités de retour de partie Web pour votre niveau web;
+	Les classes qui seront utilisées pour accéder à la base de données et au moins effectuer des opérations CRUD sur la base de données et surtout pour vos classes d'entités de retour de partie Web pour votre niveau web.
 
-== 	Service
+== Service
 
-Les cours qui reflètent les opérations commerciales que la demande prévoit;
+	Les cours qui reflètent les opérations commerciales que la demande prévoit;
 	Bean Classes qui sauvegarderont vos vues et contiendront probablement des données, des méthodes d'action, des transformations, etc., utilisés dans vos pages Web.
 	La prochaine étape est le choix du framework pour votre application Web.
 

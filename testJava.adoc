@@ -67,7 +67,6 @@
 	}
 
 	Par exemple :
-
 	Code Java :
 	1
 	2
@@ -79,7 +78,6 @@
 	}
 
 	Ou encore :
-
 	Code Java :
 	1
 	2
@@ -91,7 +89,6 @@
 	}
 
 	Ces deux bouts de code auront comme sortie :
-
 	Code Console :
 	1
 	2
@@ -105,7 +102,6 @@
 . Que signifie le mot-clé static ?
 
 	Devant une variable ou méthode :
-
 	Le mot-clé static devant une variable (ou méthode) indique que celle-ci n'appartient pas à une instance particulière de la classe. Les variables ou méthodes statiques appartiennent à la classe elle-même. On peut ainsi les utiliser sans avoir une instance créée. De nombreuses classes ont des membres ou méthodes statiques. Par exemple la classe java.lang.Math :
 
 	Code Java :
