@@ -23,40 +23,43 @@ Parallèlement à Spring Framework, il existe de nombreux autres projets Spring 
 Il existe de nombreux autres projets intéressants abordant divers autres besoins de développement d'applications modernes. Pour plus d'informations, consultez http://spring.io/projects. Dans les premiers jours, Spring Framework fournit une approche basée sur XML pour configurer les beans. Plus tard Spring a introduit des DSL basées sur XML,desannotations et des approches basées sur JavaConfig pour configurer des beans	Permettez-nous de regarder rapidement comment ressemble chacun de ces styles deconfiguration.
 
 == Pourquoi Springboot?
-	Spring Boot a été conçu pour rendre la vie du développeur plus simple et lui permettre de se concentrer sur le coeur de l’application et non pas sur les aspects annexes : configuration, tests, sécurité, déploiement…​
+Spring Boot a été conçu pour rendre la vie du développeur plus simple et lui permettre de se concentrer sur le coeur de l’application et non pas sur les aspects
+annexes : configuration, tests, sécurité, déploiement…​
 
 == Les 10 raisons
-# RestController
 
-# Kiss :  application.yml
+=== RestController
 
-# Plus de script de gestion d'environnement (@Component, @Configuration et possibilité de déclarer dans application.yml ou application.properties)
-	@EnableAutoConfiguration. Cette annotation va alors s’appuyer sur l’ensemble des dépendances de l’application (MVC, Tomcat, …​) pour configurer l’application.
+=== Kiss:application.yml
+Plus de script de gestion d'environnement (@Component, @Configuration et possibilité de déclarer dans application.yml ou application.properties).
+@EnableAutoConfiguration. Cette annotation va alors s’appuyer sur l’ensemble des dépendances de l’application (MVC, Tomcat, …​) pour configurer l’application.
 
-# Plus de serveur d'application Deploiement facile (tomcat embarqué ou jety)
-	Simplicité de déploiement (le seul prérequis est Java).
-	Cloud-ready.
+=== Plus de serveur d'application Deploiement facile (tomcat embarqué ou jety)
+Simplicité de déploiement (le seul prérequis est Java).
+Cloud-ready.
 
-# Securité
+=== Securité
 
-# Boite à outils pour intégration
-	Bases relationnelles : JDBC, JPA, JdbcTemplate
-	Bases NoSQL : Redis, MongoDB, ElasticSearch …​
-	Messaging : JMS
+=== Boite à outils pour intégration
+Bases relationnelles : JDBC, JPA, JdbcTemplate
+Bases NoSQL : Redis, MongoDB, ElasticSearch …​
+Messaging : JMS
 
-# Springboot et Docker
+=== Springboot et Docker
 	FROM java:8u45
 	MAINTAINER Gregory Le Bonniec "gregory.le.bonniec@ellixo.com"
 	ADD springboot-1.0-SNAPSHOT.jar app.jar
 	ENTRYPOINT [ "java", "-Dspring.profiles.active=test", "-jar", "/app.jar" ]
-		$ docker build -t ellixo/springboot .
-		$ docker run -d -p=9292:9292 ellixo/springboot
-# environnemet Prod:
-	Pour aller plus loin, il est possible d’installer le module Actuator qui fournit de nombreuses fonctionnalités d’administation système (via notamment une API Rest) :
-		health : fournit des données permettant de vérifier l'état de l’application (UP/DOWN, état disque, état systèmes externes …​)
-		metrics : fournit des métriques processus (threads, CPU, mémoire …​)
-		trace : fournit les informations des dernières connexions HTTP applicatives …​
-	Libre à vous ensuite de connecter ce module à l’outil de monitoring du système d’information (Graphite, Promotheus …​)
+
+	$ docker build -t ellixo/springboot .
+	$ docker run -d -p=9292:9292 ellixo/springboot
+
+=== Environnemet Prod:
+Pour aller plus loin, il est possible d’installer le module Actuator qui fournit de nombreuses fonctionnalités d’administation système (via notamment une API Rest):
+health : fournit des données permettant de vérifier l'état de l’application (UP/DOWN, état disque, état systèmes externes …​)
+metrics : fournit des métriques processus (threads, CPU, mémoire …​)
+trace : fournit les informations des dernières connexions HTTP applicatives …​
+Libre à vous ensuite de connecter ce module à l’outil de monitoring du système d’information (Graphite, Promotheus …​)
 
 	Exemple : API Health
 	----
@@ -64,19 +67,17 @@ Il existe de nombreux autres projets intéressants abordant divers autres besoin
 	{"status":"UP","diskSpace":{"status":"UP","free":169718296576,"threshold":10485760},"mongo":{"status":"UP","version":"3.0.2"}}
 	----
 
-# Cloud
+=== Cloud
 Encore une fois, le fait qu’une application Spring Boot embarque son propre containeur (Tomcat ou Jetty par défaut donc) simplifie un déploiement cloud.
 Pour démontrer le rapidité du processus, j’ai décidé d’exposer le déploiement sous la plateforme Cloud Foundry de Pivotal (à tout seigneur, tout honneur) :
+Une fois votre compte Pivotal Web Services créé et le client associé installé, la seule commande à exécuter sur votre environnement est :
+$ cf push springboot-demo -p springboot-1.0-SNAPSHOT.jar
+...
+Uploading app files from: springboot-1.0-SNAPSHOT.jar
+Uploading 623.8K, 96 files
+Done uploading
+OK
 
-	Une fois votre compte Pivotal Web Services créé et le client associé installé, la seule commande à exécuter sur votre environnement est :
-
-	$ cf push springboot-demo -p springboot-1.0-SNAPSHOT.jar
-	...
-	Uploading app files from: springboot-1.0-SNAPSHOT.jar
-	Uploading 623.8K, 96 files
-	Done uploading
-	OK
-	Par défaut, Cloud Foundry prend en compte le profil "cloud" ; pour autant, il est possible d’activer un autre profil en positionnant la variable d’environnement JAVA_OPTS (exemple : -Dspring.profiles.active=test)
-
-	L’application est alors disponible via l’URL nom_app.cfapps.io (http://springboot-demo.cfapps.io ici)
+Par défaut, Cloud Foundry prend en compte le profil "cloud" ; pour autant, il est possible d’activer un autre profil en positionnant la variable d’environnement JAVA_OPTS (exemple : -Dspring.profiles.active=test).
+L’application est alors disponible via l’URL nom_app.cfapps.io (http://springboot-demo.cfapps.io ici)
 
