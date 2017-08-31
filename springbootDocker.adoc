@@ -3,6 +3,7 @@
 :toclevels: 3
 
 = Développement microservice
+
 == Guide pour créer une application SpringBoot dans un container Linux Docker
 
 Ce document énumère les étapes de création d'une application Springboot dans un container Docker, un container Linux.
@@ -48,13 +49,13 @@ Ce fichier java retourne "Hello world" sur localhost:8080/
             }
     }
 
-Cette classe contient l'annotation @SpringBootApplication et @RestController pour paramètrer Springboot en Spring MVC. Quand l'utilisateur appel localhost:8080/ Springboot renvoi sur la page "Hello Docker World"
+Cette classe contient l'annotation `@SpringBootApplication` et `@RestController` pour paramètrer Springboot en Spring MVC. Quand l'utilisateur appel `localhost:8080/` Springboot renvoi sur la page "Hello Docker World"
 
 == Containeriser l'application SpringBoot
 
 Pour contenariser une application SpringBoot un Dockerfile est necessaire à la racine du projet. Lors de la construction de l'application, l'artefact "app.jar"
 
-We will containerize the above application using the DockerFile. The project JAR file is added to the container as “app.jar” and then executed in the ENTRYPOINT.We have added a VOLUME pointing to /tmp because it is where a Spring Boot application creates working directories for Tomcat by default.
+We will containerize the above application using the DockerFile. The project JAR file is added to the container as `app.jar` and then executed in the ENTRYPOINT.We have added a VOLUME pointing to /tmp because it is where a Spring Boot application creates working directories for Tomcat by default.
 
 === Dockerfile
 
@@ -68,14 +69,14 @@ This file is needed to create a docker image;
 
 === Construire une image Docker avec Maven
 
-Maven support la construction d'une application Springboot dans un container Docker. Il suffit de préciser un plugins dans pom.xml (rajouter la dépendance Maven / Docker).
+Maven support la construction d'une application Springboot dans un container Docker. Il suffit de préciser un plugins dans `pom.xml` (rajouter la dépendance Maven / Docker).
 
 Dans la configuration, il est necessaire de:
  .  préciser le nom et le tag de l'application
  .  le dossier où est situé le Dockerfile
  .  les fichers ressources pour construire l'image.
 
-=== La configuration de Maven doit contenir informations:
+=== La configuration de Maven doit contenir informations
 
 `pom.xml`
 
@@ -103,13 +104,13 @@ Dans la configuration, il est necessaire de:
         </plugins>
     </build>
 
-=== Utilisé Maven poiur construire l'image Docker
+=== Utilisé Maven pour construire l'image Docker
 
     $ mvn package docker:build
 
 == Construire une image Docker avec Gradle
 
-    Pour la configuration de la construction de Docker image avec Gradle, il faut rajouter dans la configuration de Gradle:
+    Pour la configuration de la construction de Docker image avec Gradle, il faut rajouter dans la configuration de Gradle
 
     build.gradle
     buildscript {
@@ -141,7 +142,7 @@ Dans la configuration, il est necessaire de:
 
 == Demonstration
 
-Maintenant l'application doit tourner sur `localhost:8080/` (application SpringBoot par defaut)
+Maintenant l'application doit tourner sur `localhost:8080/` (application SpringBoot par defaut).
 
     $ docker images
     REPOSITORY                        TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
