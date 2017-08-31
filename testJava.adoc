@@ -6,24 +6,24 @@
 
 1. Java est un langage…
 
- * [] Interprété
- * [] Compilé
- * [x] Les deux
- * [] Ni l' un, ni l'autre
+	 ** [] Interprété
+	 ** [] Compilé
+	 ** [x] Les deux
+	 ** [] Ni l' un, ni l'autre
 
 
 2. Quelle phrase au sujet de Java est correcte ?
 
-* [] En Java, les types de base ne sont pas des objets
-* [x] Java supporte l'héritage multiple entre les classes
-* [] En Java, on peut affecter soi-même l'adresse d'un pointeur
-* [] Java supporte la surcharge des opérateurs
+	** [] En Java, les types de base ne sont pas des objets
+	** [x] Java supporte l'héritage multiple entre les classes
+	** [] En Java, on peut affecter soi-même l'adresse d'un pointeur
+	** [] Java supporte la surcharge des opérateurs
 
-. Quels sont les différents mots-clés du langage Java ?
+	.. Quels sont les différents mots-clés du langage Java ?
 
-* public
-* private
-* protected
+	** public
+	** private
+	** protected
 
 . Que signifient les mots-clés public, private et protected ?
 
