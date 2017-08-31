@@ -6,7 +6,7 @@
 
 Ce document va énumérer les étapes de création d'une application Springboot dans un container Docker.
 
-==
+== Installation recommandé
 
 * docker (1.6.0 ou supérieur)
 * jdk 1.8
