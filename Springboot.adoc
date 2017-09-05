@@ -31,23 +31,24 @@ annexes : configuration, tests, sécurité, déploiement…​
 === RestController
 
 === Kiss:application.yml
-Plus de script de gestion d'environnement (@Component, @Configuration et possibilité de déclarer dans application.yml ou application.properties).
-@EnableAutoConfiguration. Cette annotation va alors s’appuyer sur l’ensemble des dépendances de l’application (MVC, Tomcat, …​) pour configurer l’application.
+Plus de script de gestion d'environnement (`@Component`, `@Configuration` et possibilité de déclarer dans `application.yml` ou `application.properties`).
 
-=== Plus de serveur d'application Deploiement facile (tomcat embarqué ou jety)
+`@EnableAutoConfiguration`. Cette annotation va alors s’appuyer sur l’ensemble des dépendances de l’application (MVC, Tomcat, …) pour configurer l’application.
+
+=== Plus de serveur d'application Deploiement facile (tomcat ou Jety embarqué )
 Simplicité de déploiement (le seul prérequis est Java).
 Cloud-ready.
 
 === Securité
 
 === Boite à outils pour intégration
-Bases relationnelles : JDBC, JPA, JdbcTemplate
-Bases NoSQL : Redis, MongoDB, ElasticSearch …​
-Messaging : JMS
+- Bases relationnelles : JDBC, JPA, JdbcTemplate
+- Bases NoSQL : Redis, MongoDB, ElasticSearch …
+- Messaging : JMS
 
 === Springboot et Docker
 	FROM java:8u45
-	MAINTAINER Gregory Le Bonniec "gregory.le.bonniec@ellixo.com"
+	MAINTAINER Patty Randriambololona "patty.randria8@gmail.com"
 	ADD springboot-1.0-SNAPSHOT.jar app.jar
 	ENTRYPOINT [ "java", "-Dspring.profiles.active=test", "-jar", "/app.jar" ]
 
