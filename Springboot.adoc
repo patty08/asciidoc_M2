@@ -5,14 +5,12 @@
 = 10 raisons pour adopter Springboot
 
 == Spring Framework
-Spring est un framework Java très populaire pour la construction d'applications Web et d'entreprise. Contrairement à de nombreux autres cadres, qui se concentrentsur un seul domaine, Spring Framework offre une grande variété de fonctionnalités répondant aux besoins commerciaux modernes grâce à ses projets de portefeuilleLe framework Spring offre une flexibilité pour configurer les beans de plusieurs manières telles que XML , Annotations et JavaConfig . Avec le nombre defonctionnalités augmentées, la complexité augmente également et la configuration des applications Spring devient fastidieuse et susceptible d'erreursL'équipe Spring a créé SpringBoot pour répondre à la complexité de la configuration.Mais avant de plonger dans SpringBoot, nous allons jeter un coup d'œil sur le cadre du printemps et voir quel type de problèmes SpringBoot essaie de résoudre.Dans cet article, nous couvrirons:Vue d'ensemble du cadre de printempsUne application Web utilisant Spring MVC et JPA (Hibernate)Un exemple rapide de SpringBootVue d'ensemble de Spring FrameworkSi vous êtes un développeur Java, il y a de fortes chances que vous ayez entendu parler de Spring Framework et l'avez probablement utilisé dans vos projets. Lecadre de printemps a été créé principalement comme un conteneur d'injection de dépendance, mais c'est beaucoup plus que cela. Spring est très populaire en raison de plusieurs raisons:
 
-* L'approche d'injection de dépendance de Spring encourage l'écriture du code vérifiable
-* Fonctionnalités de gestion des transactions de base de données faciles à utiliser mais puissantes
-* Spring simplifie l'intégration avec d'autres frameworks Java comme JPA / Hibernate ORM, Struts / JSF / etc. Cadres web
-* Cadre Web MVC de pointe pour la construction d'applications Web
+	Spring est un framework Java très populaire pour la construction d'applications Web et d'entreprise. Contrairement à de nombreux autres cadres, qui se concentrentsur un seul domaine, Spring Framework offre une grande variété de fonctionnalités répondant aux besoins commerciaux modernes grâce à ses projets de portefeuilleLe framework Spring offre une flexibilité pour configurer les beans de plusieurs manières telles que XML , Annotations et JavaConfig . 
+	Avec le nombre de fonctionnalités augmentées, la *complexité augmente* également et la configuration des applications Spring devient *fastidieuse* et susceptible d'erreurs.L'équipe Spring a créé `SpringBoot` pour répondre à la complexité de la configuration.
+	Mais avant de plonger dans SpringBoot, nous allons jeter un coup d'œil sur le cadre du printemps et voir quel type de problèmes SpringBoot essaie de résoudre.
 
-Parallèlement à Spring Framework, il existe de nombreux autres projets Spring Brothers qui aident à créer des applications répondant aux besoins des entreprises modernes:
+	Parallèlement à Spring Framework, il existe de nombreux autres projets Spring Brothers qui aident à créer des applications répondant aux besoins des entreprises modernes:
 
 * Spring Data: simplifie l'accès aux données des magasins de données relationnels et NoSQL.
 * Spring Batch: offre un puissant cadre de traitement par lots.
