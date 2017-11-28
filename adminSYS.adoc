@@ -7,13 +7,11 @@
 === uname ou lsb-release
 
 	Connaitre la version de linux.
-	uname -a
-	uname -v
-	uname -r
+	Commande: `uname -a | -v | -r`
 
 	ou
 
-	lsb-release -a
+	Commande: `lsb-release -a`
 
 == LINUX Disk
 === ls /mnt
@@ -28,23 +26,23 @@
 
 	Connaitre l'espace disque.
 
-	df -ah
+	Command: `df -ah`
 
 == LINUX SYSTEM DEAMON
 === service (old) ou systemctl (new)
 
 	Systemd: Deamon linux gestionnaire du noyau linux.
 
-	service [nomService] status | start | stop
+	Command: `service [nomService] status | start | stop`
 connaitre le status du X service
 
-	systemctl status | start | stop [nomService]
+	Command: `systemctl status | start | stop [nomService]`
 connaitre le status du X service avec la commande systemctl
 
 exemple:
 
-	systemctl status docker
-	systemctl status udev
+	Command: `systemctl status docker`
+	Command: `systemctl status udev`
 
 === top et htop (monitoring process)
 
@@ -59,13 +57,13 @@ exemple:
 
 	Netstat ou Networking Statistique. Il permet de générer une présentation assez complete du reseau.
 
-	netstat -nr
+	Command: `netstat -nr`
 	Affiche la table de routage
 
-	netstat -laputen | grep 80
+	Command: `netstat -laputen | grep 80`
 	Connaitre le port 80
 
-	netstat -tulpen
+	Command: `netstat -tulpen`
 	sudo netstat -tulpen
 	Connaitre un max d'information sur les processus et avec sudo, on affiche les processus impliqués
 
@@ -84,12 +82,17 @@ exemple:
 
 	hosts est le fichier de configuration de l'hote de la machine en question. Il permet de spécifier le DNS c'est à dire, de definier dans ce fichier /etc/hosts la correspondance entre un ip et un nom de domaine.
 
-	$ /etc/hosts
+	Command: `/etc/hosts`
 
-	[valeur] uri [alias]
+.Optional Title
+[NOTE]
+===============================
+*NOTE* [valeur] uri [alias]
 
-	exemple:
-	127.0.0.1 localhost
+===============================
+
+exemple:
+127.0.0.1 localhost
 
 	$ si je veux ajouter exemple xxx.com sur mon ip public:
 
@@ -109,3 +112,6 @@ exemple:
 
 	acronyme de statisitque de fichier ou du system. Il permet de voir les détails d'un fichier, création, droit, etc.
 
+=== less | cat
+
+	decrire un fichier
