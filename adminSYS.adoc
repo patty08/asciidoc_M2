@@ -2,7 +2,7 @@
 :toc-position: left
 :toclevels: 3
 
-= AdminSys & Networking tools Linux
+= AdminSys & Networking tools for Linux
 
 == LINUX
 === uname ou lsb-release
@@ -107,8 +107,8 @@ si je veux ajouter exemple xxx.com sur mon ip public:
 
 	Outil permettant d'accéder à une machine distante
 
-Command= `ssh-keygen`
-Command= `cat ~/.ssh/id_rsa.pub`
+Command: `ssh-keygen`
+Command: `cat ~/.ssh/id_rsa.pub`
 
 === sftp
 

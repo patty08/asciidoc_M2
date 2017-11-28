@@ -2,7 +2,7 @@
 :toc-position: left
 :toclevels: 3
 
-= JPA
+= Base de JPA
 
 	De nombreuses applications Web se composent de plusieurs «couches» également appelées «niveaux» de l'application: niveau web ou niveau de présentation pour afficher les pages de votre application, niveau commercial ou niveau intermédiaire pour l'exécution des règles logiques et commerciales de votre application et de votre niveau de données , Ou persistece pour transférer des données vers / depuis votre base de données. Ces niveaux peuvent avoir la configuration suivante:
 
