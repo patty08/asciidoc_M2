@@ -6,11 +6,11 @@
 
 == TOP CLI administration system
 
-= top et htop (monitoring process)
+=== top et htop (monitoring process)
 
 	top permet de visualiser la consomation de ressource des processus actives. htop est un outils améliorer de top.
 
-= netstat
+=== netstat
 
 	accronime de networking statistique. Il permet de générer une présentation assez complete du reseau.
 
@@ -25,18 +25,18 @@ Connaitre un max d'information sur les processus
 ** sudo netstat -tulpen
 pour afficher les processus impliqués
 
-= tcpdump
+=== tcpdump
 
 	outils puissant qui permet d'afficher la trame TCP. On peut avoir à l'utiliser pour analyser les failles réseaux, le 3 hands check (SYN,SYN[ACK],ACK)
 
-= nmap
+=== nmap
 
 nmap est l'accronyme de network map. nmap permet de générer une cartographie de l'adresse ip demandé.
 - affiche les détails de port ouvert de l'hote.
 
 ** nmap [monIP ou monDomainName]
 
-= hosts
+=== hosts
 
 	hosts est le fichier de configuration de l'hote de la machine en question. Il permet de spécifier le DNS c'est à dire, de definier dans ce fichier /etc/hosts la correspondance entre un ip et un nom de domaine.
 
@@ -57,13 +57,13 @@ $ si je veux ajouter exemple xxx.com sur mon ip public:
 == Changer le nom de l'ĥote
 
 
-= ssh
+=== ssh
 
 	Outil permettant d'accéder à une machine distante
 
-= sftp
+=== sftp
 
-= stat
+=== stat
 
 	acronyme de statisitque de fichier ou du system. Il permet de voir les détails d'un fichier, création, droit, etc.
 
