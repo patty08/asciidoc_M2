@@ -7,7 +7,6 @@ This document is a step by step configuration in order to activate automatique b
     `id: johndoe`
     `pwd: abc2015`
 
-= GitLab configuration
 == Create a GitLab key
 
 Jenkins need the access token to listen to GitLab behaviors.
