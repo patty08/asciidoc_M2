@@ -4,12 +4,11 @@
 
 = AdminSys & Networking tools Linux
 
-== Outils en ligne de commande
+== TOP CLI administration system
 
 = top et htop (monitoring process)
 
-top permet de visualiser la consomation de ressource des processus actives. htop est un outils améliorer de top.
-
+	top permet de visualiser la consomation de ressource des processus actives. htop est un outils améliorer de top.
 
 = netstat
 
@@ -21,9 +20,14 @@ Affiche la table de routage
 Connaitre le port 80
 ** netstat -laputen | grep 80
 
+Connaitre un max d'information sur les processus
+** netstat -tulpen
+** sudo netstat -tulpen
+pour afficher les processus impliqués
+
 = tcpdump
 
-outils puissant qui permet d'afficher la trame TCP. On peut avoir à l'utiliser pour analyser les failles réseaux, le 3 hands check (SYN,SYN[ACK],ACK)
+	outils puissant qui permet d'afficher la trame TCP. On peut avoir à l'utiliser pour analyser les failles réseaux, le 3 hands check (SYN,SYN[ACK],ACK)
 
 = nmap
 
@@ -34,7 +38,7 @@ nmap est l'accronyme de network map. nmap permet de générer une cartographie d
 
 = hosts
 
-hosts est le fichier de configuration de l'hote de la machine en question. Il permet de spécifier le DNS c'est à dire, de definier dans ce fichier /etc/hosts la correspondance entre un ip et un nom de domaine.
+	hosts est le fichier de configuration de l'hote de la machine en question. Il permet de spécifier le DNS c'est à dire, de definier dans ce fichier /etc/hosts la correspondance entre un ip et un nom de domaine.
 
 /etc/hosts
 
@@ -55,9 +59,11 @@ $ si je veux ajouter exemple xxx.com sur mon ip public:
 
 = ssh
 
+	Outil permettant d'accéder à une machine distante
+
 = sftp
 
 = stat
 
-acronyme de statisitque de fichier ou du system. Il permet de voir les détails d'un fichier, création, droit, etc.
+	acronyme de statisitque de fichier ou du system. Il permet de voir les détails d'un fichier, création, droit, etc.
 
