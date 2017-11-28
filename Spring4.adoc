@@ -46,12 +46,12 @@ public DataBaseService data(){
 }
 ---
 
-= Spring & Springboot (~/ressouces/)
+== Spring & Springboot (~/ressouces/)
 - abstract=true bean sert a regrouper des propiété de class dans <bean></bean>
 Question: pourquoi on ne peut pas mettre @Bean sur une methodes final
 	- toutes les classes annotées @Configuration utilisé CGLIB de JavaConfig, en consequence toutes ses occurences ne peuvet être marquées en final ou private, donc @Bean n'ai pas pas accepté non plus en raison de CGLIB.
 
-== PropertyPlaceHolder
+=== PropertyPlaceHolder
 C'est un moyen de resoudre `${}` dans un fichier XML ou system ou variable d'environnement.
 
 	1) déclarer en tant que @Bean dans main
@@ -59,7 +59,7 @@ C'est un moyen de resoudre `${}` dans un fichier XML ou system ou variable d'env
 	3) mettre les variables dans ce fichier
 	4) annoter la classe l'utilisant avec l'annotation @PropertySource
 
-== Scopes (application-context.xml)
+=== Scopes (application-context.xml)
 Les scopes sont définis das la balise <bean .. scope="xxx"> soit par singleton, prototype, session, request, global_session, application.
 
 	- Singleton: est une et une seule instance d'un objet dans le Springframework
@@ -68,7 +68,7 @@ Les scopes sont définis das la balise <bean .. scope="xxx"> soit par singleton,
 	- Request: environment web dont une instance va être créer à chaque requette
 	- Global session:
 
-== Profil en Spring (@Profil)
+=== Profil en Spring (@Profil)
 @Profile peut être defini dans un fichier XML ou dans une class. Ca consiste a definir un profil basé sur une configuration.
 exemple:
 On a deux @bean methode de connexion à une base de données.

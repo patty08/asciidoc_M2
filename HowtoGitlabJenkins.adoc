@@ -25,11 +25,11 @@ Jenkins need the access token to listen to GitLab behaviors.
 3. add athe first line a GitLab Jenkins plugin properties
     `properties([gitLabConnection('cloudunit')])`
 
-= Jenkins configuration
-== Requirement
+== Jenkins configuration
+=== Requirement
  - Jenkins version 2.46.1 (Tested)
 
-== GitLab Jenkinsfile
+=== GitLab Jenkinsfile
 1. go to Jenkins management
 2. system configuration
 3. got to Gitlab panel
@@ -40,7 +40,7 @@ Jenkins need the access token to listen to GitLab behaviors.
 4. Save button
 Make sure that you have credentials token, go to `Identities`
 
-== How to add credentials
+=== How to add credentials
 In the Jenkins Credentials Provider: Jenkins,
   `1. Domain: Global identity`
   `2. Domain: GitLab API token`

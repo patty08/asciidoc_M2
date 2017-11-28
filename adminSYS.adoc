@@ -3,27 +3,71 @@
 :toclevels: 3
 
 = AdminSys & Networking tools Linux
+== LINUX
+=== uname ou lsb-release
 
-== TOP CLI administration system
+	Connaitre la version de linux.
+	uname -a
+	uname -v
+	uname -r
+
+	ou
+
+	lsb-release -a
+
+== LINUX Disk
+=== ls /mnt
+
+	Lister les partions de disque.
+
+=== less /etc/fstab
+
+	Information sur la partition disque de linux.
+
+=== df
+
+	Connaitre l'espace disque.
+
+	df -ah
+
+== LINUX SYSTEM DEAMON
+=== service (old) ou systemctl (new)
+
+	Systemd: Deamon linux gestionnaire du noyau linux.
+
+	service [nomService] status | start | stop
+connaitre le status du X service
+
+	systemctl status | start | stop [nomService]
+connaitre le status du X service avec la commande systemctl
+
+exemple:
+
+	systemctl status docker
+	systemctl status udev
 
 === top et htop (monitoring process)
 
 	top permet de visualiser la consomation de ressource des processus actives. htop est un outils améliorer de top.
 
+=== ps aux |
+
+	voir les processus en cours d'execution.
+
+== LINUX NETWORK
 === netstat
 
-	accronime de networking statistique. Il permet de générer une présentation assez complete du reseau.
+	Netstat ou Networking Statistique. Il permet de générer une présentation assez complete du reseau.
 
-Affiche la table de routage
-** netstat -nr
+	netstat -nr
+	Affiche la table de routage
 
-Connaitre le port 80
-** netstat -laputen | grep 80
+	netstat -laputen | grep 80
+	Connaitre le port 80
 
-Connaitre un max d'information sur les processus
-** netstat -tulpen
-** sudo netstat -tulpen
-pour afficher les processus impliqués
+	netstat -tulpen
+	sudo netstat -tulpen
+	Connaitre un max d'information sur les processus et avec sudo, on affiche les processus impliqués
 
 === tcpdump
 
@@ -31,31 +75,29 @@ pour afficher les processus impliqués
 
 === nmap
 
-nmap est l'accronyme de network map. nmap permet de générer une cartographie de l'adresse ip demandé.
-- affiche les détails de port ouvert de l'hote.
+	nmap est l'accronyme de network map. nmap permet de générer une cartographie de l'adresse ip demandé.
+	affiche les détails de port ouvert de l'hote.
 
-** nmap [monIP ou monDomainName]
+	nmap [monIP ou monDomainName]
 
 === hosts
 
 	hosts est le fichier de configuration de l'hote de la machine en question. Il permet de spécifier le DNS c'est à dire, de definier dans ce fichier /etc/hosts la correspondance entre un ip et un nom de domaine.
 
-/etc/hosts
+	$ /etc/hosts
 
-valeur uri alias
+	[valeur] uri [alias]
 
-exemple:
+	exemple:
+	127.0.0.1 localhost
 
- 127.0.0.1 localhost
+	$ si je veux ajouter exemple xxx.com sur mon ip public:
 
-$ si je veux ajouter exemple xxx.com sur mon ip public:
-
-- aller sur network-tools.com/
-- recupérer un adresse ip
-- adresseIP_X xxx.com
+	-- aller sur network-tools.com/
+	-- recupérer un adresse ip
+	-- adresseIP_X xxx.com
 
 == Changer le nom de l'ĥote
-
 
 === ssh
 
