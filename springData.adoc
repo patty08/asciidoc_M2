@@ -2,7 +2,7 @@
 :toc-position: left
 :toclevels: 3
 
-= Base de JPA
+= Notion de Spring JPA (BackEND JEE)
 
 	De nombreuses applications Web se composent de plusieurs «couches» également appelées «niveaux» de l'application: niveau web ou niveau de présentation pour afficher les pages de votre application, niveau commercial ou niveau intermédiaire pour l'exécution des règles logiques et commerciales de votre application et de votre niveau de données , Ou persistece pour transférer des données vers / depuis votre base de données. Ces niveaux peuvent avoir la configuration suivante:
 
@@ -34,3 +34,32 @@
 	Les services mettront @Serviceégalement en place des interfaces de base. Ils seront également gérés par le cadre du printemps. Notez que Spring Framework offrira une gestion de transaction hors connexion pour vous si vous marquez les méthodes de service @Transactional.
 	Les haricots doivent donc être @Componentet @Scope("value")être gérés par Spring si vous souhaitez l'utiliser comme un cadre d'injection de dépendance, permettant d'accéder à vos services et autres beans via @Autowired.
 	Ainsi, le NPE provient du malentendu que vos beans, en tant que partie logique de la vue, devraient être gérés par JSF (notez que @ManagedPropertycela ne fonctionnerait pas aussi). Le bean est instancié par JSF, mais votre service réside dans un contexte de printemps sur lequel JSF sait bien, ce qui rend l'injection impossible. D'autre part, si le haricot reste dans le contexte de Spring, son cycle de vie et ses dépendances seront injectés par Spring.
+
+== Spring Data
+
+WARNING: comment configurer Spring avec HSQLDB?
+
+== HSQL DB est embarqué
+C'est une base de données embarqué dans Spring. Il faut juste la configurer. C'est pratique pour une petite application en local au lieu d'utiliser Mysql, Oracle, postgres ....
+
+Exemple: on va creer une base de données avec HSQLDB
+
+1) dans Maven, declerer la dépendance org.hsqldb.
+2) creer un fichier .sql pour la creation et insertion de données dans la table.
+3) dans Spring
+-	declarer un bean configuration de la base de données, c'est à dire, `class="org.springframework.jdbc.datasource.DriverManagerDataSource"` et les `property name=`, driverClassName, url, username, password.
+-	declarer  <jdbc:initialize-database data-source="xxx">, <jdbc:script location="">,
+
+== Hibernate
+
+WARNING: C'est quoi Hibernate?
+
+- Hibernate est un ORM, un fornisseur qui implémente l'interface JPA.
+
+WARNING: Qu'est ce que JPA?
+
+- JPA ou Java Persistance API est une interfaces pour correlier Java POJO object avec les tabldes d'une base de données. On peut utiliser JPA ave des annotations ou une configuration XML.
+
+=== Configuration de Hibernate
+
+Afin de configurer Hibernate, il faut créer dans application-context-persistence.xml un `entity manager factory`. La différence entre HSQLDB c'est qu'Hibernate doit créer unr entité manager factory et une persistence context, le bean est `<bean class= "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"`

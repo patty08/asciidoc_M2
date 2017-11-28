@@ -27,7 +27,7 @@ annexes : configuration, tests, sécurité, déploiement…​
 == Les fonctionnalités de SpringBoot
 
 === 1. RestController
- nouveauté dans Spring boot. Permet de representer le retour d'une requête sur le browser.
+ "Nouveauté" dans Springboot. Permet de representer le retour d'une requête sur le browser.
 
 === 2. application.yml
 Plus de script de gestion d'environnement (`@Component`, `@Configuration` et possibilité de déclarer dans `application.yml` ou `application.properties`).
@@ -83,7 +83,7 @@ L’application est alors disponible via l’URL nom_app.cfapps.io (http://sprin
 
 == Spring Springboot, les différences
 
-=== Injection de dependance (IOC) utilisant XML
+=== 1. Injection de dependance (IOC) utilisant XML
 
 TIP: @ComponentScan, @Component, @Autowired, @Qualifier
 
@@ -114,7 +114,7 @@ exemple sur une classe DAO
 .Question: qu'est ce qu'un prefix?
 - Est utile pour mapper et accéder à une ressource. Dans `Spring` on peut utiliser des préfix sur le `classpath`,`file`,`http`,`(none)`
 
-=== Injection de dependance (IOC) en utilisant @Configuration
+=== 2. Injection de dependance (IOC) en utilisant @Configuration
 `@Configuration`: permet d'eviter de rediger un `fichier xml`. La configuration peut directement être écrit dans le main annoté @Bean.
 exemple:
 
@@ -127,12 +127,12 @@ public DataBaseService data(){
 }
 ---
 
-=== Spring & Springboot (~/ressouces/)
+=== 3. Spring & Springboot (~/ressouces/)
 - abstract=true bean sert a regrouper des propiété de class dans <bean></bean>
 Question: pourquoi on ne peut pas mettre @Bean sur une methodes final
 	- toutes les classes annotées @Configuration utilisé CGLIB de JavaConfig, en consequence toutes ses occurences ne peuvet être marquées en final ou private, donc @Bean n'ai pas pas accepté non plus en raison de CGLIB.
 
-=== PropertyPlaceHolder
+=== 4. PropertyPlaceHolder
 C'est un moyen de resoudre `${}` dans un fichier XML ou system ou variable d'environnement.
 
 	1) déclarer en tant que @Bean dans main
@@ -140,7 +140,7 @@ C'est un moyen de resoudre `${}` dans un fichier XML ou system ou variable d'env
 	3) mettre les variables dans ce fichier
 	4) annoter la classe l'utilisant avec l'annotation @PropertySource
 
-=== Scopes (application-context.xml)
+=== 5. Scopes (application-context.xml)
 Les scopes sont définis das la balise `<bean .. scope="xxx">` soit par singleton, prototype, session, request, global_session, application.
 
 	- Singleton: est une et une seule instance d'un objet dans le Springframework
@@ -149,7 +149,7 @@ Les scopes sont définis das la balise `<bean .. scope="xxx">` soit par singleto
 	- Request: environment web dont une instance va être créer à chaque requette
 	- Global session:
 
-=== Definir des profils: Profil en Spring (@Profil)
+=== 6. Definir des profils: Profil en Spring (@Profil)
 `@Profile` peut être defini dans un fichier XML ou dans une class. Ca consiste a definir un profil basé sur une configuration.
 exemple:
 On a deux @bean methode de connexion à une base de données.
