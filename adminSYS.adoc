@@ -89,27 +89,29 @@ Command: `netstat -tulpen`
 
 	Command: `/etc/hosts`
 
-.Optional Title
-[NOTE]
+.fichier hosts
+[DESC]
 ===============================
-*NOTE* [valeur] uri [alias]
-
+[valeur] uri [alias]
 ===============================
 
 exemple:
 127.0.0.1 localhost
 
-	$ si je veux ajouter exemple xxx.com sur mon ip public:
+$ si je veux ajouter exemple xxx.com sur mon ip public:
 
-	-- aller sur network-tools.com/
-	-- recupérer un adresse ip
-	-- adresseIP_X xxx.com
+-- aller sur network-tools.com/
+-- recupérer un adresse ip
+-- adresseIP_X xxx.com
 
 == Changer le nom de l'ĥote
 
 === ssh
 
 	Outil permettant d'accéder à une machine distante
+
+Command= `ssh-keygen`
+Command= `cat ~/.ssh/id_rsa.pub`
 
 === sftp
 
