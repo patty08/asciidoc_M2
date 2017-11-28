@@ -90,7 +90,7 @@ Command: `netstat -tulpen`
 	Command: `/etc/hosts`
 
 .fichier hosts
-[DESC]
+[NOTE]
 ===============================
 [valeur] uri [alias]
 ===============================
