@@ -3,6 +3,7 @@
 :toclevels: 3
 
 = AdminSys & Networking tools Linux
+
 == LINUX
 === uname ou lsb-release
 
@@ -26,17 +27,19 @@
 
 	Connaitre l'espace disque.
 
-	Command: `df -ah`
+Command: `df -ah`
 
 == LINUX SYSTEM DEAMON
 === service (old) ou systemctl (new)
 
 	Systemd: Deamon linux gestionnaire du noyau linux.
 
-	Command: `service [nomService] status | start | stop`
+Command: `service [nomService] status | start | stop`
+
 connaitre le status du X service
 
-	Command: `systemctl status | start | stop [nomService]`
+Command: `systemctl status | start | stop [nomService]`
+
 connaitre le status du X service avec la commande systemctl
 
 exemple:
@@ -57,14 +60,16 @@ exemple:
 
 	Netstat ou Networking Statistique. Il permet de générer une présentation assez complete du reseau.
 
-	Command: `netstat -nr`
+Command: `netstat -nr`
+
 	Affiche la table de routage
 
-	Command: `netstat -laputen | grep 80`
+Command: `netstat -laputen | grep 80`
+
 	Connaitre le port 80
 
-	Command: `netstat -tulpen`
-	sudo netstat -tulpen
+Command: `netstat -tulpen`
+
 	Connaitre un max d'information sur les processus et avec sudo, on affiche les processus impliqués
 
 === tcpdump
