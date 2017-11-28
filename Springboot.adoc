@@ -81,9 +81,9 @@ Par défaut, *Cloud Foundry* prend en compte le profil "cloud" ; pour autant, il
 L’application est alors disponible via l’URL nom_app.cfapps.io (http://springboot-demo.cfapps.io ici)
 
 
-= Spring Springboot, les différences
+== Spring Springboot, les différences
 
-== Injection de dependance (IOC) utilisant XML
+=== Injection de dependance (IOC) utilisant XML
 
 TIP: @ComponentScan, @Component, @Autowired, @Qualifier
 
@@ -114,7 +114,7 @@ exemple sur une classe DAO
 .Question: qu'est ce qu'un prefix?
 - Est utile pour mapper et accéder à une ressource. Dans `Spring` on peut utiliser des préfix sur le `classpath`,`file`,`http`,`(none)`
 
-== Injection de dependance (IOC) en utilisant @Configuration
+=== Injection de dependance (IOC) en utilisant @Configuration
 `@Configuration`: permet d'eviter de rediger un `fichier xml`. La configuration peut directement être écrit dans le main annoté @Bean.
 exemple:
 
@@ -127,7 +127,7 @@ public DataBaseService data(){
 }
 ---
 
-== Spring & Springboot (~/ressouces/)
+=== Spring & Springboot (~/ressouces/)
 - abstract=true bean sert a regrouper des propiété de class dans <bean></bean>
 Question: pourquoi on ne peut pas mettre @Bean sur une methodes final
 	- toutes les classes annotées @Configuration utilisé CGLIB de JavaConfig, en consequence toutes ses occurences ne peuvet être marquées en final ou private, donc @Bean n'ai pas pas accepté non plus en raison de CGLIB.
