@@ -9,113 +9,190 @@
 
 	Connaitre la version de linux.
 
-Commande: `uname -a | -v | -r`
-	ou
-Commande: `lsb-release -a`
+.CLI: `uname -a | -v | -r`
+
+.CLI: `lsb-release -a`
 
 == LINUX Disk
 === ls /mnt
 
-	Lister les partions de disque.
+-> Lister les partions de disque.
 
 === less /etc/fstab
 
-	Information sur la partition disque de linux.
+-> Information sur la partition disque de linux.
 
 === df
+-> Connaitre l'espace disque.
 
-	Connaitre l'espace disque.
+.CLI: `df -ah`
 
-Command: `df -ah`
+.CLI: `df -f`
 
 == LINUX SYSTEM DEAMON
 === service (old) ou systemctl (new)
 
-	Systemd: Deamon linux gestionnaire du noyau linux.
+Systemd: Deamon linux gestionnaire du noyau linux.
 
-Command: `service [nomService] status | start | stop`
+.CLI: `service [nomService] status | start | stop`
+-> connaitre le status du X service
 
-	connaitre le status du X service
+.CLI: `systemctl status | start | stop [nomService]`
+-> connaitre le status du X service avec la .CLIe systemctl
 
-Command: `systemctl status | start | stop [nomService]`
+.exemple:
 
-	connaitre le status du X service avec la commande systemctl
-
-exemple:
-
-Command: `systemctl status docker`
-Command: `systemctl status udev`
+.CLI: `systemctl status docker`
+.CLI: `systemctl status udev`
 
 === top et htop (monitoring process)
+-> top permet de visualiser la consomation de ressource des processus actives. htop est un outils améliorer de top.
 
-	top permet de visualiser la consomation de ressource des processus actives. htop est un outils améliorer de top.
+=== ps aux | grep yyy
 
-=== ps aux |
-
-	voir les processus en cours d'execution.
+-> voir les processus en cours d'execution.
 
 == LINUX NETWORK
 === netstat
 
-	Netstat ou Networking Statistique. Il permet de générer une présentation assez complete du reseau.
+Netstat ou Networking Statistique. Il permet de générer une présentation assez complete du reseau.
 
-Command: `netstat -nr`
-	Affiche la table de routage
-Command: `netstat -laputen | grep 80`
+.CLI: `netstat -nr`
+
+    Affiche la table de routage
+
+.CLI: `netstat -laputen | grep 80`
 
 	Connaitre le port 80
-Command: `netstat -tulpen`
 
-	Connaitre un max d'information sur les processus et avec sudo, on affiche les processus impliqués
+.CLI: `netstat -tulpen`
+
+    Connaitre un max d'information sur les processus et avec sudo, on affiche les processus impliqués
 
 === tcpdump
 
-	outils puissant qui permet d'afficher la trame TCP. On peut avoir à l'utiliser pour analyser les failles réseaux, le 3 hands check (SYN,SYN[ACK],ACK)
+    outils puissant qui permet d'afficher la trame TCP. On peut avoir à l'utiliser pour analyser les failles réseaux, le 3 hands check (SYN,SYN[ACK],ACK)
 
 === nmap
 
-	nmap est l'accronyme de network map. nmap permet de générer une cartographie de l'adresse ip demandé.
-	affiche les détails de port ouvert de l'hote.
+nmap est l'accronyme de network map. nmap permet de générer une cartographie de l'adresse ip demandé et affiche les détails de port ouvert de l'hote.
 
-	nmap [monIP ou monDomainName]
+.CLI: `nmap [monIP ou monDomainName]`
 
 === hosts
 
-	hosts est le fichier de configuration de l'hote de la machine en question. Il permet de spécifier le DNS c'est à dire, de definier dans ce fichier /etc/hosts la correspondance entre un ip et un nom de domaine.
+`/etc/hosts` est le fichier de configuration de l'hote de la machine en question. Il permet de spécifier le DNS c'est à dire, de definier dans ce fichier /etc/hosts la correspondance entre un ip et un nom de domaine.
 
-Command: `/etc/hosts`
+.CLI: `/etc/hosts`
 
-.fichier hosts
+./etc/hosts
 [NOTE]
 ===============================
 [valeur] uri [alias]
 exemple:
+
+
 127.0.0.1 localhost
 
+192.168.1.10 patsou.ddns.net
 ===============================
 
 
-si je veux ajouter exemple xxx.com sur mon ip public:
+.NB: si je veux ajouter exemple xxx.com sur mon ip public, je fais:
 
--- aller sur network-tools.com/
--- recupérer un adresse ip
--- adresseIP_X xxx.com
+. aller sur `network-tools.com/`
+. recupérer un adresse ip
+. dans /etc/hosts/
+. je rajoute `adresseIP_X xxx.com`
 
-== Changer le nom de l'ĥote
+=== ssh : authentification à distance.
 
-=== ssh
+Outil permettant d'accéder à une machine distante
 
-	Outil permettant d'accéder à une machine distante
+.CLI: `ssh-keygen`
 
-Command: `ssh-keygen`
-Command: `cat ~/.ssh/id_rsa.pub`
+Permet de générer une clé `ssh` facilement sur linux. la .CLIe `ssh-keygen -t rsa` est très utile.
+
+.Démarche:
+. ssh-keygen -t rsa
+. stocker la clé dans $HOME
+. voir la description du contenu: `cat ~/.ssh/id_rsa.pub`
+. copier la clé sur le serveur:  `ssh-copy-id utilisateur@ipduserveur`
+. ssh 'user@ipserveur'
+
+    et c'est bon! :), vous êtes authenfifié en toute securité. :)
+
 
 === sftp
+Transfert de fichier sécurisé.
 
 === stat
 
-	acronyme de statisitque de fichier ou du system. Il permet de voir les détails d'un fichier, création, droit, etc.
+acronyme de statisitque de fichier ou du system. Il permet de voir les détails d'un fichier, création, droit, etc.
 
 === less | cat
 
-	decrire un fichier
+decrire un fichier.
+
+== LINUX PROCESSUS : lsof (REMPLACE TOUT)
+=== lsof
+lister les fichiers d'un processus en cours d'execution.
+
+    sudo lsof | head
+
+.exemple: on va voir un processus qui tourne et voir les fichiers qu'il a ouvert
+
+.. on va voir le processus
+
+    sudo nestat -tulpen
+
+.. on va ouvrir le log du programme
+
+    lsof /etc/log/[nomProgramme].log
+
+=== ps VS lsof: binaire des processus?, où sont ils?
+
+    lsof -p [PIDduProcess]| grep log
+
+=== ps VS lsof: connaitre les processus qu'utilise une librairie
+
+    lsof [cheminDuLibrairie]
+
+    mieux que ps :).
+
+.exemple:
+
+    ls -alh /lib/i386-linux-gnu/libgcc_s.so.1
+    -rw-r--r-- 1 root root 114K avril  7  2017 /lib/i386-linux-gnu/libgcc_s.so.1
+
+    lsof /lib/i386-linux-gnu/libgcc_s.so.1
+    lsof: WARNING: can't stat() fuse.gvfsd-fuse file system /run/user/120/gvfs
+
+.sortie:
+    .CLI    PID   USER  FD   TYPE DEVICE SIZE/OFF    NODE NAME
+    TeamViewe 4603 patsoo mem    REG    8,3   116312 8659775 /lib/i386-linux-gnu/libgcc_s.so.1
+    wineserve 5093 patsoo mem    REG    8,3   116312 8659775 /lib/i386-linux-gnu/libgcc_s.so.1
+    services. 5137 patsoo mem    REG    8,3   116312 8659775 /lib/i386-linux-gnu/libgcc_s.so.1
+    explorer. 5526 patsoo mem    REG    8,3   116312 8659775 /lib/i386-linux-gnu/libgcc_s.so.1
+    TVGuiDele 5540 patsoo mem    REG    8,3   116312 8659775 /lib/i386-linux-gnu/libgcc_s.so.1
+
+=== Reseau avec lsof: connaitre les processus ecoutant un protocole
+
+    lsof -i udp
+
+=== connaitre l'espace disque
+
+au lieu de faire `df -f`, on utilise `lsof`
+
+    lsof -f
+
+=== lsof VS htop : monitoring un numéro de processus
+
+    lsof -p [numPID]
+
+.exemple:
+    . htop
+    . recupérer num PID
+    . lsof -p [numPID]
+
+    lsof va décrire tout ce qui se passe sur le PID (les fichiers ouverts, les ports, ...).
