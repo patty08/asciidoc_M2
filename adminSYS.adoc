@@ -261,3 +261,12 @@ au lieu de faire `df -f`, on utilise `lsof`
     . lsof -p [numPID]
 
     lsof va décrire tout ce qui se passe sur le PID (les fichiers ouverts, les ports, ...).
+
+=== Triches:
+
+-> lister les nombres d'appel des commandes linux
+`history | awk '{print $2}' | sort | uniq -c | sort -rn | head -10`
+
+-> monitoring des LOGS en temps réel
+`sudo tail -f /var/log/apache2/access.log
+sudo less +F  /var/log/apache2/access.log`
