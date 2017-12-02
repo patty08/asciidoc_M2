@@ -7,7 +7,7 @@
 == 1. LINUX
 === 1. uname ou lsb-release
 
-	Connaitre la version de linux.
+> Connaitre la version de linux.
 
 .CLI: `uname -a | -v | -r`
 
@@ -17,16 +17,30 @@
 
 .Commande text dans la CLI
 
-    `CTRL + U`: couper le texte jusqu'au curseur
-    `CTRL + K` : couper le text depuis le curseur jsuqu'à la fin de la ligne
-    `CTRL + Y` : coller texte du presse papier
-    `CTRL + E` : deplacer curseur jusq'à la fin
-    `CTRL + A` : deplacer le curseur jusqu'à la fin de la ligne
-    `ALT + F` : sauter au prochain espace
-    `ALT + B` : revenir au dernier espace
-    `ALT + Backspace` : supprimer en arrière
-    `CTRL + W` : couper ce qui est derrière le curseur
-    `Shift + Insert` : coller le text dans le terminale
+|===
+|Commande | Description
+
+|kbd:[CTRL + U]
+|couper le texte jusqu'au curseur
+|kbd:[CTRL + K]
+|couper le text depuis le curseur jsuqu'à la fin de la ligne
+|kbd:[CTRL + Y]
+|coller texte du presse papier
+|kbd:[CTRL + E]
+|deplacer curseur jusq'à la fin
+|kbd:[CTRL + A]
+|deplacer le curseur jusqu'à la fin de la ligne
+|kbd:[ALT + F:]
+|sauter au prochain espace
+|kbd:[ALT + B:]
+|revenir au dernier espace
+|kbd:[ALT + Backspace]
+|supprimer en arrière
+|kbd:[CTRL + W]
+|couper ce qui est derrière le curseur
+|kbd:[Shift + insert]
+|coller le text dans le terminale
+|===
 
 .Commande de base
 
@@ -80,14 +94,14 @@ Si votre distribution n'utilise pas APT, elle peut utiliser YUM, RPM ou une autr
 == 2. LINUX gestion de Disque
 === 1. ls /mnt
 
--> Lister les partions de disque.
+> Lister les partions de disque.
 
 === 2. less /etc/fstab
 
--> Information sur la partition disque de linux.
+> Information sur la partition disque de linux.
 
 === 3. df
--> Connaitre l'espace disque.
+> Connaitre l'espace disque.
 
 .CLI: `df -ah`
 
@@ -99,10 +113,10 @@ Si votre distribution n'utilise pas APT, elle peut utiliser YUM, RPM ou une autr
 Systemd: Deamon linux gestionnaire du noyau linux.
 
 .CLI: `service [nomService] status | start | stop`
--> connaitre le status du X service
+> connaitre le status du X service
 
 .CLI: `systemctl status | start | stop [nomService]`
--> connaitre le status du X service avec la .CLIe systemctl
+> connaitre le status du X service avec la .CLIe systemctl
 
 .exemple:
 
@@ -110,7 +124,7 @@ Systemd: Deamon linux gestionnaire du noyau linux.
 .CLI: `systemctl status udev`
 
 === 2. top et htop (monitoring process)
--> top permet de visualiser la consomation de ressource des processus actives. htop est un outils améliorer de top.
+> top permet de visualiser la consomation de ressource des processus actives. htop est un outils améliorer de top.
 
 == 4. LINUX reseaux
 === 1. netstat
@@ -184,30 +198,31 @@ Permet de générer une clé `ssh` facilement sur linux. la .CLIe `ssh-keygen -t
 
 
 === 6. sftp
-Transfert de fichier sécurisé.
+> Transfert de fichier sécurisé.
 
 === 7. stat
 
-acronyme de statisitque de fichier ou du system. Il permet de voir les détails d'un fichier, création, droit, etc.
+> acronyme de statisitque de fichier ou du system. Il permet de voir les détails d'un fichier, création, droit, etc.
 
 === 8. less | cat
 
-decrire un fichier.
+> decrire un fichier.
 
 == 5.LINUX processus : la commande `lsof` remplace TOUT :)
 
 === 1. lsof
-lister les fichiers d'un processus en cours d'execution.
+> lister les fichiers d'un processus en cours d'execution.
 
     sudo lsof | head
 
-.exemple: on va voir un processus qui tourne et voir les fichiers qu'il a ouvert
+.exemple:
+on va voir un processus qui tourne et voir les fichiers qu'il a ouvert
 
-.. on va voir le processus
+> on va voir le processus
 
     sudo nestat -tulpen
 
-.. on va ouvrir le log du programme
+> on va ouvrir le log du programme
 
     lsof /etc/log/[nomProgramme].log
 
@@ -216,14 +231,15 @@ lister les fichiers d'un processus en cours d'execution.
     lsof -p [PIDduProcess]| grep log
 
     ps aux | grep yyy
--> voir les processus en cours d'execution.
+
+> voir les processus en cours d'execution.
 
 
 === 3. ps VS lsof: connaitre les processus qu'utilise une librairie
 
     lsof [cheminDuLibrairie]
 
-    mieux que ps :).
+> mieux que ps :).
 
 .exemple:
 
@@ -247,7 +263,7 @@ lister les fichiers d'un processus en cours d'execution.
 
 === 5. connaitre l'espace disque
 
-au lieu de faire `df -f`, on utilise `lsof`
+> au lieu de faire `df -f`, on utilise `lsof`
 
     lsof -f
 
@@ -264,9 +280,9 @@ au lieu de faire `df -f`, on utilise `lsof`
 
 === Triches:
 
--> lister les nombres d'appel des commandes linux
+> lister les nombres d'appel des commandes linux
 `history | awk '{print $2}' | sort | uniq -c | sort -rn | head -10`
 
--> monitoring des LOGS en temps réel
+> monitoring des LOGS en temps réel
 `sudo tail -f /var/log/apache2/access.log
 sudo less +F  /var/log/apache2/access.log`
