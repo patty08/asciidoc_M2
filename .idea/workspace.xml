@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d4e08616-5291-4a1c-84d6-88dc49163a47" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminSYS.adoc" afterPath="$PROJECT_DIR$/adminSYS.adoc" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -240,7 +239,7 @@
       <workItem from="1511889583771" duration="13816000" />
       <workItem from="1511950632056" duration="306000" />
       <workItem from="1511950951458" duration="4797000" />
-      <workItem from="1512222458510" duration="1834000" />
+      <workItem from="1512222458510" duration="1838000" />
     </task>
     <task id="LOCAL-00001" summary="cloud computing maj">
       <created>1511952154164</created>
@@ -270,11 +269,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512223628740</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="maj adminSys">
+      <created>1512224294908</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1512224294908</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20753000" />
+    <option name="totallyTimeSpent" value="20757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="688" y="425" width="1920" height="1053" extended-state="6" />
