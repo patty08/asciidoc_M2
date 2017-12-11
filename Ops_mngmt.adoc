@@ -4,6 +4,21 @@
 
 = Chef vs Puppet vs Ansible vs Saltstack"
 
+
+
+[options="header,footer"]
+|=======================
+|Métrique|Chef       |Puppet       |Ansible       |Saltstack
+|Disponibilité|✔       |✔       |✔       |✔
+|Facilité d'installation    |Pas très facile     |Pas très facile     | facile     |Pas très facile
+|Gestion    |Pas très facile     |Pas très facile     | facile     |Pas très facile
+|Evolutivité       |Très évolutif   |Très évolutif  |Très évolutif   |Très évolutif
+|Langage de configuration    |DSL (Ruby)     |DSL (Ruby)     |YAML (Python)    |YAML (Python)
+|Interopérabilité    |Haute   |Haute    |Haute    |Haute
+|Coût     |13700 $   |11200 $ - 19900 $    |10 000 $    |15 000 $ (app)
+|=======================
+
+
 == 1. Disponibilité
 
 Laissez-moi comparer chef vs marionnette vs ansible vs selstack sur la base de la disponibilité. Tous les outils sont hautement disponibles, ce qui signifie qu'il y a plusieurs serveurs ou plusieurs instances présentes. Dites, si votre maître ou serveur principal tombe en panne, il y a toujours un serveur de sauvegarde ou le maître différent pour prendre sa place. Jetons un coup d'œil à chaque outil un par un:
