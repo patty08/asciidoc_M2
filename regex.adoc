@@ -1,0 +1,20 @@
+:toc: auto
+:toc-position: left
+:toclevels: 3
+
+= REGEX
+
+l'expression regulière repond à la question, quel texte tu cherches et en faire quoi?
+
+== 1. Syntax
+
+.exemple: 123 patty
+
+> \[1-5]\s\[a-z]
+
+\d represente les nombres
+\D represente autre choses que les nombres
+\s represente les espaces
+\S represente autre choses que les espaces
+\w represente les caractères
+\W represente autre choses que les caractères
