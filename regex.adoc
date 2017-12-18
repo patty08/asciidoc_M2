@@ -18,3 +18,7 @@ l'expression regulière repond à la question, quel texte tu cherches et en fair
 \S represente autre choses que les espaces
 \w represente les caractères
 \W represente autre choses que les caractères
+
+? au moins une fois
+* 0 ou plusieurs fois
+{n} n nombre de fois
