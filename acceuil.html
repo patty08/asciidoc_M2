@@ -63,7 +63,7 @@
 
 	
 <!-- Fixed navbar -->
-<nav class="navbar bg-dark navbar-dark fixed-bottom">
+<nav class="navbar bg-dark navbar-dark fixed-top">
   <a class="navbar-brand" href="#">Mes realisations</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -86,7 +86,7 @@
 <!-- Navbar-->
 <div class="jumbotron jumbotron-fuild bg-into text-xhite text-center">
   <div class="container">
-    <h1 class="display-1">Mes réalisations</h1>
+    <h1 class="h1-responsive">Mes réalisations</h1>
     <p class="lead"> Ceci est une documentation qui résume les outils de bases important pour commencer à faire du DevOps. La génération de cette page est assuré par <code>Travis CI</code> depuis mon GitHub repository.</p>
     <footer class="blockquote-footer">Voir <a href="https://github.com/patty08/asciidoc_M2">ici</a></footer>
   </div>
@@ -94,89 +94,183 @@
 
 <main>
 
-<div class="container-fluid">
-  <div class="row col-lg-12 ">
-    <div class="row mt-5 wow col-lg-3">
-      <div class="card" style="width: 25rem;">
-        <img class="card-img-top img-fuild" src="https://discoversdkcdn.azureedge.net/postscontent/spring/spring_3.png" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title">Springboot: standalone app </h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="https://patty08.github.io/asciidoc_M2/springboot.html" class="btn btn-primary">Lire</a>
-          <a href="https://patty08.github.io/asciidoc_M2/springboot.pdf" class="btn btn-info" role="button">PDF</a>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-5 wow col-lg-3 ">
-      <div class="card" style="width: 25rem;">
-        <img class="card-img-top img-fuild" src="http://g00glen00b.be/wp-content/uploads/2012/08/boot-data.png" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title">SpringData: Notion de base sur JPA & Hibernate</h4>
-          <p class="card-text">Base à comprendre pour prendre en main l'aspect accès aux données de Spring.Hibernate est un framework open source gérant la persistance des objets en base de données relationnelle.</p>
+        <!--Main layout-->
+        <div class="container">
+            
+            <hr class="extra-margins">
+
+            <!--Second row-->
+            <div class="row">
+                <!--First columnn-->
+                <div class="col-lg-3">
+                    <!--Card-->
+                    <div class="card wow fadeIn" data-wow-delay="0.2s">
+
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://discoversdkcdn.azureedge.net/postscontent/spring/spring_3.png" alt="Card image cap">
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">Springboot: standalone app</h4>
+                            <!--Text-->
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									          <a href="https://patty08.github.io/asciidoc_M2/springboot.html" class="btn btn-primary">Lire</a>
+									          <a href="https://patty08.github.io/asciidoc_M2/springboot.pdf" class="btn btn-info" role="button">PDF</a>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--First columnn-->
+
+                <!--Second columnn-->
+                <div class="col-lg-3">
+                    <!--Card-->
+                    <div class="card wow fadeIn" data-wow-delay="0.4s">
+
+                        <!--Card image-->
+                        <img class="img-fluid" src="http://g00glen00b.be/wp-content/uploads/2012/08/boot-data.png" alt="Card image cap">
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">SpringData: Notion de base sur JPA & Hibernate</h4>
+                            <!--Text-->
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="https://patty08.github.io/asciidoc_M2/springData.html" class="btn btn-primary">Lire</a>
           <a href="https://patty08.github.io/asciidoc_M2/springData.pdf" class="btn btn-info" role="button">PDF</a>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-5 wow col-lg-3">
-      <div class="card" style="width: 25rem;">
-        <img class="card-img-top" src="https://www.pole-scs.org/sites/www.pole-scs.org/files/images/communication/Logo-Treeptik-RVB.png" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title">CloudUnit - Treeptik PaaS DevOps</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+
+                </div>
+                <!--Second columnn-->
+
+                <!--Third columnn-->
+                <div class="col-lg-3">
+                    <!--Card-->
+                    <div class="card wow fadeIn" data-wow-delay="0.6s">
+
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://www.pole-scs.org/sites/www.pole-scs.org/files/images/communication/Logo-Treeptik-RVB.png" alt="Card image cap">
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">CloudUnit - Treeptik PaaS DevOps</h4>
+                            <!--Text-->
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="https://patty08.github.io/asciidoc_M2/cloudunit.html" class="btn btn-primary">Lire </a>
           <a href="https://patty08.github.io/asciidoc_M2/cloudunit.pdf" class="btn btn-info" role="button">PDF</a>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-5 wow col-lg-3">
-      <div class="card" style="width: 25rem;">
-        <img class="card-img-top img-fuild" src="" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title">Cloud Computing</h4>
-          <p class="card-text">Les notions de base des modèles du cloud computing.</p>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--Third columnn-->
+
+                <!--Fourth columnn-->
+                <div class="col-lg-3">
+                    <!--Card-->
+                    <div class="card wow fadeIn" data-wow-delay="0.6s">
+
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Architecture/4-col/img%20(4).jpg" alt="Card image cap">
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">Cloud Computing</h4>
+                            <!--Text-->
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="https://patty08.github.io/asciidoc_M2/cloudComputing.html" class="btn btn-primary">Lire </a>
           <a href="https://patty08.github.io/asciidoc_M2/cloudComputing.pdf" class="btn btn-info" role="button">PDF</a>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-5 wow col-lg-3">
-      <div class="card" style="width: 20rem;">
-        <img class="card-img-top img-fuild" src="https://www.hostingireland.ie/images/java-logo.png" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title">Test Java </h4>
-          <p class="card-text">Quelques notions utiles pour le langage Java.</p>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--Fourth columnn-->
+
+                <!--Fith columnn-->
+                <div class="col-lg-3">
+                    <!--Card-->
+                    <div class="card wow fadeIn" data-wow-delay="0.6s">
+
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Architecture/4-col/img%20(4).jpg" alt="Card image cap">
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">Java OO</h4>
+                            <!--Text-->
+                            <p class="card-text">Quelques notions utiles pour le langage Java.</p>
           <a href="https://patty08.github.io/asciidoc_M2/testJava.html" class="btn btn-primary">Lire</a>
           <a href="https://patty08.github.io/asciidoc_M2/testJava.pdf" class="btn btn-info" role="button">PDF</a>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-5 wow col-lg-3">
-      <div class="card" style="width: 20rem;">
-        <img class="card-img-top img-fuild" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfoPlYkJIXvk8_kzVTKM4gngJ4qtv6h5VgFalN0cHG8b2Wzc-4" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title">Administation système</h4>
-          <p class="card-text">Documents qui résume les outils necessaire pour faire de l'administration système Linux.</p>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--Fith columnn-->
+
+
+                <!--Sixth columnn-->
+                <div class="col-lg-3">
+                    <!--Card-->
+                    <div class="card wow fadeIn" data-wow-delay="0.6s">
+
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfoPlYkJIXvk8_kzVTKM4gngJ4qtv6h5VgFalN0cHG8b2Wzc-4" alt="Card image cap">
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">Administation système</h4>
+                            <!--Text-->
+                            <p class="card-text">Documents qui résume les outils necessaire pour faire de l'administration système Linux.</p>
           <a href="https://patty08.github.io/asciidoc_M2/adminSYS.html" class="btn btn-primary">Lire</a>
           <a href="https://patty08.github.io/asciidoc_M2/adminSYS.pdf" class="btn btn-info" role="button">PDF</a>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-5 wow col-lg-3">
-      <div class="card" style="width: 20rem;">
-        <img class="card-img-top" src="http://g00glen00b.be/wp-content/uploads/2015/12/spring-boot-docker.png" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title">Docker SpringBoot</h4>
-          <p class="card-text">Etapes de création d'une application SpringBoot dans un container Docker.</p>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--Sixth columnn-->
+
+
+                <!--Seventh columnn-->
+                <div class="col-lg-3">
+                    <!--Card-->
+                    <div class="card wow fadeIn" data-wow-delay="0.6s">
+
+                        <!--Card image-->
+                        <img class="img-fluid" src="http://g00glen00b.be/wp-content/uploads/2015/12/spring-boot-docker.png" alt="Card image cap">
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">Docker SpringBoot</h4>
+                            <!--Text-->
+                            <p class="card-text">Etapes de création d'une application SpringBoot dans un container Docker.</p>
           <a href="https://patty08.github.io/asciidoc_M2/springbootDocker.html" class="btn btn-primary">Lire</a>
           <a href="https://patty08.github.io/asciidoc_M2/springbootDocker.pdf" class="btn btn-info" role="button">PDF</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</main>
+                        </div>
 
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--Seventh columnn-->
+
+            </div>
+            <!--/.Second row-->
+        </div>
+        <!--/.Main layout-->
+
+    </main>
 
 
 
