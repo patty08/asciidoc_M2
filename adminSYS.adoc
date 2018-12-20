@@ -4,7 +4,7 @@
 
 = Administration SI et outils reseaux sur linux
 
-== 1. LINUX
+== 1. Basic
 === 1. uname ou lsb-release
 
 > Connaitre la version de linux.
@@ -91,7 +91,7 @@ Si votre distribution n'utilise pas APT, elle peut utiliser YUM, RPM ou une autr
 - `wget` : Télécharge le fichier ou la page à l'URL Web donnée.
 - `zip / gzip / tar` : Divers formats pour compresser et décompresser les archives de fichiers.
 
-== 2. LINUX gestion de Disque
+== 2.  Gestion de Disque
 === 1. ls /mnt
 
 > Lister les partions de disque.
@@ -107,7 +107,7 @@ Si votre distribution n'utilise pas APT, elle peut utiliser YUM, RPM ou une autr
 
 .CLI: `df -f`
 
-== 3. LINUX daemon
+== 3.  Daemon linux
 === 1. service (old) ou systemctl (new)
 
 Systemd: Deamon linux gestionnaire du noyau linux.
@@ -126,7 +126,7 @@ Systemd: Deamon linux gestionnaire du noyau linux.
 === 2. top et htop (monitoring process)
 > top permet de visualiser la consomation de ressource des processus actives. htop est un outils améliorer de top.
 
-== 4. LINUX reseaux
+== 4.  Reseaux
 === 1. netstat
 
 Netstat ou Networking Statistique. Il permet de générer une présentation assez complete du reseau.
@@ -208,9 +208,11 @@ Permet de générer une clé `ssh` facilement sur linux. la .CLIe `ssh-keygen -t
 
 > decrire un fichier.
 
-== 5.LINUX processus : la commande `lsof` remplace TOUT :)
+== 5. processus
 
 === 1. lsof
+** la commande `lsof` remplace TOUT :)
+
 > lister les fichiers d'un processus en cours d'execution.
 
     sudo lsof | head
