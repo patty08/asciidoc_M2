@@ -1,4 +1,4 @@
 # asciidoc_M2
-asciidoc test with Travis
+Automation document with CI CD 
 
 Here: https://patty08.github.io/asciidoc_M2/
