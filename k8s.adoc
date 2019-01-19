@@ -1,19 +1,21 @@
 :toc: auto
 :toc-position: left
-:toclevels: 2
+:toclevels: 3
 
 = Kubernetes
-== C'est quoi?
+
+== C'est quoi ?
 
 Kubernetes est un projet developpé par Google, un grand outils d'orchestration de container avec plein de fonctionnalité. Kubernetes se place au début de la liste des outils les plus performant en 2018 par ses npmbreux points fort par rapport à d'autre outils de d'orchestration de container.
 Kubernetes ou k8s n'est pas tout de même l'un des outils les plus facile à mettre en place, pas pour autant de bien maitriser. Pour faire fonctionner correctement K8s, il en est d'avoir une bonne pratique et de methode.
 K8s contient plusieurs module, l'outil est modulable en fonction de choix de son utilisateur.
 Les points forts de K8s sont:
- - Lightweight: Pour faire tourner l'outil, il n'est pas necessaire d'avoir un monstre puisque en memoire ou en processeur :), l'application ne compte que quelque mega octet de memoire. 
- - realability: la fiabilité est aussi l'un de ces points fort contrairement à ces concurant. Kubernetes assure la disponibilité de ces containers en ajustant automatiquement les services déjà disponible. 
- - scalable: K8s est modulable, tous ces services sont remplacables par un autre module. K8s loadbalance automatiquement les nodes orphelins pour optimiser la mise en diponibilité.
+	 -- Lightweight: Pour faire tourner l'outil, il n'est pas necessaire d'avoir un monstre puisque en memoire ou en processeur :), l'application ne compte que quelque mega octet de memoire.
+	 -- realability: la fiabilité est aussi l'un de ces points fort contrairement à ces concurant. Kubernetes assure la disponibilité de ces containers en ajustant automatiquement les services déjà disponible.
+	 -- scalable: K8s est modulable, tous ces services sont remplacables par un autre module. K8s loadbalance automatiquement les nodes orphelins pour optimiser la mise en diponibilité.
 le but de K8s est d'assurer la disponibilté de tous les containers qui eux executes differents charges de travail et different flux de données sur une infrastructure donné tel qu'une VM ou une bare metal ou sur le cloud.
- ## Vocabulaires
+
+== Vocabulaires
 
  - cluster
  a Cluster est une collection de host et de ressource.
@@ -26,7 +28,7 @@ le but de K8s est d'assurer la disponibilté de tous les containers qui eux exec
   -	Un pod contient un ou plusieurs containers
   -	un pod à le meme adresse IP et même port
   - communique en localhost ou avec un standard inter-procès de communication
-  - partage un meme dossier 
+  - partage un meme dossier
  - label
 
  - annotation
@@ -37,10 +39,46 @@ le but de K8s est d'assurer la disponibilté de tous les containers qui eux exec
  - Name
  - Namespace
  le Namespace est un cluser virtuel
-## Deployer un cluster
-### outils
-### demonstation
-## Deployer un mutli cluster
-### outils
-### demonstation
 
+== Deployer un cluster
+=== outils
+K8s with Kubctl
+-	minikube
+-	cmder (conEmu)
+=== demonstation
+
+
+	Deploy 1 cluster on Kubernetes on Windows
+
+- we use alias 'k' to make writing easer. Kubctl is the commande line to use Kubernetes
+Set-Alias -Name k -Value kubectl
+
+- Minikube is responsible of container deployment in one cluster
+- I personalize minikube typing with log redirected  to mk, here
+function mk { minikube-windows-amd64 `--show-libmachine-logs `--alsologtostderr `@args` }
+
+- pull and run echo nginx container in kubernetes. Base image here is in google cloud plateform
+K run echo --image=gcr.io/google_containers/echoserver:1.4 --port=8080
+
+- if container is stopped, then
+k expose deployment echo --type=NodePort
+NodePort = port of your host
+
+- retrieve ip where 'echo' image is hosted
+k get service echo --output='jsonpath="{.spec.ports[0].NodePort}"'
+-> it returnes the port of echo container
+
+- check status of pods
+k get pods
+
+- retrive pod ip
+mk ip
+-> it returnes the IP of pods
+
+- Dashboard is accessible with:
+mk dashboad
+
+
+== Deployer un mutli cluster
+=== outils
+=== demonstation
