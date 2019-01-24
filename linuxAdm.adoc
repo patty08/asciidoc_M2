@@ -7,14 +7,15 @@
 == Informations système
 uname - Identification du système.
 -a : toutes les informations.
-dmesg - Messages du noyau (et ceux du boot).
-uptime - Durée et charge du système.
-free - Occupation de la mémoire.
-vmstat - Détails sur l'utilisation de la mémoire.
-ipcs - Utilisation des ressources IPC System V.
-ipcrm - Suppression de ressources IPC System V.
-ldconfig - Valider les bibliothèques dynamiques.
-init - Changement de niveau de fonctionnement :
+
+	dmesg - Messages du noyau (et ceux du boot).
+	uptime - Durée et charge du système.
+	free - Occupation de la mémoire.
+	vmstat - Détails sur l'utilisation de la mémoire.
+	ipcs - Utilisation des ressources IPC System V.
+	ipcrm - Suppression de ressources IPC System V.
+	ldconfig - Valider les bibliothèques dynamiques.
+	init - Changement de niveau de fonctionnement :
 
 0 : arrêt.
 1 : mono-utilisateur,
