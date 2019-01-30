@@ -18,7 +18,7 @@ after_failure:
   - docker logs asciidoc-to-pdf
 
 after_success:
-  - cd output ; mv ../acceuil.html index.html ;
+  - cd output ; mv ../index.html index.html ; mv ../css/style.css css/style.css
   - git init
   - git config user.name "${GH_USER_NAME}"
   - git config user.email "{GH_USER_EMAIL}"
