@@ -190,7 +190,7 @@ Permet de générer une clé `ssh` facilement sur linux. la .CLIe `ssh-keygen -t
 .Démarche:
 . ssh-keygen -t rsa
 . stocker la clé dans $HOME
-. voir la description du contenu: `cat ~/.ssh/id_rsa.pub`
+. voir la description du contenu: `cat $HOME/.ssh/id_rsa.pub`
 . copier la clé sur le serveur:  `ssh-copy-id utilisateur@ipduserveur`
 . ssh 'user@ipserveur'
 
@@ -283,8 +283,10 @@ on va voir un processus qui tourne et voir les fichiers qu'il a ouvert
 === Triches:
 
 > lister les nombres d'appel des commandes linux
-`history | awk '{print $2}' | sort | uniq -c | sort -rn | head -10`
+
+    history | awk '{print $2}' | sort | uniq -c | sort -rn | head -10`
 
 > monitoring des LOGS en temps réel
-`sudo tail -f /var/log/apache2/access.log
-sudo less +F  /var/log/apache2/access.log`
+
+    sudo tail -f /var/log/apache2/access.log
+    sudo less +F  /var/log/apache2/access.log`

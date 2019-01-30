@@ -29,15 +29,14 @@ le but de K8s est d'assurer la disponibilté de tous les containers qui eux exec
   -	un pod à le meme adresse IP et même port
   - communique en localhost ou avec un standard inter-procès de communication
   - partage un meme dossier
- - label
-
- - annotation
- - label selection
- - volume
- - PetSet
- - Secret
- - Name
- - Namespace
+  - label
+  - annotation
+  - label selection
+  - volume
+  - PetSet
+  - Secret
+  - Name
+  - Namespace
  le Namespace est un cluser virtuel
 
 == Deployer un cluster
@@ -46,7 +45,6 @@ K8s with Kubctl
 -	minikube
 -	cmder (conEmu)
 === demonstation
-
 
 	Deploy 1 cluster on Kubernetes on Windows
 
