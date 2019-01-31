@@ -78,7 +78,6 @@ mk ip
 - Dashboard is accessible with:
 mk dashboad
 
-
 == Deployer un mutli cluster
 === outils
 === demonstation
