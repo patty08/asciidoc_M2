@@ -11,11 +11,11 @@ Kubernetes ou k8s n'est pas tout de même l'un des outils les plus facile à met
 K8s contient plusieurs module, l'outil est modulable en fonction de choix de son utilisateur.
 Les points forts de K8s sont:
 
-.Lightweight: Pour faire tourner l'outil, il n'est pas necessaire d'avoir un monstre puisque en memoire ou en processeur :), l'application ne compte que quelque mega octet de memoire.
+. Lightweight: Pour faire tourner l'outil, il n'est pas necessaire d'avoir un monstre puisque en memoire ou en processeur :), l'application ne compte que quelque mega octet de memoire.
 
-.realability: la fiabilité est aussi l'un de ces points fort contrairement à ces concurant. Kubernetes assure la disponibilité de ces containers en ajustant automatiquement les services déjà disponible.
+. realability: la fiabilité est aussi l'un de ces points fort contrairement à ces concurant. Kubernetes assure la disponibilité de ces containers en ajustant automatiquement les services déjà disponible.
 
-.scalable: K8s est modulable, tous ces services sont remplacables par un autre module. K8s loadbalance automatiquement les nodes orphelins pour optimiser la mise en diponibilité.
+. scalable: K8s est modulable, tous ces services sont remplacables par un autre module. K8s loadbalance automatiquement les nodes orphelins pour optimiser la mise en diponibilité.
 
 le but de K8s est d'assurer la disponibilté de tous les containers qui eux executes differents charges de travail et different flux de données sur une infrastructure donné tel qu'une VM ou une bare metal ou sur le cloud.
 
