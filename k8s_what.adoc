@@ -44,7 +44,7 @@ pod;;
 ...Secret
 ...Name
 ...Namespace
-    le Namespace est un cluser virtuel
+le Namespace est un cluser virtuel
 
 == Deployer un cluster
 === outils
