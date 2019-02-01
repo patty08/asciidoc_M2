@@ -47,10 +47,12 @@ pod;;
 le Namespace est un cluser virtuel
 
 == Deployer un cluster
+
 === outils
 K8s with Kubctl
 .minikube
 .cmder (conEmu)
+
 === demonstation
 .Deploy 1 cluster on Kubernetes on Windows
 
