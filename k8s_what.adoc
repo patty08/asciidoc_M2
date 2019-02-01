@@ -55,24 +55,24 @@ Set-Alias -Name k -Value kubectl
 
 . Minikube is responsible of container deployment in one cluster
 . I personalize minikube typing with log redirected  to mk, here
-function mk { minikube-windows-amd64 `--show-libmachine-logs `--alsologtostderr `@args` }
+  function mk { minikube-windows-amd64 `--show-libmachine-logs `--alsologtostderr `@args` }
 
 . pull and run echo nginx container in kubernetes. Base image here is in google cloud plateform
-K run echo --image=gcr.io/google_containers/echoserver:1.4 --port=8080
+  K run echo --image=gcr.io/google_containers/echoserver:1.4 --port=8080
 
 . if container is stopped, then
-k expose deployment echo --type=NodePort
-NodePort = port of your host
+  k expose deployment echo --type=NodePort
+  NodePort = port of your host
 
 . retrieve ip where 'echo' image is hosted
-k get service echo --output='jsonpath="{.spec.ports[0].NodePort}"'
+  k get service echo --output='jsonpath="{.spec.ports[0].NodePort}"'
 -> it returnes the port of echo container
 
 . check status of pods
-k get pods
+  k get pods
 
 . retrive pod ip
-mk ip
+  mk ip
 -> it returnes the IP of pods
 
 - Dashboard is accessible with:
