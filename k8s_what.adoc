@@ -6,9 +6,11 @@
 
 == C'est quoi ?
 
-Kubernetes est un projet developpé par Google, un grand outils d'orchestration de container avec plein de fonctionnalité. Kubernetes se place au début de la liste des outils les plus performant en 2018 par ses npmbreux points fort par rapport à d'autre outils de d'orchestration de container.
+Kubernetes est un projet developpé par Google, un grand outils d'orchestration de container avec plein de fonctionnalité.
+Kubernetes se place au début de la liste des outils les plus performant en 2018 par ses npmbreux points fort par rapport à d'autre outils de d'orchestration de container.
 
 Kubernetes ou k8s n'est pas tout de même l'un des outils les plus facile à mettre en place, pas pour autant de bien maitriser. Pour faire fonctionner correctement K8s, il en est d'avoir une bonne pratique et de methode.
+
 K8s contient plusieurs module, l'outil est modulable en fonction de choix de son utilisateur.
 Les points forts de K8s sont:
 
