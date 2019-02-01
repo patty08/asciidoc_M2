@@ -23,6 +23,7 @@ Les points forts de K8s sont:
 le but de K8s est d'assurer la disponibilté de tous les containers qui eux executes differents charges de travail et different flux de données sur une infrastructure donné tel qu'une VM ou une bare metal ou sur le cloud.
 
 == Vocabulaires
+
 cluster;;
  a Cluster est une collection de host et de ressource.
 node;;
