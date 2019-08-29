@@ -1,0 +1,101 @@
+:toc: auto
+:toc-position: left
+:toclevels: 3
+
+
+= Azure Vs AWS Vs Google Cloud
+
+As per the Gartner Survey Report, the market of public cloud is estimated to hit a total worth of $411 bn by 2020. Cloud technology is used for making backups, storing data, working in co-op, and whatnot.
+
+Microsoft Azure claims more than 95 percent of Fortune 500 companies use Azure while 62% of market is captured by Amazon Web Services. Microsoft Azure almost doubled their revenues in year 2017 that is approximately $1.5 billion, while Amazon Web Services claims approximately to $9.7 billion which is 45% increase in revenue. AWS revenues increased by nearly three times as much as Azure´s revenue. Google hasn’t reported its cloud revenue for 2018, yet, but Canalys estimates Google’s cloud revenue at $6.8 billion, representing annual growth of 94%. That secures Google’s spot for the third highest market share. According to Google and Alphabet CFO Ruth Porat, “Google Cloud Platform remains one of the fastest growing businesses in Alphabet with strong customer momentum reflected in particular in demand for our compute and data analytics products”.
+
+== Microsoft Azure:
+
+Microsoft Azure, formerly known as Windows Azure and stands out as one of the top vendors in the market with a wide range of services available. Azure is Microsoft’s public cloud computing platform. It was commercially launched from year 2010. Today it is available to 54 regions, spread across 140 countries. Azure has more than 100 services with great end-to-end tools. 120000 new customer subscription per month. Microsoft offers all three of the major categories of cloud computing, platform as a service (PaaS), software as a service (SaaS) and infrastructure as a service (IaaS). It deals with PaaS and IaaS offerings under the brand name of Microsoft Azure.
+
+== Amazon Web Services:
+
+Amazon Web Services (AWS) started in year 2006 and today AWS Cloud spans 57 Availability Zones within 19 geographic Regions around the world, with announced plans for 15 more Availability Zones and five more Regions in Bahrain, Cape Town, Hong Kong SAR, Milan, and Stockholm. AWS is a comprehensive, evolving cloud computing platform provided by Amazon.  It provides cloud platform as a Infrastructure as a Service (IaaS), Software as a Service (SaaS) and Platform as a service (SaaS). It provide Infrastructure as a Service (IaaS) into five different categories of Storage, Compute, Database, Content Delivery and Networking. AWS was the first company to offer pay-as-you-go cloud computing model.
+
+== Google Cloud Platform:
+
+Google Cloud Platform (GCP) started their journey on October 6, 2011. At the time of this article, they’ve had 5 years during which they’ve managed to create a good presence in the industry. Initially, the push was to strengthen their own services, such as Google or YouTube. But they went further and created enterprise services, so now anyone can use their cloud platform. Google Cloud Platform, as the name implies, is a cloud computing platform that provides infrastructure tools and services for users to build applications and services on top of. Google Cloud Platform (GCP) is a portfolio of cloud computing services that grew around the initial Google App Engine framework for hosting web applications from Google’s data centers.
+
+Key Differences between Azure Vs AWS Vs Google Cloud :
+
+: Google Cloud Platform: Microsoft Azure: Amazon Web Services
+Platform As A Service: GCP supports Google App Engine: Azure supports Cloud Services: AWS supports Elastic Beanstalk
+Instances Family	GCP supports 7	Azure support 4	AWS support 7
+Instance Types	Maximum 18	 Maximum up to 33	Maximum up to 38
+Caching	CloudCDN	Azure supports Redis Cache	ASW supports Elastic Cache
+Data Warehouse		Azure Supports SQL Data Warehouse	ASW supports Redshift
+Virtual Networking		Virtual Network	Virtual Private Cloud
+Administration	Cloud Console	Log Analytics, Operations Management Suite, Resource Health, Storage Explorer	Application Discovery Service, System manager, Personal Health Dashboard
+Pricing	Per Minute	For Infrastructure pay Per Minute	For Infrastructure pay Per Hour
+Big Data Platform	Widely used as a Big data Platform	Less mature comparing AWS for Big Data environment	More  mature for Big Data environment
+Hadoop		HDInsight	Elastic Map Reduce
+NoSQL Databases	Cloud Bigtable	Azure Document DB	Amazon Dynamo DB
+Object Size Limits	5 TB	4.75 TB	5 TB
+How much platform are Matured	GCP are 7 years old	Azure are 8 years old	AWS are 18 years old
+Market Capture	12% of Cloud Market	20% of entire cloud market	62% of entire cloud market
+Maximum Processor in VM	96	128	128
+Maximum Memory in VM	1433 GB	3800 GB	3904 GB
+SAL Availability	99.95% Monthly Uptime	99.90%	99.95%
+Operating System Supported	Windows, SLES, CentOS, CoreOS, OpenSUSE, RHEL, Debian, FreeBSD, Ubunyu	RHEL, OpenSUSE, Windows, SLES, CoreOS, CentOS, Cloud Linux, Debian, FreeBSD, Ubuntu, Oracle Linux	RHEL, Ubuntu, Oracle Linux, Cloud Linux, CentOS, Windows, SLES, Windows, FreeBSD, Debian, CoreOS
+Platform	Cloud computing platform that provides infrastructure tools and services	Public Cloud Platform for Microsoft	On demand cloud computing platform for Amazon Web Services
+Open Source Community	Not much open source tool supported	Not much open source tool supported	Large number of Open Source Tool Supported
+Marketplace	G suite Marketplace	Azure Marketplace	AWS Marketplace
+App Testing	Cloud Test lab is being used in this	DevTest labs are being used	Device farm is being used
+File Storage	ZFS and Avere	Azure Files	EFS
+ 
+
+== Pros and Cons between Cloud Service Provider ( Azure Vs AWS Vs Google Cloud ):
+
+Cloud Service Provider	Advantages	Disadvantages
+Amazon Web Services	·         Dominant market position
+·         Extensive, mature offerings
+
+·         Support for large                             organizations
+
+·         Extensive training
+
+·         Global reach
+
+·         Difficult to use
+·         Cost management
+
+·         Overwhelming options
+
+Microsoft Azure	·         Second largest provider
+·         Integration with Microsoft              tools and software
+
+·         Broad feature set
+
+·         Hybrid cloud
+
+·         Support for open source
+
+·         Issues with                                   documentation
+·         Incomplete management            tooling
+
+Google Cloud Platform	·         Designed for cloud-native                businesses
+·         Commitment to open                       source and portability
+
+·         Deep discounts and flexible            contracts
+
+·         DevOps expertise
+
+·         Late entrant to IaaS                     market
+·         Fewer features and                      services
+
+·         Historically not as                       enterprise focused
+
+ 
+
+== And at the Bottom: ( Azure Vs AWS Vs Google Cloud )
+
+We are generating very huge volume of data and everyday data are piling up. Most of the data are stored in cloud and it opened door of more growth and business opportunities to cloud vendors. With the exponentially growth and demand of Cloud Technology, public cloud vendor are in very high demands.
+
+So, in this blog, we had a Cloud Services comparison for Azure Vs AWS Vs Google. I have described comparison in terms of different services offered by these public clouds, market share, and pricing. But the actual research while choosing the best cloud service provider depends on what you need and what the provider offers. Comparing cloud services can be a tough task but this comparison only scratches the surface and is meant for people who are getting started with cloud computing. If you would like to go to with the safest option, Amazon AWS is the best way to go. If your application utilizes Microsoft products or languages, Azure can help you sustain and take advantage of Microsoft’s ecosystem. GCP stands in a sweet spot and is viable most of the time. This battle cloud between AWS, Google, and Azure makes us conclude that whatever cloud service you will opt, you will be happy. Due to the competition, all the cloud service providers are trying to attract customers with the extended services at reduced prices.
+
+When evaluating cloud platforms, it’s important to keep their strengths and weaknesses in mind. However, it’s equally as important to understand where providers put the most attention into developing and maintaining.

@@ -1,0 +1,99 @@
+:toc: auto
+:toc-position: left
+:toclevels: 3
+
+= KUBERNETES CHEAT SHEET
+
+Let’s start with pods. Here is the YAML for a basic busybox pod:
+
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	name: busybox
+	spec:
+	containers:
+	- image: busybox:1.28.4
+	command:
+	- sleep
+	- "3600"
+	name: busybox
+	restartPolicy: Always
+
+Learn more about YAML here.
+
+Create the pod with this command:
+
+kubectl create -f busybox.yaml
+
+Use this command to create a deployment:
+
+kubectl run nginx --image=nginx
+
+Use this command to create a service from the deployment above:
+
+kubectl expose deployment nginx --port=80 --type=NodePort
+
+Sign up for a free community account today and check out these free courses: Kubernetes Essentials and Beginner’s Guide to Containers and Orchestration to learn more about Kubernetes!
+
+Here is the YAML for a simple persistent volume using local storage from the node:
+
+	apiVersion: v1
+	kind: PersistentVolume
+	metadata:
+	name: data-pv
+	namespace: web
+	spec:
+	storageClassName: local-storage
+	capacity:
+	storage: 1Gi
+	accessModes:
+	- ReadWriteOnce
+	hostPath:
+	path: /mnt/data
+	Use the following command to create the persistent volume:
+
+kubectl apply -f my-pv.yaml
+
+Here is the YAML for a simple ConfigMap:
+
+	apiVersion: v1
+	kind: ConfigMap
+	metadata:
+	name: my-config-map
+	data:
+	myKey: myValue
+	anotherKey: anotherValue
+
+Use the following command to create the ConfigMap:
+
+kubectl apply -f configmap.yaml
+
+Here is the YAML for a secret:
+
+	apiVersion: v1
+	kind: Secret
+	metadata:
+	name: my-secret
+	stringData:
+	myKey: myPassword
+
+Use this command to create the secret:
+
+kubectl apply -f secret.yaml
+
+Here is the YAML for a service account:
+
+	apiVersion: v1
+	kind: ServiceAccount
+	metadata:
+	name: acr
+	namespace: default
+	secrets:
+	- name: acr
+
+Use this command to create the service account:
+
+kubectl apply -f serviceaccount.yaml
+
+== CHEAT SHEET
+https://linuxacademy.com/site-content/uploads/2019/04/Kubernetes-Cheat-Sheet_07182019.pdf?x96242
