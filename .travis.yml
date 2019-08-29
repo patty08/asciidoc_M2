@@ -20,7 +20,7 @@ after_failure:
   - docker logs asciidoc-to-pdf
 
 after_success:
-  - cd output ; mv ../index.html index.html ; mv ../css/style.css css/style.css; mv ../css/jquery.min.js; css/jquery.min.js; mv ../css/browser.min.js; css/browser.min.js; mv ../css/breakpoints.min.js; css/breakpoints.min.js; mv ../css/util.js; css/util.js; mv ../css/main.js; css/main.js; mv ../css/main.css; css/main.css; mv ../css/noscript.css; css/noscript.css
+  - cd output ; mv ../index.html index.html ; mv ../css/style.css css/style.css; mv ../css/jquery.min.js css/jquery.min.js; mv ../css/browser.min.js css/browser.min.js; mv ../css/breakpoints.min.js css/breakpoints.min.js; mv ../css/util.js css/util.js; mv ../css/main.js css/main.js; mv ../css/main.css css/main.css; mv ../css/noscript.css css/noscript.css; 
   - git init
   - git config user.name "${GH_USER_NAME}"
   - git config user.email "{GH_USER_EMAIL}"
