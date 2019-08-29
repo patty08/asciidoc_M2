@@ -2,7 +2,7 @@
 :toc-position: left
 :toclevels: 3
 
-= WORDPRESS usefull plugins
+= WORDPRESS useful plugins
 
 == Yoast SEO
 Yoast SEO est probablement l’extension SEO la plus populaire parmi les plugins WordPress. Elle permet de bénéficier de différents indicateurs destinés à vous aider à optimiser le SEO de votre site. Elle dispose d’un outil d’analyse des pages afin d’en optimiser le contenu, d’un outil de sitemap XML et d’un support de Open Graph. Yoast SEO fournit toutes les informations nécessaires à Google pour vous aider à référencer votre site.
