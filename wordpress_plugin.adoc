@@ -2,68 +2,70 @@
 :toc-position: left
 :toclevels: 3
 
-= Yoast SEO
+= WORDPRESS usefull plugins
+
+== Yoast SEO
 Yoast SEO est probablement l’extension SEO la plus populaire parmi les plugins WordPress. Elle permet de bénéficier de différents indicateurs destinés à vous aider à optimiser le SEO de votre site. Elle dispose d’un outil d’analyse des pages afin d’en optimiser le contenu, d’un outil de sitemap XML et d’un support de Open Graph. Yoast SEO fournit toutes les informations nécessaires à Google pour vous aider à référencer votre site.
 
-= Woocommerce
+== Woocommerce
 Comme son nom l’indique, Woocommerce est une extension permettant de construire sa boutique e-commerce. Vous pouvez ainsi configurer votre store en y créant des pages produit, le panier et les tunnels de paiement, choisir vos méthodes de paiement sécurisées et vos options d’expédition. Vous pourrez ensuite intégrer vos contenus et vos produits dans votre site via des blocs modulaires et monitorer vos métriques depuis un  tableau de bord dédié.
 
 
 Smush Image Compression and Optimization
 Pour optimiser au mieux son site web, l’un des impératifs est qu’il soit très rapide au chargement de ses pages. Si vous avez besoin de poster beaucoup d’images, celles-ci peuvent affecter les performances du site. Smush Image Compression and Optimization est un plugin permettant de compresser et réduire la taille des images afin qu’elles restent légères, tout en gardant une haute qualité.
 
-= Imagify
+== Imagify
 Dans le même esprit que Smush Image Compression and Optimization, Imagify optimise la qualité des images tout en réduisant leur poids. Cela se fait automatiquement dès qu’une image est chargée dans WordPress, l’extension peut convertir les fichiers WebP. L’optimisation fonctionnera également pour les images incluses dans vos thèmes et plugins.
 
 Akismet Anti-spam
 Akismet compare vos commentaires et vos formulaires de contact à la base de données mondiale de spam d’Automattic, société-mère de WordPress, afin d’empêcher votre site de publier des contenus malveillants. Vous pouvez consulter les commentaires de spam saisis dans l’écran d’administration « Commentaires » de votre blog.
 
-= MailPoet
+== MailPoet
 MailPoet est une extension de newsletter permettant de gérer les abonnés, la configuration et l’envoi de la newsletter sans quitter WordPress. Vous pouvez ajouter très simplement du contenu et des images directement à partir de votre bibliothèque multimédia. Pas besoin de télécharger des fichiers vers des services tiers, tout est prêt à être utilisé dans votre tableau de bord WordPress. Les abonnés à la newsletter peuvent être notifiés automatiquement d’un nouveau contenu.
 
 
-= Contact Form 7
+== Contact Form 7
 L’extension Contact Form 7 sert à gérer et à personnaliser les formulaires de contact. La fonction de Contact Form 7 reste très simple mais efficace. Vous donnez la possibilité à vos visiteurs de vous contacter facilement tout en restant protégé des spams grâce à d’autres plugins comme Akismet. Vous pouvez y configurer votre questionnaire, les champs obligatoires à remplir, l’envoi de fichiers, le tout très facilement.
 
-= Classic Editor
+== Classic Editor
 Classic Editor est un plugin officiel maintenu par l’équipe WordPress. Il restaure l’éditeur de texte précédant la mise à jour vers WordPress 5 et l’écran Edit Post. Le plugin sera entièrement pris en charge et maintenu jusqu’au moins 2022, ou aussi longtemps que nécessaire.
 
-= Wordfence Security – Firewall & Malware Scan
+== Wordfence Security – Firewall & Malware Scan
 Comme son nom l’indique, Wordfence Security a pour mission de protéger votre site web des logiciels malveillants en installant un pare-feu et un système de scan. Votre site sera ainsi protégé des bad URLs, backdoors, du spam SEO, des redirections malveillantes ou des injections de code. Le pare-feu identifie et bloque le trafic malveillant et protège également contre les attaques brute force en limitant les tentatives de connexion.
 
-= Elementor Page Builder
+== Elementor Page Builder
 Elementor Page Builder permet de construire les pages de votre site web. Ce plugin vous permet d’introduire simplement vos éléments de conception, d’éditer la page et voir simultanément les changements. Elementor propose la conception en direct et l’édition en ligne, de sorte que l’ensemble du processus d’écriture et de conception se fasse directement sur la page, sans qu’il soit nécessaire d’appuyer sur update ou de passer en mode aperçu. Cela fonctionne aussi parfaitement avec ou sans Gutenberg.
 
 
-= Divi Builder
+== Divi Builder
 Divi Builder est une extension permettant de construire des mises en pages complexes et originales. Il est connu pour être très simple d’utilisation et être doté de nombreuses fonctionnalités destinées à faciliter la vie de chacun. Il a également l’avantage d’être utilisable en front ou en back et de permettre de télécharger des mises en page prêtes à être installées.
 
-= Google XML Sitemaps
+== Google XML Sitemaps
 Ce plugin permet d’accroître son référencement SEO en créant des sitemaps XML spéciaux qui aideront les moteurs de recherche tels que Google, Bing, Yahoo et Ask.com à mieux indexer votre site. Le plugin prend en charge tous les types de pages générées par WordPress, ainsi que des URL personnalisées. Il informe tous les principaux moteurs de recherche chaque fois que vous créez un article sur le nouveau contenu.
 
-= Duplicator – Extension de migration WordPress
+== Duplicator – Extension de migration WordPress
 Besoin de migrer le contenu d’un site vers un nouveau domaine ? L’extension Duplicator vous permet de copier ou cloner un site d’un emplacement à un autre. Il permet également d’automatiser l’export-import de votre site et ainsi de faciliter la tâche pour les plus novices. Simple et rapide, Duplicator est un plugin apprécié pour ce genre de démarche.
 
-= WPS Hide Login
+== WPS Hide Login
 Ce plugin vous permet de changer l’URL de la page de formulaire de connexion et de rendre inaccessible le répertoire wp-admin et la page wp-login.php afin de vous protéger des bots qui ont la fâcheuse manie d’essayer de se connecter à l’administration de votre site.
 
 
-= WP Rocket
+== WP Rocket
 WP Rocket est un plugin de cache qui permet d’accélérer le chargement des pages et ainsi d’améliorer les performances de votre site. Il garde en mémoire les pages déjà chargées afin que la navigation soit plus fluide pour le visiteur. WP Rocket est réputé pour être très simple à mettre en place, et dispose de nombreuses fonctionnalités que l’on peut configurer.
 
-= BuddyPress
+== BuddyPress
 Avec ce plugin, vous pourrez communiquer et vous entretenir plus facilement avec votre communauté via votre site WordPress. BuddyPress permet en effet de développer une plateforme social sur son site avec la possibilité de créer des profils de membres, des groupes d’utilisateurs, des fonctions de messageries etc.
 
 
-= Advanced Custom Fields
+== Advanced Custom Fields
 Advanced Custom Fields permet d’ajouter des champs aux écrans de modification WordPress en quelques clics. Vous pouvez les ajouter où vous le souhaitez : les publications, les utilisateurs, les médias, les commentaires etc.
 
-= AMP
+== AMP
 Le plugin AMP officiel pour WordPress permet à vos pages de se charger plus rapidement sur tous les devices mobiles. Il va créer automatiquement des urls en /amp/.
 
-= Broken Link Checker
+== Broken Link Checker
 Une fois ce plugin installé, Broken Link Checker analysera votre site web afin de répérer les liens brisés et vous les notifier. Il détecte également les images manquantes et les redirections et peut même empêcher les moteurs de recherche de suivre les liens cassés.
 
-= Jetpack
+== Jetpack
 Jetpack est une petite boîte à outil très efficace pour administrer votre site WordPress. Vous disposez d’une protection contre les attaques brute force, l’analyse de logiciels malveillants et le filtrage des spams. Jetpack sauvegarde également l’intégralité de votre site web, optimise vos pages, gére votre community management etc.
 
