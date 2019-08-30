@@ -21,32 +21,33 @@ Amazon Web Services (AWS) started in year 2006 and today AWS Cloud spans 57 Avai
 
 Google Cloud Platform (GCP) started their journey on October 6, 2011. At the time of this article, they’ve had 5 years during which they’ve managed to create a good presence in the industry. Initially, the push was to strengthen their own services, such as Google or YouTube. But they went further and created enterprise services, so now anyone can use their cloud platform. Google Cloud Platform, as the name implies, is a cloud computing platform that provides infrastructure tools and services for users to build applications and services on top of. Google Cloud Platform (GCP) is a portfolio of cloud computing services that grew around the initial Google App Engine framework for hosting web applications from Google’s data centers.
 
-Key Differences between Azure Vs AWS Vs Google Cloud :
 
-: Google Cloud Platform: Microsoft Azure: Amazon Web Services
-Platform As A Service: GCP supports Google App Engine: Azure supports Cloud Services: AWS supports Elastic Beanstalk
-Instances Family	GCP supports 7	Azure support 4	AWS support 7
-Instance Types	Maximum 18	 Maximum up to 33	Maximum up to 38
-Caching	CloudCDN	Azure supports Redis Cache	ASW supports Elastic Cache
-Data Warehouse		Azure Supports SQL Data Warehouse	ASW supports Redshift
-Virtual Networking		Virtual Network	Virtual Private Cloud
-Administration	Cloud Console	Log Analytics, Operations Management Suite, Resource Health, Storage Explorer	Application Discovery Service, System manager, Personal Health Dashboard
-Pricing	Per Minute	For Infrastructure pay Per Minute	For Infrastructure pay Per Hour
-Big Data Platform	Widely used as a Big data Platform	Less mature comparing AWS for Big Data environment	More  mature for Big Data environment
-Hadoop		HDInsight	Elastic Map Reduce
-NoSQL Databases	Cloud Bigtable	Azure Document DB	Amazon Dynamo DB
-Object Size Limits	5 TB	4.75 TB	5 TB
-How much platform are Matured	GCP are 7 years old	Azure are 8 years old	AWS are 18 years old
-Market Capture	12% of Cloud Market	20% of entire cloud market	62% of entire cloud market
-Maximum Processor in VM	96	128	128
-Maximum Memory in VM	1433 GB	3800 GB	3904 GB
-SAL Availability	99.95% Monthly Uptime	99.90%	99.95%
-Operating System Supported	Windows, SLES, CentOS, CoreOS, OpenSUSE, RHEL, Debian, FreeBSD, Ubunyu	RHEL, OpenSUSE, Windows, SLES, CoreOS, CentOS, Cloud Linux, Debian, FreeBSD, Ubuntu, Oracle Linux	RHEL, Ubuntu, Oracle Linux, Cloud Linux, CentOS, Windows, SLES, Windows, FreeBSD, Debian, CoreOS
-Platform	Cloud computing platform that provides infrastructure tools and services	Public Cloud Platform for Microsoft	On demand cloud computing platform for Amazon Web Services
-Open Source Community	Not much open source tool supported	Not much open source tool supported	Large number of Open Source Tool Supported
-Marketplace	G suite Marketplace	Azure Marketplace	AWS Marketplace
-App Testing	Cloud Test lab is being used in this	DevTest labs are being used	Device farm is being used
-File Storage	ZFS and Avere	Azure Files	EFS
+.Key Differences between Azure Vs AWS Vs Google Cloud
+[options="header,footer"]
+| Google Cloud Platform | Microsoft Azure | Amazon Web Services
+|Platform As A Service | GCP supports Google App Engine | Azure supports Cloud Services | AWS supports Elastic Beanstalk
+|Instances Family | GCP supports 7 | Azure support 4 | AWS support 7
+|Instance Types | Maximum 18 | Maximum up to 33 | Maximum up to 38
+|Caching | CloudCDN | Azure supports Redis Cache | ASW supports Elastic Cache
+|Data Warehouse |        | Azure Supports SQL Data Warehouse | ASW supports Redshift
+|Virtual Networking |    | Virtual Network | Virtual Private Cloud
+|Administration | Cloud Console	 | Log Analytics, Operations Management Suite, Resource Health, Storage Explorer | Application Discovery Service, System manager, Personal Health Dashboard
+|Pricing | Per Minute | For Infrastructure pay Per Minute | For Infrastructure pay Per Hour
+|Big Data Platform | Widely used as a Big data Platform | Less mature comparing AWS for Big Data environment | More  mature for Big Data environment
+|Hadoop | HDInsight |  | Elastic Map Reduce
+|NoSQL Databases | Cloud Bigtable | Azure Document DB | Amazon Dynamo DB
+|Object Size Limits | 5 TB | 4.75 TB | 5 TB
+|How much platform are Matured | GCP are 7 years old | Azure are 8 years old | AWS are 18 years old
+|Market Capture | 12% of Cloud Market | 20% of entire cloud market | 62% of entire cloud market
+|Maximum Processor in VM | 96 | 128 | 128
+|Maximum Memory in VM | 1433 GB | 3800 GB | 3904 GB
+|SAL Availability | 99.95% Monthly Uptime | 99.90% | 99.95%
+|Operating System Supported | Windows, SLES, CentOS, CoreOS, OpenSUSE, RHEL, Debian, FreeBSD, Ubunyu | RHEL, OpenSUSE, Windows, SLES, CoreOS, CentOS, Cloud Linux, Debian FreeBSD, Ubuntu, Oracle Linux | RHEL, Ubuntu, Oracle Linux, Cloud Linux, CentOS, Windows, SLES, Windows, FreeBSD, Debian, CoreOS
+|Platform	Cloud computing platform that provides infrastructure tools and services | Public Cloud Platform for Microsoft | On demand cloud computing platform for Amazon Web Services
+|Open Source Community | Not much open source tool supported | Not much open source tool supported | Large number of Open Source Tool Supported
+|Marketplace | G suite Marketplace | Azure Marketplace | AWS Marketplace
+|App Testing | Cloud Test lab is being used in this | DevTest labs are being used | Device farm is being used
+|File Storage | ZFS and Avere | Azure Files | EFS
  
 
 == Pros and Cons between Cloud Service Provider ( Azure Vs AWS Vs Google Cloud ):
