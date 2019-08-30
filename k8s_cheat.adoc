@@ -98,8 +98,8 @@ Use this command to create the service account:
 	kubectl apply -f serviceaccount.yaml
 
 == CHEAT SHEET
-https://linuxacademy.com/site-content/uploads/2019/04/Kubernetes-Cheat-Sheet_07182019.pdf?x96242
+link:https://linuxacademy.com/site-content/uploads/2019/04/Kubernetes-Cheat-Sheet_07182019.pdf?x96242[Cheat Sheet]
 
 == TUTO
 
-	https://www.youtube.com/channel/UCYNMCOYmvea2JyUdOtIv73Q/playlists
+link:https://www.youtube.com/channel/UCYNMCOYmvea2JyUdOtIv73Q/playlists[KUBERNETES]
