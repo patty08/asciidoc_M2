@@ -24,75 +24,52 @@ Google Cloud Platform (GCP) started their journey on October 6, 2011. At the tim
 
 .Key Differences between Azure Vs AWS Vs Google Cloud
 [options="header,footer"]
-| Google Cloud Platform | Microsoft Azure | Amazon Web Services
-|Platform As A Service | GCP supports Google App Engine | Azure supports Cloud Services | AWS supports Elastic Beanstalk
-|Instances Family | GCP supports 7 | Azure support 4 | AWS support 7
-|Instance Types | Maximum 18 | Maximum up to 33 | Maximum up to 38
-|Caching | CloudCDN | Azure supports Redis Cache | ASW supports Elastic Cache
-|Data Warehouse |        | Azure Supports SQL Data Warehouse | ASW supports Redshift
-|Virtual Networking |    | Virtual Network | Virtual Private Cloud
-|Administration | Cloud Console	 | Log Analytics, Operations Management Suite, Resource Health, Storage Explorer | Application Discovery Service, System manager, Personal Health Dashboard
-|Pricing | Per Minute | For Infrastructure pay Per Minute | For Infrastructure pay Per Hour
-|Big Data Platform | Widely used as a Big data Platform | Less mature comparing AWS for Big Data environment | More  mature for Big Data environment
-|Hadoop | HDInsight |  | Elastic Map Reduce
-|NoSQL Databases | Cloud Bigtable | Azure Document DB | Amazon Dynamo DB
-|Object Size Limits | 5 TB | 4.75 TB | 5 TB
-|How much platform are Matured | GCP are 7 years old | Azure are 8 years old | AWS are 18 years old
-|Market Capture | 12% of Cloud Market | 20% of entire cloud market | 62% of entire cloud market
-|Maximum Processor in VM | 96 | 128 | 128
-|Maximum Memory in VM | 1433 GB | 3800 GB | 3904 GB
-|SAL Availability | 99.95% Monthly Uptime | 99.90% | 99.95%
-|Operating System Supported | Windows, SLES, CentOS, CoreOS, OpenSUSE, RHEL, Debian, FreeBSD, Ubunyu | RHEL, OpenSUSE, Windows, SLES, CoreOS, CentOS, Cloud Linux, Debian FreeBSD, Ubuntu, Oracle Linux | RHEL, Ubuntu, Oracle Linux, Cloud Linux, CentOS, Windows, SLES, Windows, FreeBSD, Debian, CoreOS
-|Platform	Cloud computing platform that provides infrastructure tools and services | Public Cloud Platform for Microsoft | On demand cloud computing platform for Amazon Web Services
-|Open Source Community | Not much open source tool supported | Not much open source tool supported | Large number of Open Source Tool Supported
-|Marketplace | G suite Marketplace | Azure Marketplace | AWS Marketplace
-|App Testing | Cloud Test lab is being used in this | DevTest labs are being used | Device farm is being used
-|File Storage | ZFS and Avere | Azure Files | EFS
- 
+|=======================
+| Google Cloud Platform         |       Microsoft Azure                     |        Amazon Web Services
+|Platform As A Service          | GCP supports Google App Engine            | Azure supports Cloud Services  | AWS supports Elastic Beanstalk
+|Instances Family               | GCP supports 7    | Azure support 4       | AWS support 7
+|Instance Types                 | Maximum 18        | Maximum up to 33      | Maximum up to 38
+|Caching                        | CloudCDN          | Azure supports Redis Cache     | ASW supports Elastic Cache
+|Data Warehouse                 |                   | Azure Supports SQL Data Warehouse     | ASW supports Redshift
+|Virtual Networking             |                   | Virtual Network       | Virtual Private Cloud
+|Administration                 | Cloud Console	    | Log Analytics, Operations Management Suite, Resource Health, Storage Explorer     | Application Discovery Service, System manager, Personal Health Dashboard
+|Pricing                        | Per Minute        | For Infrastructure pay Per Minute    | For Infrastructure pay Per Hour
+|Big Data Platform              | Widely used as a Big data Platform  | Less mature comparing AWS for Big Data environment     | More  mature for Big Data environment
+|Hadoop                         | HDInsight         |    | Elastic Map Reduce
+|NoSQL Databases                | Cloud Bigtable    | Azure Document DB    | Amazon Dynamo DB
+|Object Size Limits             | 5 TB              | 4.75 TB     | 5 TB
+|How much platform are Matured  | GCP are 7 years old     | Azure are 8 years old     | AWS are 18 years old
+|Market Capture                 | 12% of Cloud Market    | 20% of entire cloud market   | 62% of entire cloud market
+|Maximum Processor in VM        | 96                | 128  | 128
+|Maximum Memory in VM           | 1433 GB           | 3800 GB    | 3904 GB
+|SAL Availability               | 99.95% Monthly Uptime    | 99.90%   | 99.95%
+|Operating System Supported     | Windows, SLES, CentOS, CoreOS, OpenSUSE, RHEL, Debian, FreeBSD, Ubunyu     | RHEL, OpenSUSE, Windows, SLES, CoreOS, CentOS, Cloud Linux, Debian FreeBSD, Ubuntu, Oracle Linux  | RHEL, Ubuntu, Oracle Linux, Cloud Linux, CentOS, Windows, SLES, Windows, FreeBSD, Debian, CoreOS
+|Platform	Cloud computing platform that provides infrastructure tools and services     | Public Cloud Platform for Microsoft   | On demand cloud computing platform for Amazon Web Services
+|Open Source Community          | Not much open source tool supported     | Not much open source tool supported   | Large number of Open Source Tool Supported
+|Marketplace                    | G suite Marketplace   | Azure Marketplace   | AWS Marketplace
+|App Testing                    | Cloud Test lab is being used in this  | DevTest labs are being used    | Device farm is being used
+|File Storage                   | ZFS and Avere    | Azure Files  | EFS
+|=======================
 
-== Pros and Cons between Cloud Service Provider ( Azure Vs AWS Vs Google Cloud ):
-
-Cloud Service Provider	Advantages	Disadvantages
-Amazon Web Services	·         Dominant market position
-·         Extensive, mature offerings
-
-·         Support for large                             organizations
-
-·         Extensive training
-
-·         Global reach
-
-·         Difficult to use
-·         Cost management
-
-·         Overwhelming options
-
-Microsoft Azure	·         Second largest provider
-·         Integration with Microsoft              tools and software
-
-·         Broad feature set
-
-·         Hybrid cloud
-
-·         Support for open source
-
-·         Issues with                                   documentation
-·         Incomplete management            tooling
-
-Google Cloud Platform	·         Designed for cloud-native                businesses
-·         Commitment to open                       source and portability
-
-·         Deep discounts and flexible            contracts
-
-·         DevOps expertise
-
-·         Late entrant to IaaS                     market
-·         Fewer features and                      services
-
-·         Historically not as                       enterprise focused
-
- 
-
+.Pros and Cons between Cloud Service Provider ( Azure Vs AWS Vs Google Cloud ):
+[options="header,footer"]
+|=======================
+| Cloud Service Provider |              Advantages                      |           Disadvantages
+| Amazon Web Services	 |  ·  Dominant market position                     · Difficult to use
+|                           ·  Extensive, mature offerings                  · Cost management
+|                           ·  Support for large organizations              · Overwhelming options
+|                           ·  Extensive training
+|                           ·  Global reach
+| Microsoft Azure	     |  · Second largest provider                   |   · Issues with documentation
+|                           · Integration with Microsoft tools and software · Incomplete management tooling
+|                           · Broad feature set
+|                           · Hybrid cloud
+|                           · Support for open source
+| Google Cloud Platform	 |  · Designed for cloud-native businesses      |   ·  Late entrant to IaaS market
+|                           ·  Commitment to open source and portability    ·  Fewer features and services
+|                           ·  Deep discounts and flexible contracts        ·  Historically not as enterprise focused
+|                           ·  DevOps expertise
+|=======================
 == And at the Bottom: ( Azure Vs AWS Vs Google Cloud )
 
 We are generating very huge volume of data and everyday data are piling up. Most of the data are stored in cloud and it opened door of more growth and business opportunities to cloud vendors. With the exponentially growth and demand of Cloud Technology, public cloud vendor are in very high demands.
