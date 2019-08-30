@@ -27,7 +27,7 @@ on each pod:
     - when network plugin is correctely installed and launched
     - you can just add the pod to the master 
     - copy/paste master join link, which was given after kubeadm installed on master
-==== Docker
+=== Docker
 how to install docker on ubuntu (link:https://youtu.be/bO9ZNAoPA6E)
 The following installation will set docker version =18.06.2
 
@@ -72,8 +72,8 @@ The following installation will set docker version =18.06.2
 
 === My configurations
 My configuration to install kubernetes:
- - install kubernetes on VM : https://gitlab.com/patsou/vagrantproject
- - Utils (git alias, docker alias, kubernetes alias, ZSH, ENV,...) : https://gitlab.com/patsou/conf
+.   install kubernetes on VM (link:https://gitlab.com/patsou/vagrantproject)
+.   Utils (git alias, docker alias, kubernetes alias, ZSH, ENV,...) (link:https://gitlab.com/patsou/conf)
 
 There are
 
