@@ -5,7 +5,7 @@
 = Step by step Kubernetes
 
 == Installation
-On Linux::
+=== On Linux
 
 Before beginning, we have to know that kubernetes can be installed on Linux, Windows or Mac and there are a little bit difference between these platfrom. These differences comes from the opérating system. Installing kubernetes on Linux is easy than the others OS.
 
@@ -13,13 +13,77 @@ Kubernetes can be install on cloud or on local machine.
 On cloud plublic, you can choose AWS, GCP oe AZURE (see doc: cloud_pub.html for differences)
 On local installation, you can use a Virtual Machine to install kubernetes. exemple: 1 master, 2 nodes. so you need to install Vagrant, VBox, ...
 
+Requirement
+ - 1 host to be the MASTER
+ - and nodes (1..n)
+ - docker
+ - swapoff (linux)
+
+on the MASTER node::
+    - install KUBECTL
+    - install KUBEADM
+    - install network plugins (link:https://kubernetes.io/docs/concepts/cluster-administration/networking/)
+on each pod:
+    - when network plugin is correctely installed and launched
+    - you can just add the pod to the master 
+    - copy/paste master join link, which was given after kubeadm installed on master
+==== Docker
+how to install docker on ubuntu (link:https://youtu.be/bO9ZNAoPA6E)
+The following installation will set docker version =18.06.2
+
+. Install Docker CE
+. Set up the repository:
+. Install packages to allow apt to use a repository over HTTPS
+
+    apt-get update && apt-get install apt-transport-https ca-certificates curl software-properties-common
+
+. Add Dockerâ€™s official GPG key
+
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+
+. Add Docker apt repository.
+    add-apt-repository \
+      "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+      $(lsb_release -cs) \
+      stable"
+
+. Install Docker CE.
+
+    apt-get update && apt-get install docker-ce=18.06.2\~ce\~3-0\~ubuntu
+
+. Setup daemon.
+    cat > /etc/docker/daemon.json <<EOF
+    {
+      "exec-opts": ["native.cgroupdriver=systemd"],
+      "log-driver": "json-file",
+      "log-opts": {
+        "max-size": "100m"
+      },
+      "storage-driver": "overlay2"
+    }
+    EOF
+
+    mkdir -p /etc/systemd/system/docker.service.d
+
+. Restart docker.
+
+    systemctl daemon-reload
+    systemctl restart docker
+
+=== My configurations
 My configuration to install kubernetes:
  - install kubernetes on VM : https://gitlab.com/patsou/vagrantproject
- - Utils (alias, ZSH, ENV,...) : https://gitlab.com/patsou/conf
+ - Utils (git alias, docker alias, kubernetes alias, ZSH, ENV,...) : https://gitlab.com/patsou/conf
+
+There are
+
+    setup.sh : main of the programme
+    k8s.sh : script sh to install Kubernetes
+    confiVagrant.sh : script to install Docker, Docker-compose and Ansible
 
 == Gestion Management (gestionnaire de configuration)
 Ansible::
 
 == Connected Nodes
 Master::
-Node1::
+Node - Pod_1::
