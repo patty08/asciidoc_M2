@@ -1,0 +1,25 @@
+:toc: auto
+:toc-position: left
+:toclevels: 3
+
+= Step by step Kubernetes
+
+== Installation
+On Linux::
+
+Before beginning, we have to know that kubernetes can be installed on Linux, Windows or Mac and there are a little bit difference between these platfrom. These differences comes from the opérating system. Installing kubernetes on Linux is easy than the others OS.
+
+Kubernetes can be install on cloud or on local machine.
+On cloud plublic, you can choose AWS, GCP oe AZURE (see doc: cloud_pub.html for differences)
+On local installation, you can use a Virtual Machine to install kubernetes. exemple: 1 master, 2 nodes. so you need to install Vagrant, VBox, ...
+
+My configuration to install kubernetes:
+ - install kubernetes on VM : https://gitlab.com/patsou/vagrantproject
+ - Utils (alias, ZSH, ENV,...) : https://gitlab.com/patsou/conf
+
+== Gestion Management (gestionnaire de configuration)
+Ansible::
+
+== Connected Nodes
+Master::
+Node1::
