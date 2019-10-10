@@ -3,11 +3,13 @@
 :toclevels: 3
 
 = Jenkins and GitLab configurations trigger build
+
 This document is a step by step configuration in order to activate automatique build on all behavior of GitLab. This setting is a trigger to multibranch job configuration, all modication on GitLab implies automatic build in CloudUni/Jenkins.
         
-        `id: johndoe`
-        `pwd: abc2015`
-    hello
+`id: johndoe`
+`pwd: abc2015`
+
+hello
 
 == Create a GitLab key
 
@@ -16,10 +18,11 @@ Jenkins need the access token to listen to GitLab behaviors.
 2. Access Todkens
 3. Add a Personnal Access Token
 
-    `name: cloudunit`
-    `Expire at: xxx`
+`name: cloudunit`
+`Expire at: xxx`
 
 `xxx` : leave it blanc to set it never or give expiration date.
+
 `[important]`: don't forget to save the token ID.
 
 == Jenkins file configuration
