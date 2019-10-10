@@ -1,0 +1,26 @@
+:toc: auto
+:toc-position: left
+:toclevels: 3
+
+= 5 points that Why DevOps is efficient
+
+== 1. The rise in AI will lead to the boost in Data Science
+The number of AI-powered applications is growing, and so is the need of implementing DevOps practices by Data Science teams in their workflows. This surge in the adoption rate of Artificial Intelligence is also predicted to be the radical change in 2019.
+
+When it comes to maintaining and testing several deployed models and dealing with automated pipelines, DevOps approach is the most sought-after option that Data Scientists go for. This trend will step up the game for Data Science in 2019, urging app development teams to work together toward making developing, deploying, and managing Machine Learning and AI-powered apps more efficiently.
+
+== 2. Containers will have an effect on Continuous Delivery
+As DevOps experiences growth, we witness growth in complications and size of container production clusters as well. In order to deploy and manage container clusters smoothly, an orchestration tool is required, such as Kubernetes, Hibernates, and Docker.
+The increase in multi-cloud architecture adoption is going to give a boost to such container-centric technologies and the continuous delivery approach across large enterprises. Moreover, DevOps engineers will make a major shift from traditional DevOps functions to container orchestration software.
+
+== 3. Smooth security
+Security breaches can happen at any given stage of the software lifecycle. To combat security threats, the security approach needs to go beyond scanning and correcting issues which we are going to see in the form of collaborations between two distinct teams: security and development.
+Enabling DevSecOps at the initial stage of app development will help development teams to create secure codes quickly. This will further help in testing workflows throughout the cycle, eventually saving time increasing the chances of providing code free of error.
+
+== 4. The transition of the pipeline
+Typically, DevOps is outlined as a pipeline (a straight workflow) that moves from build to test and then to release. But with the growth of DevOps in recent years, it has become more of a cycle that includes additional phases of monitoring, testing, and continuous enhancement. DevOps, however, has created a problem for itself as its growth has outperformed the accessibility of tools that support the pipeline from the initial stage to the final one.
+
+== 5. More attention to the integration between services
+The on-premises database infrastructure model is no more conventional. We have witnessed an increase in the migration toward infrastructure as a service (IaaS) in the last few years, including the database environment in the database as a service (DBaaS). We are positive that this trend will persist in 2019, given how dominant cloud services (AWS, Google Cloud, Microsoft Azure, and many more), along with developing technologies like Kubernetes have been. This trend will enable DevOps to pay attention to the integration at the edge between services. It is also predicted that conventional premise-bound enterprises will begin moving to cloud-based infrastructure and operations to realize the agility, flexibility, and cost-savings offered by IaaS.
+
+DevOps is an IT movement that focuses on transforming the way of how enterprises function. It is going to make a notable impact across many organizations in 2019. DevOps can be of a huge help for a company’s competitive advantage, its product lifecycle, and its capability of meeting customer needs more quickly.

@@ -51,7 +51,7 @@ Here is the YAML for a simple persistent volume using local storage from the nod
 	- ReadWriteOnce
 	hostPath:
 	path: /mnt/data
-	
+
 Use the following command to create the persistent volume:
 
 	kubectl apply -f my-pv.yaml
@@ -98,7 +98,8 @@ Use this command to create the service account:
 	kubectl apply -f serviceaccount.yaml
 
 == CHEAT SHEET
-link:https://linuxacademy.com/site-content/uploads/2019/04/Kubernetes-Cheat-Sheet_07182019.pdf?x96242[Cheat Sheet]
+
+	link:https://linuxacademy.com/site-content/uploads/2019/04/Kubernetes-Cheat-Sheet_07182019.pdf?x96242[Cheat Sheet]
 
 == TUTO
 
