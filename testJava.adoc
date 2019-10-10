@@ -148,22 +148,3 @@ tous les constructeurs d'une Enum sont obligatoirement private.
 	Le mot-clé final est utilisable pour des variables, méthodes, classes, classes internes ou des classes internes statiques.
 	Devant une méthode :
 	On indique que cette méthode ne pourra plus être redéfinie dans une classe fille. Ce qui entraine une certaine optimisation dans les appels à cette méthode.
-
-== 9. Que signifient les mots-clés this et super ?
-10. Que signifie le mot-clé strictfp ?
-11. Que signifie le mot-clé transient ?
-12. Que signifie le mot-clé volatile ?
-13. Java dispose-t-il d'un goto ?
-14. Comment utiliser les mots-clés break et continue ?
-15. Comment fonctionnent les Varargs (nombre d'arguments variable) ?
-16. Que signifie le mot-clé import ?
-17. Qu'est-ce que l'import static ?
-18. Quelle est la différence entre « import » et « import static » ?
-19. Qu'est-ce que l'opérateur ternaire "?" ?
-20. Que veut dire « deprecated » ?
-21. Comment tester si une variable est une instance d'un type donné ?
-22. Que signifie le mot-clé throw ?
-23. Que signifie le mot-clé throws ?
-24. Que signifie le mot-clé try ?
-25. Que signifie le mot-clé catch ?
-26. Que signifie le mot-clé finally ?*
