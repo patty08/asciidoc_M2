@@ -3,8 +3,9 @@
 :toclevels: 3
 
 = JAVA NOTES
+Patty RANDRIAMBOLOLONA <patty08@github.com>
 
-1. Java est un langage…
+== 1. Java est un langage…
 
 	 ** [] Interprété
 	 ** [] Compilé
@@ -12,7 +13,7 @@
 	 ** [] Ni l' un, ni l'autre
 
 
-2. Quelle phrase au sujet de Java est correcte ?
+== 2. Quelle phrase au sujet de Java est correcte ?
 
 	** [] En Java, les types de base ne sont pas des objets
 	** [x] Java supporte l'héritage multiple entre les classes
@@ -25,7 +26,7 @@
 	** private
 	** protected
 
-3. Que signifient les mots-clés public, private et protected ?
+== 3. Que signifient les mots-clés public, private et protected ?
 
 	Ces trois mots-clés du langage Java (public, private, protected) définissent la portée d'une variable, d'une méthode ou d'une classe.
 
@@ -34,33 +35,35 @@
 	Voici les caractéristiques de ces modificateurs, du plus permissif au plus restrictif :
 
 
-	public	Les variables, méthodes ou classes publiques sont accessibles par tout objet.	Il ne peut y avoir qu'une seule classe publique par .java et celle-ci doit obligatoirement porter le nom du fichier .java
-	Les variables, méthodes ou classes définies sans modificateur sont accessibles par toute classe appartenant au même package.	Attention : les variables sans modificateur ne sont pas accessibles aux classes filles définies dans un autre package.
+.public	
+Les variables, méthodes ou classes publiques sont accessibles par tout objet.	Il ne peut y avoir qu'une seule classe publique par .java et celle-ci doit obligatoirement porter le nom du fichier .java
 
-	protected	Les variables, méthodes ou classes définies comme protégées ne sont accessibles que par les classes filles et classes du même package.
+Les variables, méthodes ou classes définies sans modificateur sont accessibles par toute classe appartenant au même package.	Attention : les variables sans modificateur ne sont pas accessibles aux classes filles définies dans un autre package.
 
-	private	Les variables, méthodes ou classes définies comme privées ne sont accessibles que par la classe dans laquelle elles sont définies.	Il est fortement conseillé de déclarer comme privés tous les attributs d'une classe, et de créer des méthodes de type getter et setter pour y accéder.
+.protected
+Les variables, méthodes ou classes définies comme protégées ne sont accessibles que par les classes filles et classes du même package.
 
-	Naturellement, toute méthode, variable ou classe est accessible dans la classe ou elle est définie.
+private	Les variables, méthodes ou classes définies comme privées ne sont accessibles que par la classe dans laquelle elles sont définies.	Il est fortement conseillé de déclarer comme privés tous les attributs d'une classe, et de créer des méthodes de type getter et setter pour y accéder.
 
+Naturellement, toute méthode, variable ou classe est accessible dans la classe ou elle est définie.
 
-	Remarque : il y a deux cas particuliers où l’absence de mot-clé de visibilité ne correspond pas à une visibilité package-private :
-	tous les membres (attributs et méthodes) d'une interface ou d'une annotation sont obligatoirement public ;
-	tous les constructeurs d'une Enum sont obligatoirement private.
+Remarque : il y a deux cas particuliers où l’absence de mot-clé de visibilité ne correspond pas à une visibilité package-private :
+tous les membres (attributs et méthodes) d'une interface ou d'une annotation sont obligatoirement public ;
+tous les constructeurs d'une Enum sont obligatoirement private.
 
-4. Que signifie le mot-clé void ?
+== 4. Que signifie le mot-clé void ?
 
 	Le mot-clé void (avec un petit v) signifie littéralement « rien » ou « néant ». Ce mot-clé indique qu'une méthode ne retourne aucune valeur et sert donc à distinguer les méthodes qui ne retournent pas de valeur (appelées « procédures » dans d'autres langages de programmation) de celles qui en retournent une (appelées « fonctions » dans d'autres langages).
 
-5. Que signifie le mot-clé return ?
+== 5. Que signifie le mot-clé return ?
 
 	Le mot-clé return permet de terminer une méthode et de la quitter. Lorsqu'une méthode ne retourne pas de valeur (déclarée void), le mot-clé return doit être utilisé tel quel sans spécifier de valeur. Lorsque cette méthode retourne une valeur, ce mot-clé doit être suivi d'une valeur de retour ; cela permet de faire remonter ce résultat dans la méthode appelante. Combiné avec des tests, le mot-clé return peut être utilisé pour sortir prématurément d'une méthode.
 
-6. Comment faire une boucle avec foreach ?
+== 6. Comment faire une boucle avec foreach ?
 
 	Depuis Java 1.5, il est possible d'utiliser le mot-clé for dans une boucle nommée enhanced for loop (boucle for améliorée) également appelée for-each dans d'autres langages. Ce type de boucle effectue une itération automatique sur un ensemble de valeurs ; il n'est donc pas besoin de manipuler un indice manuellement comme dans le for classique. Si un conteneur de données est un tableau ou hérite de l'interface java.lang.Iterable<T>, il est possible de faire une boucle for-each en utilisant la syntaxe suivante :
 
-		Code Java :
+	Code Java :
 	for (valeur : conteneur) {
 	// Code à exécuter dans la boucle.
 	}
@@ -74,7 +77,8 @@
 	}
 
 	Ou encore :
-		Code Java :
+	
+	Code Java :
 
 	final List<Integer>valeurs = Arrays.asList(1, 2, 3);
 	for (final int valeur : valeurs) {
@@ -86,7 +90,7 @@
 
 	Ici, dans le premier code valeurs est un tableau d'entiers tandis que dans le second bout de code c'est un objet de type List<Integer> qui étend donc l'interface Iterable<Integer>. Il est donc possible d'utiliser la syntaxe for-each dans les deux cas.
 
-7. Que signifie le mot-clé static ?
+== 7. Que signifie le mot-clé static ?
 
 	Devant une variable ou méthode :
 	Le mot-clé static devant une variable (ou méthode) indique que celle-ci n'appartient pas à une instance particulière de la classe. Les variables ou méthodes statiques appartiennent à la classe elle-même. On peut ainsi les utiliser sans avoir une instance créée. De nombreuses classes ont des membres ou méthodes statiques. Par exemple la classe java.lang.Math :
@@ -139,13 +143,13 @@
 	}
 	}
 
-8. Que signifie le mot-clé final ?
+== 8. Que signifie le mot-clé final ?
 
 	Le mot-clé final est utilisable pour des variables, méthodes, classes, classes internes ou des classes internes statiques.
 	Devant une méthode :
 	On indique que cette méthode ne pourra plus être redéfinie dans une classe fille. Ce qui entraine une certaine optimisation dans les appels à cette méthode.
 
-9. Que signifient les mots-clés this et super ?
+== 9. Que signifient les mots-clés this et super ?
 10. Que signifie le mot-clé strictfp ?
 11. Que signifie le mot-clé transient ?
 12. Que signifie le mot-clé volatile ?

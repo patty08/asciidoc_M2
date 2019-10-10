@@ -3,6 +3,7 @@
 :toclevels: 3
 
 = Administration SI et outils reseaux sur linux
+Patty RANDRIAMBOLOLONA <patty08@github.com>
 
 == 1. Basic
 === 1. uname ou lsb-release

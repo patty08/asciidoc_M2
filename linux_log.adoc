@@ -3,6 +3,7 @@
 :toclevels: 2
 
 = Logs linux
+Patty RANDRIAMBOLOLONA <patty08@github.com>
 
 == 1. Important
 Les logs sont générés par le service 'rsyslogd'

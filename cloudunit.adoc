@@ -4,15 +4,18 @@
 
 = Jenkins and GitLab configurations trigger build
 This document is a step by step configuration in order to activate automatique build on all behavior of GitLab. This setting is a trigger to multibranch job configuration, all modication on GitLab implies automatic build in CloudUni/Jenkins.
-    `id: johndoe`
-    `pwd: abc2015`
-hello
+        
+        `id: johndoe`
+        `pwd: abc2015`
+    hello
+
 == Create a GitLab key
 
 Jenkins need the access token to listen to GitLab behaviors.
 1. go to Profile Settings
 2. Access Todkens
 3. Add a Personnal Access Token
+
     `name: cloudunit`
     `Expire at: xxx`
 
@@ -23,6 +26,7 @@ Jenkins need the access token to listen to GitLab behaviors.
 1. in your project, make sure that you have Jenkins file
 2. open your Jenkinsfile
 3. add athe first line a GitLab Jenkins plugin properties
+
     `properties([gitLabConnection('cloudunit')])`
 
 == Jenkins configuration

@@ -3,6 +3,7 @@
 :toclevels: 3
 
 = Adopter Springboot = KISS = Facilité/Rapidité = Cloud = Sécurité
+Patty RANDRIAMBOLOLONA <patty08@github.com>
 
 == Spring Framework
 

@@ -4,6 +4,7 @@
 
 
 = Azure Vs AWS Vs Google Cloud
+Patty RANDRIAMBOLOLONA <patty08@github.com>
 
 As per the Gartner Survey Report, the market of public cloud is estimated to hit a total worth of $411 bn by 2020. Cloud technology is used for making backups, storing data, working in co-op, and whatnot.
 

@@ -3,6 +3,7 @@
 :toclevels: 3
 
 = Aide-mémoire administrateur Linux
+Patty RANDRIAMBOLOLONA <patty08@github.com>
 
 == Informations système
 uname - Identification du système.

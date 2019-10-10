@@ -3,6 +3,8 @@
 :toclevels: 3
 
 = Développement des container Docker JEE
+Patty RANDRIAMBOLOLONA <patty08@github.com>
+
 
 == Guide pour créer une application SpringBoot dans un container Linux Docker
 

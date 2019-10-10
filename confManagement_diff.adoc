@@ -4,8 +4,6 @@
 
 = Chef vs Puppet vs Ansible vs Saltstack"
 
-
-
 [options="header,footer"]
 |=======================
 |Métrique|Chef       |Puppet       |Ansible       |Saltstack
@@ -51,13 +49,13 @@ En dehors de ce blog "Chef vs marionnette vs Ansible vs Saltstack", si vous voul
 
 Avant d'expliquer la différence entre ces outils sur la base de la gestion, laissez-moi vous dire marionnette et chef suit les configurations de traction et Ansible et Saltstack suit la configuration de poussée. Vous devez vous demander quelles sont ces configurations? En configuration push, toutes les configurations présentes dans le serveur central seront poussées vers les nœuds alors que, dans la configuration pull, les nœuds esclaves tireront automatiquement toutes les configurations du serveur central sans aucune commande.
 
-Chef - Vous devez être un programmeur pour gérer les configurations car il offre des configurations en Ruby DSL. Le client extrait les configurations du serveur.
+. Chef - Vous devez être un programmeur pour gérer les configurations car il offre des configurations en Ruby DSL. Le client extrait les configurations du serveur.
 
-Puppet - Pas très facile à gérer les configurations car il utilise son propre langage appelé Puppet DSL (Domain Specific Language). Le client extrait les configurations du serveur. Il est très orienté système-administrateur et il existe une exécution à distance non-immédiate.
+. Puppet - Pas très facile à gérer les configurations car il utilise son propre langage appelé Puppet DSL (Domain Specific Language). Le client extrait les configurations du serveur. Il est très orienté système-administrateur et il existe une exécution à distance non-immédiate.
 
-Ansible - Facile à apprendre pour gérer les configurations car il utilise YAML, c'est-à-dire Yet Another Markup Language qui ressemble beaucoup à l'anglais. Le serveur pousse les configurations à tous les nœuds. Bon pour une application en temps réel et une exécution à distance immédiate.
+. Ansible - Facile à apprendre pour gérer les configurations car il utilise YAML, c'est-à-dire Yet Another Markup Language qui ressemble beaucoup à l'anglais. Le serveur pousse les configurations à tous les nœuds. Bon pour une application en temps réel et une exécution à distance immédiate.
 
-Saltstack - Facile à apprendre pour gérer les configurations car il utilise aussi YAML. Le serveur pousse les configurations à tous les clients. Exécution à distance immédiate
+. Saltstack - Facile à apprendre pour gérer les configurations car il utilise aussi YAML. Le serveur pousse les configurations à tous les clients. Exécution à distance immédiate
 
 == 4. Évolutivité
 

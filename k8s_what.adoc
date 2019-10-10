@@ -3,6 +3,7 @@
 :toclevels: 3
 
 = Kubernetes
+Patsoo08 <patty.randri8@gmail.com>
 
 == C'est quoi ?
 

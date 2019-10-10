@@ -3,10 +3,10 @@
 :toclevels: 3
 
 = REGEX
-
-l'expression regulière repond à la question, quel texte tu cherches et en faire quoi?
+Patty RANDRIAMBOLOLONA <patty08@github.com>
 
 == 1. Syntax
+l'expression regulière repond à la question, quel texte tu cherches et en faire quoi?
 
 .exemple: 123 patty
 

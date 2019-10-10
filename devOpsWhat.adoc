@@ -2,7 +2,11 @@
 :toc-position: left
 :toclevels: 3
 
-= 1) what is DevOps?
+= DEVOPS
+Patsoo08 <patty.randri8@gmail.com>
+
+== 1) what is DevOps?
+
 
 By the name DevOps, it’s very clear that it’s a collaboration of Development as well as Operations. But one should know that DevOps is not a tool, or a software or framework, DevOps is a Combination of Tools which helps for the automation of whole infrastructure.
 
@@ -55,7 +59,6 @@ GIT	SVN
 	. Client nodes can share the entire repositories on their local system	Version history is stored on server-side repository
 	. Commits can be done offline too	Commits can be done only online
 	. Work are shared automatically by commit	Nothing is shared automatically
-
 
 == 7) what language is used in Git?
 Git is written in C language, and since its written in C language its very fast and reduces the overhead of runtimes.
@@ -291,7 +294,7 @@ Source code management tools supported by Jenkins are below:
 	- RTC
 	-
 == 44) What is Ansible?
-Ansible is a software configuration management tool to deploy an application using ssh without     any downtime. It is also used for management and configuration of software applications.  Ansible is developed in Python language.
+Ansible is a software configuration management tool to deploy an application using ssh without any downtime. It is also used for management and configuration of software applications.  Ansible is developed in Python language.
 
 == 45) How can your setup Jenkins jobs?
 Steps to set up Jenkins job as follows:

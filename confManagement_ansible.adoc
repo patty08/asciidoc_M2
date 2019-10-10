@@ -1,1 +1,10 @@
-Ansible
+:toc: auto
+:toc-position: left
+:toclevels: 3
+
+= Ansible
+Patsoo08 <patty.randri8@gmail.com>
+
+
+
+

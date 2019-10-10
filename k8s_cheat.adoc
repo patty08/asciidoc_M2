@@ -3,6 +3,7 @@
 :toclevels: 3
 
 = KUBERNETES CHEAT SHEET
+Patty RANDRIAMBOLOLONA <patty08@github.com>
 
 == Configuration of POD
 Let’s start with pods. Here is the YAML for a basic busybox pod:
