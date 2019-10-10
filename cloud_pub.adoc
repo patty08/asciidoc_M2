@@ -149,6 +149,7 @@ Google Cloud Platform (GCP) started their journey on October 6, 2011. At the tim
 |                           ·  Deep discounts and flexible contracts        ·  Historically not as enterprise focused
 |                           ·  DevOps expertise
 |=======================
+
 == And at the Bottom: ( Azure Vs AWS Vs Google Cloud )
 
 We are generating very huge volume of data and everyday data are piling up. Most of the data are stored in cloud and it opened door of more growth and business opportunities to cloud vendors. With the exponentially growth and demand of Cloud Technology, public cloud vendor are in very high demands.
