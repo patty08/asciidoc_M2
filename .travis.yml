@@ -20,6 +20,7 @@ after_failure:
 
 after_success:
   - cd output ; mv ../index.html index.html ; mv ../css/style.css css/style.css; mv ../css/jquery.min.js css/jquery.min.js; mv ../css/browser.min.js css/browser.min.js; mv ../css/breakpoints.min.js css/breakpoints.min.js; mv ../css/util.js css/util.js; mv ../css/main.js css/main.js; mv ../css/main.css css/main.css; mv ../css/noscript.css css/noscript.css; mv ../css/pic01.jpg css/pic01.jpg; mv ../css/pic02.jpg css/pic02.jpg; mv ../css/pic03.jpg css/pic03.jpg; mv ../css/pic04.jpg css/pic04.jpg; mv ../css/pic05.jpg css/pic05.jpg; mv ../css/pic06.jpg css/pic06.jpg; mv ../css/pic07.jpg css/pic07.jpg; mv ../css/pic08.jpg css/pic08.jpg; mv ../css/pic09.jpg css/pic09.jpg; mv ../css/pic10.jpg css/pic10.jpg; mv ../css/pic11.jpg css/pic11.jpg; mv ../css/pic12.jpg css/pic12.jpg
+  - cd output ; mv ../img/ img/
   - git init
   - git config user.name "${GH_USER_NAME}"
   - git config user.email "{GH_USER_EMAIL}"
