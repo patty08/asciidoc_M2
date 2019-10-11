@@ -6,19 +6,18 @@
 Patty RANDRIAMBOLOLONA <patty08@github.com>
 
 == 1. Syntax
-l'expression regulière repond à la question, quel texte tu cherches et en faire quoi?
+l'expression regulière repond à la question dont: "quelle occurence tu cherches dans une suite de char"
 
 .exemple: 123 patty
 
 > \[1-5]\s\[a-z]
 
-\d represente les nombres
-\D represente autre choses que les nombres
-\s represente les espaces
-\S represente autre choses que les espaces
-\w represente les caractères
-\W represente autre choses que les caractères
-
-? au moins une fois
-* 0 ou plusieurs fois
-{n} n nombre de fois
+. \d represente les nombres
+. \D represente autre choses que les nombres
+. \s represente les espaces
+. \S represente autre choses que les espaces
+. \w represente les caractères
+. \W represente autre choses que les caractères
+.  ? au moins une fois
+.  * 0 ou plusieurs fois
+.  {n} n nombre de fois
