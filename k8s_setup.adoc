@@ -2,10 +2,10 @@
 :toc-position: left
 :toclevels: 3
 
-= Step by step Kubernetes
+= Kubernetes - setup step by step
 Patty RANDRIAMBOLOLONA <patty08@github.com>
 
-== From scratch installation
+== From scratch installation On Linux
 === On Linux
 Before beginning, we have to know that kubernetes can be installed on Linux, Windows or Mac and there are a little bit difference between these platfrom. These differences comes from the opérating system. Installing kubernetes on Linux is easy than the others OS.
 
@@ -13,27 +13,26 @@ Kubernetes can be install on cloud or on local machine.
 On cloud plublic, you can choose AWS, GCP oe AZURE (see doc: cloud_pub.html for differences)
 On local installation, you can use a Virtual Machine to install kubernetes. exemple: 1 master, 2 nodes. so you need to install Vagrant, VBox, ...
 
-Requirement
- - 1 host to be the MASTER
- - and nodes (1..n)
- - docker
- - swapoff (linux)
+=== Requirement
+. 1 host to be the MASTER
+. and nodes (1..n)
+. docker
+. swapoff (linux)
 
-on master node::
-    - install KUBECTL
-    - install KUBEADM
-    - install network plugins
-link:https://kubernetes.io/docs/concepts/cluster-administration/networking/[ici]
+=== on master node
+. install KUBECTL
+. install KUBEADM
+. install network plugins link:https://kubernetes.io/docs/concepts/cluster-administration/networking/[K8s network plugins]
 
-on each pod::
-    - when network plugin is correctely installed and launched
-    - you can just add the pod to the master
-    - copy/paste master join link, which was given after kubeadm installed on master
+=== on each pod
 
-=== Docker
-how to install docker on ubuntu
-link:https://youtu.be/bO9ZNAoPA6E[ici]
-The following installation will set docker version =18.06.2
+. when network plugin is correctely installed and launched
+. you can just add the pod to the master
+. copy/paste master join link, which was given after kubeadm installed on master
+
+== Docker
+TIP: how to install docker on ubuntu link:https://youtu.be/bO9ZNAoPA6E[how to install Docker?]
+The following installation will set docker version 18.06.2
 
 . Install Docker CE
 . Set up the repository:
@@ -46,10 +45,10 @@ The following installation will set docker version =18.06.2
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 
 . Add Docker apt repository.
-    add-apt-repository \
-      "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-      $(lsb_release -cs) \
-      stable"
+  add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) \
+    stable"
 
 . Install Docker CE.
 
