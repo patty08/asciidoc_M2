@@ -22,7 +22,7 @@ On local installation, you can use a Virtual Machine to install kubernetes. exem
 === on master node
 . install KUBECTL
 . install KUBEADM
-. install network plugins link:https://kubernetes.io/docs/concepts/cluster-administration/networking/[K8s network plugins]
+. install network plugins -> link:https://kubernetes.io/docs/concepts/cluster-administration/networking/[K8s network plugins]
 
 === on each pod
 when network plugin is correctely installed and launched
@@ -30,7 +30,9 @@ when network plugin is correctely installed and launched
 . copy/paste master join link, which was given after kubeadm installed on master
 
 == Docker
-TIP: how to install docker on ubuntu link:https://youtu.be/bO9ZNAoPA6E[how to install Docker?]
+TIP: how to install docker on ubuntu
+link:https://youtu.be/bO9ZNAoPA6E[how to install Docker?]
+
 IMPORTANT: The following installation will set docker version 18.06.2
 
 . Install Docker CE
@@ -44,6 +46,7 @@ IMPORTANT: The following installation will set docker version 18.06.2
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 
 . Add Docker apt repository.
+
   add-apt-repository \
     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) \
@@ -54,6 +57,7 @@ IMPORTANT: The following installation will set docker version 18.06.2
     apt-get update && apt-get install docker-ce=18.06.2\~ce\~3-0\~ubuntu
 
 . Setup daemon.
+
     cat > /etc/docker/daemon.json <<EOF
     {
       "exec-opts": ["native.cgroupdriver=systemd"],
@@ -63,21 +67,23 @@ IMPORTANT: The following installation will set docker version 18.06.2
       },
       "storage-driver": "overlay2"
     }
-    EOF
 
-    mkdir -p /etc/systemd/system/docker.service.d
+  EOF
+
+  mkdir -p /etc/systemd/system/docker.service.d
 
 . Restart docker.
 
-    systemctl daemon-reload
-    systemctl restart docker
+    . systemctl daemon-reload
+    . systemctl restart docker
 
-=== My configurations
-My configuration to install kubernetes:
+=== My custom configurations
+TIP: My configuration to install kubernetes:
 
-- install kubernetes on VM
+. install kubernetes on VM
 link:https://gitlab.com/patsou/vagrantproject[ici]
-- Utils (git alias, docker alias, kubernetes alias, ZSH, ENV,...)
+
+. utils (git alias, docker alias, kubernetes alias, ZSH, ENV,...)
 link:https://gitlab.com/patsou/conf[ici]
 
 Those are:
