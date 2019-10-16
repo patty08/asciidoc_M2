@@ -21,25 +21,25 @@ Patty RANDRIAMBOLOLONA <patty08@github.com>
 |===
 |Commande | Description
 
-|kbd:[CTRL + U]
+|`CTRL + U`
 |couper le texte jusqu'au curseur
-|kbd:[CTRL + K]
+|`CTRL + K`
 |couper le text depuis le curseur jsuqu'à la fin de la ligne
-|kbd:[CTRL + Y]
+|`CTRL + Y`
 |coller texte du presse papier
-|kbd:[CTRL + E]
+|`CTRL + E`
 |deplacer curseur jusq'à la fin
-|kbd:[CTRL + A]
+|`CTRL + A`
 |deplacer le curseur jusqu'à la fin de la ligne
-|kbd:[ALT + F:]
+|`ALT + F:`
 |sauter au prochain espace
-|kbd:[ALT + B:]
+|`ALT + B:`
 |revenir au dernier espace
-|kbd:[ALT + Backspace]
+|`ALT + Backspace`
 |supprimer en arrière
-|kbd:[CTRL + W]
+|`CTRL + W`
 |couper ce qui est derrière le curseur
-|kbd:[Shift + insert]
+|`Shift + insert`
 |coller le text dans le terminale
 |===
 
