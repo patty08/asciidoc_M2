@@ -5,16 +5,16 @@
 = Administration SI et outils reseaux sur linux
 Patty RANDRIAMBOLOLONA <patty08@github.com>
 
-== 1. Basic
-=== 1. uname ou lsb-release
+== 1. Commande de basique
+=== 1. Connaitre la version de linux.
 
-> Connaitre la version de linux.
+> uname ou lsb-release
 
-.CLI: `uname -a | -v | -r`
+> uname -a | -v | -r
 
-.CLI: `lsb-release -a`
+> lsb-release -a
 
-=== 2. Terminale: les commandes utils
+=== 2. Linux commande CLI
 
 .Commande text dans la CLI
 

@@ -95,6 +95,13 @@ pod::
 - Dashboard de Kubernetes is accessible with
 mk dashboad
 
-== Deployer un mutli cluster
-=== outils
+== Sur Linux : Deployer un mutli cluster
+
+Pour commencer, il est plus facile de faire fonctionner correctement K8s ur Linux que sur Windows. J'ai testé Kubernetes sur Vagrant avec Ansible sur Windows mais la recontre avec les difficultés restent est un sujet pertinent. Exemple, les versions Ansible ou Vagrant présente des bugs, ou encore le port forwarding, ... . En effet, il est mieux d'exploiter Kubernetes sur Linux ou dans le Cloud.
+=== outils sur les cluster
+. Docker
+. Kubectl
+Autres outils important::
+. Monitoring Docker container link: https://github.com/NexClipper/NexClipper[NetClipper]
+
 === demonstation
