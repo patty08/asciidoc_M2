@@ -1,14 +1,11 @@
-:toc-title: Around DevOps knowledge
 :toc: macro
 :toc-position: left
 :toclevels: 3
-:stylesheet: "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 
 = DEVOPS
 Patsoo08 <patty.randri8@gmail.com>
 
 == 1) what is DevOps?
-
 
 By the name DevOps, it’s very clear that it’s a collaboration of Development as well as Operations. But one should know that DevOps is not a tool, or a software or framework, DevOps is a Combination of Tools which helps for the automation of whole infrastructure.
 
@@ -34,7 +31,7 @@ Git
 	- Puppet
 	- Nagios
 	- Docker
-ELK (Elasticsearch, Logstash, Kibana)
+	- ELK (Elasticsearch, Logstash, Kibana)
 
 == 5) what is a version control system?
 Version Control System (VCS) is a software that helps software developers to work together and maintain a complete history of their work.
@@ -75,6 +72,7 @@ First, we must enter the e-mail and user name for your Jenkins system, then swit
 == 10) What are the Advantages of Ansible?
 *What is Ansible?*
 Ansible is a software configuration management tool to deploy an application using ssh without any downtime. It is also used for management and configuration of software applications.  Ansible is developed in Python language.
+
 *Advantage of Ansible*
 Agentless, it doesn’t require any extra package/daemons to be installed
 . Very low overhead
