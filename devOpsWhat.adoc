@@ -1,6 +1,9 @@
 :toc: macro
 :toc-position: left
 :toclevels: 3
+:stylesdir: css/
+:stylesheet: main.css
+
 
 = DEVOPS
 Patsoo08 <patty.randri8@gmail.com>
