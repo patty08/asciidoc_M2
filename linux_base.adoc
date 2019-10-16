@@ -281,25 +281,30 @@ on va voir un processus qui tourne et voir les fichiers qu'il a ouvert
     . lsof -p [numPID]
 
     lsof va décrire tout ce qui se passe sur le PID (les fichiers ouverts, les ports, ...).
-=== AWK
+
+=== 2. AWK
 
 Le programme awk est une suite d'action de la forme : motif { action } , le motif permet de determiner sur quels enregistrements est appliquée l'action.
 
-Un enregistrement est :
+Un enregistrement est::
 
 une chaine de caractères séparée par un retour chariot, en général une ligne.
 
-Un champs est :
+Un champs est::
 
 une chaine de caractères separée par un espace (ou par le caractère specifié par l'option -F), en générale un mot.
 On accède à chaque champs de l'enregistrement courant par la variable $1, $2, ... $NF. $0 correspond à l'enregistrement complet. La variable NF contient le nombre de champs de l'enregistrement courant, la variable $NF correspond donc au dernier champs.
 
-Exemples::
+Exemples:
 
     `awk -F ":" '{ $2 = "" ; print $0 }'` /etc/passwd imprime chaque ligne du fichier /etc/passwd après avoir effacé le deuxième champs
+
     `awk 'END {print NR}'` fichier    imprime le nombre total de lignes du fichiers
+
     `awk '{print $NF}'` fichier   imprime le dernier champs de chaque ligne
+
     `who | awk '{print $1,$5}'`   imprime le login et le temps de connexion.
+
     `awk 'length($0)>75 {print}'` fichier imprime les lignes de plus de 75 caractères. (print équivaur à print $0)
 
 === Triches:
