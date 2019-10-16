@@ -3,6 +3,7 @@
 :toc: macro
 :toc-position: left
 :toclevels: 3
+:stylesheet: https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
 
 = DEVOPS
 Patsoo08 <patty.randri8@gmail.com>
@@ -296,7 +297,7 @@ Source code management tools supported by Jenkins are below:
 - Clearcase
 - RTC
 
-== 45) How can your setup Jenkins jobs?
+== 44) How can your setup Jenkins jobs?
 Steps to set up Jenkins job as follows:
 
 Select new item from the menu.
