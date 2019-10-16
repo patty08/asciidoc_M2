@@ -1,6 +1,6 @@
 :toc: auto
 :toc-position: left
-:toclevels: 3
+:toclevels: 4
 
 = Kubernetes - setup step by step
 Patty RANDRIAMBOLOLONA <patty08@github.com>
@@ -10,26 +10,32 @@ Patty RANDRIAMBOLOLONA <patty08@github.com>
 Before beginning, we have to know that kubernetes can be installed on Linux, Windows or Mac and there are a little bit difference between these platfrom. These differences comes from the opérating system. Installing kubernetes on Linux is easy than the others OS.
 
 Kubernetes can be install on cloud or on local machine.
-On cloud plublic, you can choose AWS, GCP oe AZURE (see doc: cloud_pub.html for differences)
-On local installation, you can use a Virtual Machine to install kubernetes. exemple: 1 master, 2 nodes. so you need to install Vagrant, VBox, ...
 
-=== Requirement
+*On cloud public*
+you can choose AWS, GCP or Ms AZURE link:https://patty08.github.io/asciidoc_M2/cloud_pub.html#_azure_vs_aws_vs_google_cloud[See more - HERE]
+
+*With Vagrant on local*
+you can use a Virtual Machine to install kubernetes.
+
+Example: 1 master, 2 nodes. so you need to install Vagrant, VBox, and Ansible to deploy configurations
+
+==== Requirement
 . 1 host to be the MASTER
 . and nodes (1..n)
 . docker
 . swapoff (linux)
 
-=== on master node
+==== on master node
 . install KUBECTL
 . install KUBEADM
 . install network plugins -> link:https://kubernetes.io/docs/concepts/cluster-administration/networking/[K8s network plugins]
 
-=== on each pod
+==== on each pod
 when network plugin is correctely installed and launched
 . you can just add the pod to the master (kubeadm join ....)
 . copy/paste master join link, which was given after kubeadm installed on master
 
-== Docker
+=== Install Docker
 TIP: link:https://youtu.be/bO9ZNAoPA6E[how to install Docker on Centos?]
 
 IMPORTANT: The following installation will set docker version 18.06.2
