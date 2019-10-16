@@ -1,4 +1,6 @@
-:toc: auto
+:toc-title: Around DevOps knowledge
+:doctype: book
+:toc: macro
 :toc-position: left
 :toclevels: 3
 
