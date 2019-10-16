@@ -1,8 +1,6 @@
 :toc: macro
 :toc-position: left
 :toclevels: 3
-:stylesdir: css/
-:stylesheet: align.css
 
 
 = DEVOPS
