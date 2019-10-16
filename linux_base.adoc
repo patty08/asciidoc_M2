@@ -5,14 +5,14 @@
 = Administration SI et outils reseaux sur linux
 Patty RANDRIAMBOLOLONA <patty08@github.com>
 
-== 1. Commande de basique
+== 1. LINUX CLI - Cheat sheet
 === 1. Connaitre la version de linux.
 
-> uname ou lsb-release
+> `uname ou lsb-release`
 
-> uname -a | -v | -r
+> `uname -a | -v | -r`
 
-> lsb-release -a
+> `lsb-release -a`
 
 === 2. Linux commande CLI
 
@@ -43,7 +43,8 @@ Patty RANDRIAMBOLOLONA <patty08@github.com>
 |coller le text dans le terminale
 |===
 
-.Commande de base
+
+=== Commande de base
 
 - `apt` : il y a trois commandes que vous devez connaître pour utiliser pleinement APT: add-apt-repository( pour localiser des paquets tiers ), apt-get(pour installer réellement des paquets), et apt-cache(pour rechercher vos dépôts).
 Si votre distribution n'utilise pas APT, elle peut utiliser YUM, RPM ou une autre alternative. Regardez dans leurs commandes équivalentes.
@@ -63,7 +64,7 @@ Si votre distribution n'utilise pas APT, elle peut utiliser YUM, RPM ou une autr
 - `whereis` : Trouve l'emplacement du fichier exécutable pour un programme donné.
 - `whoami` : Affiche le nom d'utilisateur actuel. C'est pratique lorsque vous passez d'un utilisateur à l'autre avec lasucommande et que vous perdez la trace de qui vous êtes en ce moment.
 
-.Commande navigation terminale
+=== Commande navigation terminale
 
 - `&&` : Celui-ci est si basique que ce n'est même pas une commande technique. Si vous souhaitez exécuter plusieurs commandes dans un ordre séquentiel, placez-les entre chaque commande. Par exemple, [command1] && [command2]exécutera d'abord [command1] puis le suivra immédiatement avec [command2]. Vous pouvez enchaîner autant de commandes que vous le souhaitez.
 - `!` : Répète une commande récemment utilisée. Le mieux est de l'utiliser en conjonction avec la historycommande. Vous pouvez utiliser !npour répéter la commande n-ème dans l'histoire. Vous pouvez également utiliser !-npour répéter la commande qui est arrivée il y a des commandes.
@@ -216,31 +217,31 @@ Permet de générer une clé `ssh` facilement sur linux. la .CLIe `ssh-keygen -t
 
 > lister les fichiers d'un processus en cours d'execution.
 
-    sudo lsof | head
+    `sudo lsof | head`
 
 .exemple:
 on va voir un processus qui tourne et voir les fichiers qu'il a ouvert
 
 > on va voir le processus
 
-    sudo nestat -tulpen
+    `sudo nestat -tulpen`
 
 > on va ouvrir le log du programme
 
-    lsof /etc/log/[nomProgramme].log
+    `lsof /etc/log/[nomProgramme].log`
 
-=== 2. ps VS lsof: binaire des processus?, où sont ils?
+==== 1.1. ps VS lsof: binaire des processus?, où sont ils?
 
-    lsof -p [PIDduProcess]| grep log
+    `lsof -p [PIDduProcess]| grep log`
 
-    ps aux | grep yyy
+    `ps aux | grep yyy`
 
 > voir les processus en cours d'execution.
 
 
-=== 3. ps VS lsof: connaitre les processus qu'utilise une librairie
+==== 1.2. ps VS lsof: connaitre les processus qu'utilise une librairie
 
-    lsof [cheminDuLibrairie]
+    `lsof [cheminDuLibrairie]`
 
 > mieux que ps :).
 
@@ -260,19 +261,19 @@ on va voir un processus qui tourne et voir les fichiers qu'il a ouvert
     explorer. 5526 patsoo mem    REG    8,3   116312 8659775 /lib/i386-linux-gnu/libgcc_s.so.1
     TVGuiDele 5540 patsoo mem    REG    8,3   116312 8659775 /lib/i386-linux-gnu/libgcc_s.so.1
 
-=== 4. Reseau avec lsof: connaitre les processus ecoutant un protocole
+==== 1.3. Reseau avec lsof: connaitre les processus ecoutant un protocole
 
-    lsof -i udp
+    `lsof -i udp`
 
-=== 5. connaitre l'espace disque
+==== 1.4. connaitre l'espace disque
 
 > au lieu de faire `df -f`, on utilise `lsof`
 
-    lsof -f
+    `lsof -f`
 
-=== 6. lsof VS htop : monitoring un numéro de processus
+==== 1.5. lsof VS htop : monitoring un numéro de processus
 
-    lsof -p [numPID]
+    `lsof -p [numPID]`
 
 .exemple:
     . htop
@@ -280,12 +281,32 @@ on va voir un processus qui tourne et voir les fichiers qu'il a ouvert
     . lsof -p [numPID]
 
     lsof va décrire tout ce qui se passe sur le PID (les fichiers ouverts, les ports, ...).
+=== AWK
+
+Le programme awk est une suite d'action de la forme : motif { action } , le motif permet de determiner sur quels enregistrements est appliquée l'action.
+
+Un enregistrement est :
+
+une chaine de caractères séparée par un retour chariot, en général une ligne.
+
+Un champs est :
+
+une chaine de caractères separée par un espace (ou par le caractère specifié par l'option -F), en générale un mot.
+On accède à chaque champs de l'enregistrement courant par la variable $1, $2, ... $NF. $0 correspond à l'enregistrement complet. La variable NF contient le nombre de champs de l'enregistrement courant, la variable $NF correspond donc au dernier champs.
+
+Exemples::
+
+    `awk -F ":" '{ $2 = "" ; print $0 }'` /etc/passwd imprime chaque ligne du fichier /etc/passwd après avoir effacé le deuxième champs
+    `awk 'END {print NR}'` fichier    imprime le nombre total de lignes du fichiers
+    `awk '{print $NF}'` fichier   imprime le dernier champs de chaque ligne
+    `who | awk '{print $1,$5}'`   imprime le login et le temps de connexion.
+    `awk 'length($0)>75 {print}'` fichier imprime les lignes de plus de 75 caractères. (print équivaur à print $0)
 
 === Triches:
 
 > lister les nombres d'appel des commandes linux
 
-    history | awk '{print $2}' | sort | uniq -c | sort -rn | head -10`
+    `history | awk '{print $2}' | sort | uniq -c | sort -rn | head -10``
 
 > monitoring des LOGS en temps réel
 
