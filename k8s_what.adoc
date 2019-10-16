@@ -7,82 +7,92 @@ Patsoo08 <patty.randri8@gmail.com>
 
 == C'est quoi ?
 
-Kubernetes est un projet developpé par Google, un grand outils d'orchestration de container avec plein de fonctionnalité.
-Kubernetes se place au début de la liste des outils les plus performant en 2018 par ses npmbreux points fort par rapport à d'autre outils de d'orchestration de container.
+Kubernetes est un projet developpé par Google, outil d'orchestration de container avec très performant avec beaucoup de fonctionnalité.
+
+Kubernetes se place au début de la liste des outils les plus performant en 2018 par ses nombreux points fort par rapport à d'autre outils de d'orchestration de container.
 
 Kubernetes ou k8s n'est pas tout de même l'un des outils les plus facile à mettre en place, pas pour autant de bien maitriser. Pour faire fonctionner correctement K8s, il en est d'avoir une bonne pratique et de methode.
 
 K8s contient plusieurs module, l'outil est modulable en fonction de choix de son utilisateur.
 Les points forts de K8s sont:
 
-	Lightweight: Pour faire tourner l'outil, il n'est pas necessaire d'avoir un monstre puisque en memoire ou en processeur :), l'application ne compte que quelque mega octet de memoire.
+Lightweight:: Pour faire tourner l'outil, il n'est pas necessaire d'avoir un monstre puisque en memoire ou en processeur :), l'application ne compte que quelque mega octet dememoire.
 
-	realability: la fiabilité est aussi l'un de ces points fort contrairement à ces concurant. Kubernetes assure la disponibilité de ces containers en ajustant automatiquement les services déjà disponible.
+Realability:: la fiabilité est aussi l'un de ces points fort contrairement à ces concurant. Kubernetes assure la disponibilité de ces containers en ajustant automatiquement les services déjà disponible.
 
-	scalable: K8s est modulable, tous ces services sont remplacables par un autre module. K8s loadbalance automatiquement les nodes orphelins pour optimiser la mise en diponibilité.
+Scalable:: K8s est modulable, tous ces services sont remplacables par un autre module. K8s loadbalance automatiquement les nodes orphelins pour optimiser la mise en diponibilité.
 
-le but de K8s est d'assurer la disponibilté de tous les containers qui eux executes differents charges de travail et different flux de données sur une infrastructure donné tel qu'une VM ou une bare metal ou sur le cloud.
+Le point fort de kubernetes est 'LA HAUTE DISPONIBILITE' de tous les containers qui eux executes differents charges de travail et different flux de données sur une infrastructure donné tel qu'une VM ou une bare metal ou sur le cloud.
 
 == Vocabulaires
 
-cluster;;
+cluster::
  a Cluster est une collection de host et de ressource.
-node;;
+
+node::
  a node est un host qui peut etre un VM, une bare metal.
-master;;
+
+master::
  le master est le plan de control de Kubernetes. Il contient l'API server, le Scheduler, et le controle manager
-pod;;
+
+pod::
  le pod est une unité de travail dans kubernetes.
-...Un pod contient un ou plusieurs containers
-...un pod à le meme adresse IP et même port
-...communique en localhost ou avec un standard inter-procès de communication
-...partage un meme dossier
-...label
-...annotation
-...label selection
-...volume
-...PetSet
-...Secret
-...Name
-...Namespace
-le Namespace est un cluser virtuel
 
-== Deployer un cluster
+. Un pod contient un ou plusieurs containers
+. un pod à le meme adresse IP et même port
+. communique en localhost ou avec un standard inter-procès de communication
+. partage un meme dossier
+. label
+. annotation
+. label selection
+. volume
+. PetSet
+. Secret
+. Name
+. Namespace: le Namespace est un cluser virtuel
 
-=== outils
-K8s with Kubctl
-.minikube
-.cmder (conEmu)
+== Deployer un cluster Kubernetes
 
-=== demonstation
-.Deploy 1 cluster on Kubernetes on Windows
+=== Dépendances requises
+. Kubectl
+. minikube (pour un seul noeud)
+. cmder sur Windows (conEmu) ou Terminale sur Linux
 
-. we use alias 'k' to make writing easer. Kubctl is the commande line to use Kubernetes
-Set-Alias -Name k -Value kubectl
+=== Sur Windows - Vagrant: Deploy 1 cluster on Kubernetes
 
-. Minikube is responsible of container deployment in one cluster
-. I personalize minikube typing with log redirected  to mk, here
+. Definir un alias 'k' pour kubectl
+
+  Set-Alias -Name k -Value kubectl
+
+. Installer 'minikube' pour déployer un seul cluser K8s
+. Definir un alias 'mk' pour Minikube
+
   function mk { minikube-windows-amd64 `--show-libmachine-logs `--alsologtostderr `@args` }
 
-. pull and run echo nginx container in kubernetes. Base image here is in google cloud plateform
+. pull and run echo nginx container sur le cluster kubernetes. Image recupérer de google cloud plateform
+
   K run echo --image=gcr.io/google_containers/echoserver:1.4 --port=8080
 
-. if container is stopped, then
+. Si le container 'stop' Faire
+
   k expose deployment echo --type=NodePort
   NodePort = port of your host
 
-. retrieve ip where 'echo' image is hosted
-  k get service echo --output='jsonpath="{.spec.ports[0].NodePort}"'
--> it returnes the port of echo container
+. Commande pour recupérer IP du container 'echo' sur le hote
 
-. check status of pods
+  k get service echo --output='jsonpath="{.spec.ports[0].NodePort}"'
+  -> it returnes the port of echo container
+
+. Status des pods
+
   k get pods
 
-. retrive pod ip
+. Commande pour récupérer l'IP du pod
+
   mk ip
 -> it returnes the IP of pods
 
-- Dashboard is accessible with:
+- Dashboard de Kubernetes is accessible with
 mk dashboad
 
 == Deployer un mutli cluster
