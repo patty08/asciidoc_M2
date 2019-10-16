@@ -71,12 +71,11 @@ First, we must enter the e-mail and user name for your Jenkins system, then swit
 
 == 10) What are the Advantages of Ansible?
 Agentless, it doesn’t require any extra package/daemons to be installed
-	- Very low overhead
-	- Good performance
-	- Idempotent
-	- Very Easy to learn
-	- Declarative not procedural
-	- Get DevOps Online Training
+. Very low overhead
+. Good performance
+. Idempotent
+. Very Easy to learn
+. Declarative not procedural
 
 == 11) what’s the use of Ansible?
 Ansible is mainly used in IT infrastructure to manage or deploy applications to remote nodes. Let’s say we want to deploy one application in 100’s of nodes by just executing one command, then Ansible is the one actually coming into the picture but should have some knowledge on Ansible script to understand or execute the same.
