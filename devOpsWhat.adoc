@@ -1,9 +1,8 @@
 :toc-title: Around DevOps knowledge
-:doctype: book
 :toc: macro
 :toc-position: left
 :toclevels: 3
-:stylesheet: https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
+:stylesheet: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
 
 = DEVOPS
 Patsoo08 <patty.randri8@gmail.com>
