@@ -30,8 +30,7 @@ when network plugin is correctely installed and launched
 . copy/paste master join link, which was given after kubeadm installed on master
 
 == Docker
-TIP: how to install docker on ubuntu
-link:https://youtu.be/bO9ZNAoPA6E[how to install Docker?]
+TIP: how to install docker on ubuntu link:https://youtu.be/bO9ZNAoPA6E[how to install Docker?]
 
 IMPORTANT: The following installation will set docker version 18.06.2
 
