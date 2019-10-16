@@ -1,208 +1,31 @@
-/* document body (contains all content) */
-body {
-  font-size: small;
+/* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+
+@import "https://fonts.googleapis.com/css?family=Noto+Sans:300,600italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";
+@import "asciidoctor.css"; /* Default asciidoc style framework - important */
+
+/* CUSTOMISATIONS */
+/* Change the values in root for quick customisation. If you want even more fine grain... venture further. */
+
+:root{
+--maincolor:#FFFFFF;
+--primarycolor:#2c3e50;
+--secondarycolor:#ba3925;
+--tertiarycolor: #186d7a;
+--sidebarbackground:#CCC;
+--linkcolor:#b71c1c;
+--linkcoloralternate:#f44336;
+--white:#FFFFFF;
+--black:#000000;
 }
 
-/* document header (contains title etc) */
-#header {
-  width: 100%;
-}
+/* Text styles */
+h1{color:var(--primarycolor) !important;}
+h2,h3,h4,h5,h6{color:var(--secondarycolor) !important;}
+.title{color:var(--tertiarycolor) !important; font-family:"Noto Sans",sans-serif !important;font-style: normal !important; font-weight: normal !important;}
+p{font-family: "Noto Sans",sans-serif !important}
 
-/* headings */
-h1 {
-  color: purple;
-}
-h2 {
-  color: chartreuse;
-}
-h3 {
-  color: coral;
-}
-h4 {
-  color: darkcyan;
-}
-h5 {
-  color: darkslategray;
-}
-h6 {
-  color: olive;
-}
-
-/* Table of Contents sidebar */
-#toc {
-  background-color: plum!important;
-  color: white;
-  font-weight: bold;
-}
-/* title of the TOC */
-#toctitle {
-  color: white;
-}
-/* top-level entries in TOC */
-.sectlevel1 {
-  background-color: palegoldenrod;
-}
-/* second-level entries in TOC */
-.sectlevel2 {
-  background-color: palegreen;
-}
-
-/* main content window */
-#content {
-  background-color: lavender;
-  color: navy;
-}
-
-/* plain paragraph text */
-.paragraph {
-  font-family: sans-serif;
-}
-p {
-  font-family: sans-serif;
-}
-
-/* blockquote text */
-.quoteblock {
-  font-style: italic;
-}
-blockquote {
-  font-style: italic;
-}
-
-/* the quotation mark itself (before the block) */
-.quoteblock blockquote::before {
-  color: blue;
-}
-
-/* blockquote attribution text */
-.attribution {
-  font-size: x-large;
-}
-
-/* blockquote citation (work where quote cited) */
-cite {
-  font-size: x-large;
-}
-
-/* ordered list */
-ol {
-  color: red;
-}
-.olist {
-  color: red;
-}
-
-/* unordered list */
-ul {
-  color: blue;
-}
-.ulist {
-  color: blue;
-}
-
-/* links */
-a {
-  text-decoration: none;
-}
-
-/* bold text */
-strong {
-  color: green;
-}
-
-/* italic text */
-em {
-  color: orange;
-}
-
-/* underlined text */
-u {
-  color: yellow;
-}
-
-/* deleted text */
-del {
-  text-decoration: line-through;
-  color: red;
-}
-/* inserted text */
-ins {
-  text-decoration: overline;
-  color: green;
-}
-
-/* strikethrough text */
-s {
-  text-decoration-color: red;
-}
-
-/* superscript text */
-sup {}
-/* subscript text */
-sub {}
-
-/* small text */
-small {}
-
-/* highlighted text */
-mark {}
-
-/* horizontal rules */
-hr {}
-
-/* table */
-table {}
-/* table caption */
-caption {}
-/* table header row */
-thead {}
-/* table header cell */
-th {}
-/* table row */
-tr {}
-/* table footer */
-tfoot {}
-/* table cell */
-td {}
-/* table body */
-tbody {}
-
-/* inline code */
-code {
-  background-color: papayawhip!important;
-}
-/* pre-formatted text */
-pre {
-  background-color: burlywood!important;
-}
-.literalblock {
-  background-color: burlywood!important;
-}
-
-/* image */
-img {
-  max-width: 100%;
-}
-/* image caption */
-.imageblock .title {
-  font-weight: bold!important;
-}
-
-/* audio */
-audio {}
-/* video */
-video {}
-
-/* footer section */
-#footer {
-  background-color: gray;
-  color: red;
-}
-/* footer text (by default contains time of last document update) */
-#footer-text {
-  font-weight: bold;
-  color: white;
-}
+/* Table styles */
+th{font-family: "Noto Sans",sans-serif !important}
 
 /* Responsiveness fixes */
 video {
