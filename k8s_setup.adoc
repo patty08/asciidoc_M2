@@ -79,8 +79,8 @@ IMPORTANT: The following installation will set docker version 18.06.2
 
 . Restart docker.
 
-    . systemctl daemon-reload
-    . systemctl restart docker
+  systemctl daemon-reload
+  systemctl restart docker
 
 === My custom configurations
 TIP: My configuration to install kubernetes:
@@ -93,9 +93,9 @@ link:https://gitlab.com/patsou/conf[ici]
 
 Those are:
 
-- setup.sh : main of the programme
-- k8s.sh : script sh to install Kubernetes
-- confiVagrant.sh : script to install Docker, Docker-compose and Ansible
+. setup.sh : main of the programme
+. k8s.sh : script sh to install Kubernetes
+. confiVagrant.sh : script to install Docker, Docker-compose and Ansible
 
 == Gestion Management (gestionnaire de configuration)
 
