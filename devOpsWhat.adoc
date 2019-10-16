@@ -69,12 +69,16 @@ SubGit is a tool for migrating SVN to Git. It creates a writable Git mirror of a
 == 9) how can you clone a Git repository via Jenkins?
 First, we must enter the e-mail and user name for your Jenkins system, then switch into your job directory and execute the “git config” command.
 
+
 == 10) What are the Advantages of Ansible?
+*What is Ansible?*
+Ansible is a software configuration management tool to deploy an application using ssh without any downtime. It is also used for management and configuration of software applications.  Ansible is developed in Python language.
+*Advantage of Ansible*
 Agentless, it doesn’t require any extra package/daemons to be installed
 . Very low overhead
 . Good performance
-. Idempotent
-. Very Easy to learn
+. Idempotent (replicate the same actions on all nodes)
+. Very Easy to learn ()
 . Declarative not procedural
 
 == 11) what’s the use of Ansible?
@@ -119,20 +123,18 @@ A kernel is the lowest level of easily replaceable software that interfaces with
 == 20) what is difference between grep -i and grep -v?
 I ignore alphabet difference V accept this value
 
-ex) ls | grep -i docker
+ex)
+
+. ls | grep -i docker
 
 	Dockerfile
-
 	docker.tar.gz
 
-	ls | grep -v docker
+. ls | grep -v docker
 
 	Desktop
-
 	Dockerfile
-
 	Documents
-
 	Downloads
 
 You can’t see anything with name docker.tar.gz
@@ -143,7 +145,7 @@ This feature is generally used to give the swap space to the server. Lets say in
 	dd if=/dev/zero of=/swapfile1 bs=1G count=1
 
 == 22) what is concept of sudo in linux?
-Sudo(superuser do) is a utility for UNIX- and Linux-based systems that provides an     efficient way to give specific users permission to use specific system commands at the root (most powerful) level of the system.
+Sudo(superuser do) is a utility for UNIX- and Linux-based systems that provides an efficient way to give specific users permission to use specific system commands at the root (most powerful) level of the system.
 
 == 23) what is a Jenkins Pipeline?
 Jenkins Pipeline (or simply “Pipeline”) is a suite of plugins which supports implementing and integrating continuous delivery pipelines into Jenkins.
@@ -269,31 +271,28 @@ When multiple developers or teams are working on different segments of same web 
 Hudson was the earlier name of current Jenkins. After some issue faced, the project name was changed from Hudson to Jenkins.
 
 == 42) What are the advantages of Jenkins?
-Advantage of using Jenkins
+*Advantage of using Jenkins*
 
-Bug tracking is easy at early stage in development environment.
-Provides a very large numbers of plugin support.
-Iterative improvement to the code, code is basically divided into small sprints.
-Build failures are cached at integration stage.
-For each code commit changes an automatic build report notification get generated.
-To notify developers about build report success or failure, it can be integrated with LDAP mail server.
-Achieves continuous integration agile development and test-driven development environment.
-With simple steps, maven release project can also be automated.
+. Bug tracking is easy at early stage in development environment.
+. Provides a very large numbers of plugin support.
+. Iterative improvement to the code, code is basically divided into small sprints.
+. Build failures are cached at integration stage.
+. For each code commit changes an automatic build report notification get generated.
+. To notify developers about build report success or failure, it can be integrated with LDAP mail server.
+. Achieves continuous integration agile development and test-driven development environment.
+. With simple steps, maven release project can also be automated.
 
 == 43) Which SCM tools does Jenkins supports?
 Source code management tools supported by Jenkins are below:
 
-	- AccuRev
-	- CVS
-	- Subversion
-	- Git
-	- Mercurial
-	- Perforce
-	- Clearcase
-	- RTC
-	-
-== 44) What is Ansible?
-Ansible is a software configuration management tool to deploy an application using ssh without any downtime. It is also used for management and configuration of software applications.  Ansible is developed in Python language.
+- AccuRev
+- CVS
+- Subversion
+- Git
+- Mercurial
+- Perforce
+- Clearcase
+- RTC
 
 == 45) How can your setup Jenkins jobs?
 Steps to set up Jenkins job as follows:
