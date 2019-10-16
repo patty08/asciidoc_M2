@@ -25,14 +25,13 @@ On local installation, you can use a Virtual Machine to install kubernetes. exem
 . install network plugins link:https://kubernetes.io/docs/concepts/cluster-administration/networking/[K8s network plugins]
 
 === on each pod
-
-. when network plugin is correctely installed and launched
-. you can just add the pod to the master
+when network plugin is correctely installed and launched
+. you can just add the pod to the master (kubeadm join ....)
 . copy/paste master join link, which was given after kubeadm installed on master
 
 == Docker
 TIP: how to install docker on ubuntu link:https://youtu.be/bO9ZNAoPA6E[how to install Docker?]
-The following installation will set docker version 18.06.2
+IMPORTANT: The following installation will set docker version 18.06.2
 
 . Install Docker CE
 . Set up the repository:
@@ -40,7 +39,7 @@ The following installation will set docker version 18.06.2
 
     apt-get update && apt-get install apt-transport-https ca-certificates curl software-properties-common
 
-. Add Dockerâ€™s official GPG key
+. Add Docker official GPG key
 
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 
