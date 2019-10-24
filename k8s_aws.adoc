@@ -48,6 +48,7 @@ S3 creation d'un compartiment pour stockage d'informations et des données sur A
 
 === etape 4. AWS - ROUTE53
 ROUTE53 sert à la gestion des réseaux, la table DNS, routage sur AWS.
+
 .Table Tableau de code serveurs des regions
 |===
 |Code |Nom |Statut d'inscription
