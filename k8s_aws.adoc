@@ -38,11 +38,13 @@ Role sur l'instance EC2.
 S3 creation d'un compartiment pour stockage d'informations et des données sur AWS. Cela va permettre de stocké des fichiers, des images, des videos, ...
 
 . *creer un S3 (stockage de données dans AWS)*
-	- soit UI
-	- soit CLI:
-		aws s3 mb s3://[nom_du_Buket] et exporter env en KOPS_STATE_STORE
-		exemple: 	aws s3 mb s3://cluster.patsoo.com
-					export KOPS_STATE_STORE=s3://cluster.patsoo.bucket
+- soit UI
+- soit CLI:
+
+	'aws s3 mb s3://[nom_du_Buket]'
+	aws s3 mb s3://cluster.patsoo.com
+
+	export KOPS_STATE_STORE=s3://cluster.patsoo.bucket
 
 	aws s3 list //lister les buckets s3
 
