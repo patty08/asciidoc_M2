@@ -50,26 +50,26 @@ S3 creation d'un compartiment pour stockage d'informations et des données sur A
 ROUTE53 sert à la gestion des réseaux, la table DNS, routage sur AWS.
 .Table Title
 |===
-|Code			|Nom	|Statut d'inscription
-|us-east-1 , USA Est (Virginie du Nord) , Facultatif
-|us-east-2 , USA Est (Ohio) , Facultatif
-|us-west-1 , USA Ouest (Californie du Nord) , Facultatif
-|us-west-2 , USA Ouest (Oregon) , Facultatif
-|ca-central-1 ,Canada (Centre) , Facultatif
-|eu-central-1 ,UE (Francfort) , Facultatif
-|eu-west-1 , UE (Irlande) , Facultatif
-|eu-west-2 , UE (Londres) , Facultatif
-|eu-west-3 , UE (Paris) , Facultatif
-|eu-north-1 , UE (Stockholm) , Facultatif
-|ap-east-1 , Asie-Pacifique (Hong Kong) , Obligatoire
-|ap-northeast-1 ,Asie-Pacifique (Tokyo) , Facultatif
-|ap-northeast-2 ,Asie-Pacifique (Séoul) , Facultatif
-|ap-northeast-3 ,Asie-Pacifique (Osaka-Local) , Facultatif
-|ap-southeast-1 ,Asie-Pacifique (Singapour) , Facultatif
-|ap-southeast-2 ,Asie-Pacifique (Sydney) , Facultatif
-|ap-south-1 , Asie-Pacifique (Mumbai) , Facultatif
-|me-south-1 , Moyen-Orient (Bahreïn) , Obligatoire
-|sa-east-1 , Amérique du Sud (São Paulo) , Facultatif
+|Code |Nom |Statut d'inscription
+|us-east-1, USA Est (Virginie du Nord), Facultatif
+|us-east-2, USA Est (Ohio), Facultatif
+|us-west-1, USA Ouest (Californie du Nord), Facultatif
+|us-west-2, USA Ouest (Oregon), Facultatif
+|ca-central-1,Canada (Centre), Facultatif
+|eu-central-1,UE (Francfort), Facultatif
+|eu-west-1, UE (Irlande), Facultatif
+|eu-west-2, UE (Londres), Facultatif
+|eu-west-3, UE (Paris), Facultatif
+|eu-north-1, UE (Stockholm), Facultatif
+|ap-east-1, Asie-Pacifique (Hong Kong), Obligatoire
+|ap-northeast-1,Asie-Pacifique (Tokyo), Facultatif
+|ap-northeast-2,Asie-Pacifique (Séoul), Facultatif
+|ap-northeast-3,Asie-Pacifique (Osaka-Local), Facultatif
+|ap-southeast-1,Asie-Pacifique (Singapour), Facultatif
+|ap-southeast-2,Asie-Pacifique (Sydney), Facultatif
+|ap-south-1, Asie-Pacifique (Mumbai), Facultatif
+|me-south-1, Moyen-Orient (Bahreïn), Obligatoire
+|sa-east-1, Amérique du Sud (São Paulo), Facultatif
 |===
 
 . *creer un Route53 (Table de Rootage et table DNS dans AWS) dont PARIS ici*
