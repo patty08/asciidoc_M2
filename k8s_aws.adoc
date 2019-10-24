@@ -3,8 +3,8 @@
 :toclevels: 3
 
 = DEVOPS : KUBERNETES - AWS
-== GIT \-> JENKINS \-> ANSIBLE \-> DOCKER
 
+== OBJECTIF
 Le but de ce petit projet est de mettre en place un environnement DevOps en partant de build - package - deploy - operate.
 Le outils qu'on va utiliser sont:
  - Gitlab : stockage de code source
