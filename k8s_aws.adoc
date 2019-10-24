@@ -1,0 +1,136 @@
+:toc: auto
+:toc-position: left
+:toclevels: 3
+
+= DEVOPS : KUBERNETES - AWS
+== GIT \-> JENKINS \-> ANSIBLE \-> DOCKER
+Le but de ce petit projet est de mettre en place un environnement DevOps en partant de build - package - deploy - operate.
+Le outils qu'on va utiliser sont:
+ - Gitlab : stockage de code source
+ - package : Jenkins - Maven ou autre
+ - deploy:
+	 -- Docker
+	 -- Ansible
+	 -- Kubernetes
+
+=== etape 1. AWS - EC2
+Provisionnement d'une instance sur AWS.
+
+. *creer une instance EC2 AWS*
+- EC2:
+
+	- installer AWS CLI with (https://github.com/yankils/Simple-DevOps-Project/tree/master/Kubernetes)
+	- configurer AWS (aws configure)
+	- kops (outils pour deployer un cluster sur AWS)
+
+=== etape 2. AWS - ROLE
+Role sur l'instance EC2.
+
+. *creer un Role (gestion de connexon dans AWS)*
+	- aller dans SERVICE / IAM / Role et attribuer les permissions suivantes :
+			- AmazonEC2FullAccess,
+			- IAMFullAccess,
+			- AmazonS3FullAccess,
+			- AmazonRoute53FullAccess
+
+=== etape 3. AWS - S3
+S3 creation d'un compartiment pour stockage d'informations et des données sur AWS. Cela va permettre de stocké des fichiers, des images, des videos, ...
+
+. *creer un S3 (stockage de données dans AWS)*
+	- soit UI
+	- soit CLI:
+		aws s3 mb s3://[nom_du_Buket] et exporter env en KOPS_STATE_STORE
+		exemple: 	aws s3 mb s3://cluster.patsoo.com
+					export KOPS_STATE_STORE=s3://cluster.patsoo.bucket
+
+	aws s3 list //lister les buckets s3
+
+=== etape 4. AWS - ROUTE53
+ROUTE53 sert à la gestion des réseaux, la table DNS, routage sur AWS.
+.Table Title
+|===
+|Code			|Nom	|Statut d'inscription
+|us-east-1		,USA Est (Virginie du Nord)		,Facultatif
+|us-east-2		,USA Est (Ohio)		,Facultatif
+|us-west-1		,USA Ouest (Californie du Nord)		,Facultatif
+|us-west-2		,USA Ouest (Oregon)		,Facultatif
+|ca-central-1	,	Canada (Centre)		,Facultatif
+|eu-central-1	,	UE (Francfort)		,Facultatif
+|eu-west-1		,UE (Irlande)		,Facultatif
+|eu-west-2		,UE (Londres)		,Facultatif
+|eu-west-3		,UE (Paris)		,Facultatif
+|eu-north-1		,UE (Stockholm)		,Facultatif
+|ap-east-1		,Asie-Pacifique (Hong Kong)		,Obligatoire
+|ap-northeast-1	,	Asie-Pacifique (Tokyo)		,Facultatif
+|ap-northeast-2	,	Asie-Pacifique (Séoul)		,Facultatif
+|ap-northeast-3	,	Asie-Pacifique (Osaka-Local)		,Facultatif
+|ap-southeast-1	,	Asie-Pacifique (Singapour)		,Facultatif
+|ap-southeast-2	,	Asie-Pacifique (Sydney)		,Facultatif
+|ap-south-1		,Asie-Pacifique (Mumbai)		,Facultatif
+|me-south-1		,Moyen-Orient (Bahreïn)		,Obligatoire
+|sa-east-1		,Amérique du Sud (São Paulo)		,Facultatif
+|===
+
+. *creer un Route53 (Table de Rootage et table DNS dans AWS) dont PARIS ici*
+	- Gestion de DNS
+	- Cibler votre zone
+
+== EC2 Configuration
+
+=== etape 5. CREATION DE CLUSTER KUBERNETES AVEC KOPS
+. *Attacher S3, ROUTE53 et ROLE sur votre instance EC2*
+Sur votre  instance ECS2
+Faire:
+	- Actions / paramètes instances / Attacher et remplacer Role IAM
+
+=== etape 6. CREATION DE CLUSTER KUBERNETES AVEC KOPS
+On va utiliser Kops pour creer et deployer un cluster Kubernetes
+
+[CLI]
+
+	kops create cluster --cloud=aws --zones=us-west-2a --name=cluster.k8s --dns-zone=patsoo.com --dns private
+ou
+	kops create cluster \
+	  --name=k8s.ifritltd.net --state=s3://kayan-kops-state \
+	  --zones="eu-west-2a" --node-count=2 --node-size=t2.micro
+	  --master-size=t2.micro --dns-zone=k8s.ifritltd.net  --cloud aws
+ou
+	kops create cluster cluster-patsoo.patsoo.com --state=s3://cluster.patsoo.bucket --cloud aws --node-count 1 --zones eu-west-3c --master-zones eu-west-3c --topology private --networking weave --master-size t2.micro --node-size t2.micro --node-volume-size 100 --master-volume-size 100 --encrypt-etcd-storage --bastion --admin-access 0.0.0.0/0 --dns-zone=patsoo.com --dns private --yes
+
+
+...
+--zones=us-west-2a 				// la zone paris eu-west-3c n'accepte pas le types de l'instance ubuntu 16LTS
+--name=.... 					// dossier de configuration qui sera stocké dans S3 suite à la varible d'env KOPS_STATE_STORE
+...
+
+---> le cluster chez us-west-2a sera crée
+
+IMPORTANT:
+	Cluster configuration has been created.
+	Suggestions:
+	 * list clusters with: kops get cluster
+	 * edit this cluster with: kops edit cluster cluster.k8s
+	 * edit your node instance group: kops edit ig --name=cluster.k8s nodes
+	 * edit your master instance group: kops edit ig --name=cluster.k8s master-us-west-2a
+	Finally configure your cluster with: kops update cluster --name cluster.k8s --yes
+
+NOTE: Il faut éditer l'instance du cluster pour optimisé les coûts
+
+	kops edit ig --name=cluster.k8s master-us-west-2a
+
+----
+changer la ligne
+
+	machinetype = xxx
+		en
+	machinetype = t2.micro
+
+IMPORTANT:
+	Cluster is starting.  It should be ready in a few minutes.
+	Suggestions:
+	 * validate cluster: kops validate cluster
+	 * list nodes: kubectl get nodes --show-labels
+	 * ssh to the master: ssh -i ~/.ssh/id_rsa admin@api.cluster.k8s
+	 * the admin user is specific to Debian. If not using Debian please use the appropriate user based on your OS.
+	 * read about installing addons at: https://github.com/kubernetes/kops/blob/master/docs/addons.md.
+
