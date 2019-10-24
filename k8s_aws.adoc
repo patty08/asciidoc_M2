@@ -4,6 +4,7 @@
 
 = DEVOPS : KUBERNETES - AWS
 == GIT \-> JENKINS \-> ANSIBLE \-> DOCKER
+
 Le but de ce petit projet est de mettre en place un environnement DevOps en partant de build - package - deploy - operate.
 Le outils qu'on va utiliser sont:
  - Gitlab : stockage de code source
@@ -50,25 +51,25 @@ ROUTE53 sert à la gestion des réseaux, la table DNS, routage sur AWS.
 .Table Title
 |===
 |Code			|Nom	|Statut d'inscription
-|us-east-1		,USA Est (Virginie du Nord)		,Facultatif
-|us-east-2		,USA Est (Ohio)		,Facultatif
-|us-west-1		,USA Ouest (Californie du Nord)		,Facultatif
-|us-west-2		,USA Ouest (Oregon)		,Facultatif
-|ca-central-1	,	Canada (Centre)		,Facultatif
-|eu-central-1	,	UE (Francfort)		,Facultatif
-|eu-west-1		,UE (Irlande)		,Facultatif
-|eu-west-2		,UE (Londres)		,Facultatif
-|eu-west-3		,UE (Paris)		,Facultatif
-|eu-north-1		,UE (Stockholm)		,Facultatif
-|ap-east-1		,Asie-Pacifique (Hong Kong)		,Obligatoire
-|ap-northeast-1	,	Asie-Pacifique (Tokyo)		,Facultatif
-|ap-northeast-2	,	Asie-Pacifique (Séoul)		,Facultatif
-|ap-northeast-3	,	Asie-Pacifique (Osaka-Local)		,Facultatif
-|ap-southeast-1	,	Asie-Pacifique (Singapour)		,Facultatif
-|ap-southeast-2	,	Asie-Pacifique (Sydney)		,Facultatif
-|ap-south-1		,Asie-Pacifique (Mumbai)		,Facultatif
-|me-south-1		,Moyen-Orient (Bahreïn)		,Obligatoire
-|sa-east-1		,Amérique du Sud (São Paulo)		,Facultatif
+|us-east-1 , USA Est (Virginie du Nord) , Facultatif
+|us-east-2 , USA Est (Ohio) , Facultatif
+|us-west-1 , USA Ouest (Californie du Nord) , Facultatif
+|us-west-2 , USA Ouest (Oregon) , Facultatif
+|ca-central-1 ,Canada (Centre) , Facultatif
+|eu-central-1 ,UE (Francfort) , Facultatif
+|eu-west-1 , UE (Irlande) , Facultatif
+|eu-west-2 , UE (Londres) , Facultatif
+|eu-west-3 , UE (Paris) , Facultatif
+|eu-north-1 , UE (Stockholm) , Facultatif
+|ap-east-1 , Asie-Pacifique (Hong Kong) , Obligatoire
+|ap-northeast-1 ,Asie-Pacifique (Tokyo) , Facultatif
+|ap-northeast-2 ,Asie-Pacifique (Séoul) , Facultatif
+|ap-northeast-3 ,Asie-Pacifique (Osaka-Local) , Facultatif
+|ap-southeast-1 ,Asie-Pacifique (Singapour) , Facultatif
+|ap-southeast-2 ,Asie-Pacifique (Sydney) , Facultatif
+|ap-south-1 , Asie-Pacifique (Mumbai) , Facultatif
+|me-south-1 , Moyen-Orient (Bahreïn) , Obligatoire
+|sa-east-1 , Amérique du Sud (São Paulo) , Facultatif
 |===
 
 . *creer un Route53 (Table de Rootage et table DNS dans AWS) dont PARIS ici*
@@ -98,16 +99,14 @@ ou
 	kops create cluster cluster-patsoo.patsoo.com --state=s3://cluster.patsoo.bucket --cloud aws --node-count 1 --zones eu-west-3c --master-zones eu-west-3c --topology private --networking weave --master-size t2.micro --node-size t2.micro --node-volume-size 100 --master-volume-size 100 --encrypt-etcd-storage --bastion --admin-access 0.0.0.0/0 --dns-zone=patsoo.com --dns private --yes
 
 
-...
---zones=us-west-2a 				// la zone paris eu-west-3c n'accepte pas le types de l'instance ubuntu 16LTS
---name=.... 					// dossier de configuration qui sera stocké dans S3 suite à la varible d'env KOPS_STATE_STORE
-...
+'--zones=us-west-2a 				// la zone paris eu-west-3c n'accepte pas le types de l'instance ubuntu 16LTS'
+'--name=.... 					// dossier de configuration qui sera stocké dans S3 suite à la varible d'env KOPS_STATE_STORE'
 
----> le cluster chez us-west-2a sera crée
+--> le cluster chez us-west-2a sera crée
 
-IMPORTANT:
-	Cluster configuration has been created.
-	Suggestions:
+IMPORTANT: configuration has been created.
+
+Suggestions:
 	 * list clusters with: kops get cluster
 	 * edit this cluster with: kops edit cluster cluster.k8s
 	 * edit your node instance group: kops edit ig --name=cluster.k8s nodes
