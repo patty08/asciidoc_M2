@@ -88,12 +88,11 @@ Patsoo08 <patty.randri8@gmail.com>
 	  command: ...
 	  register: result
 	  failed_when: "'FAILED' in result.stderr"
-
 	  ignore_errors: yes
-
 	  changed_when: "result.rc != 2"
 
 == Env vars
-vars:
-  local_home: "{{ lookup('env','HOME') }}"
+
+	vars:
+	  local_home: "{{ lookup('env','HOME') }}"
 
