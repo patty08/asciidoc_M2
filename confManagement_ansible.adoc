@@ -3,27 +3,28 @@
 :toclevels: 3
 
 = Ansible
-
 Patsoo08 <patty.randri8@gmail.com>
 
 *Point fort*
-- facile à lire
--
+- simple
+- facile d'utilisation
+- facile de comprehension
 
 == Hosts
 
 	$ sudo mkdir /etc/ansible
 	$ sudo vim /etc/ansible/hosts
 
-*[example]*
-192.0.2.101
-192.0.2.102
+	*[example]*
+	192.0.2.101
+	192.0.2.102
 
 == Running a playbook
 
 	$ ansible-playbook playbook.yml
 
 == Tasks
+
 	- hosts: all
 	  user: root
 	  sudo: no
@@ -36,15 +37,21 @@ Patsoo08 <patty.randri8@gmail.com>
 
 
 == Includes
+
 *tasks:*
-  - include: db.yml
+
+	- include: db.yml
 
 *handlers:*
-  - include: db.yml user=timmy
+
+	- include: db.yml user=timmy
+
 == Handlers
+
 *handlers:*
-  - name: start apache2
-    action: service name=apache2 state=started
+
+	  - name: start apache2
+	    action: service name=apache2 state=started
 
 *tasks:*
 	  - name: install apache
@@ -52,6 +59,7 @@ Patsoo08 <patty.randri8@gmail.com>
 	    notify:
 	      - start apache2
 == Vars
+
 	- host: lol
 	  vars_files:
 	    - vars.yml
@@ -61,7 +69,9 @@ Patsoo08 <patty.randri8@gmail.com>
 	    - name: Create the SSH directory.
 	      file: state=directory path=${project_root}/home/.ssh/
 	      only_if: "$vm == 0"
+
 == Roles
+
 	- host: xxx
 	  roles:
 	    - db
