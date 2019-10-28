@@ -5,28 +5,82 @@
 = Ansible
 Patsoo08 <patty.randri8@gmail.com>
 
+*C'est quoi?*
+. ecrit en python
+. outils d'orchestration de serveur
+. gestion de configuration
+. execution de taches (indepotent) sur les machines ciblés
+
 *Point fort*
+. open source
 . simple
 . facile d'utilisation
 . facile de comprehension
 
-== Syntax
+== Syntax de Ansible
+
+host_vars/
+   hostname1.yml          # here we assign variables to particular systems
+   hostname2.yml
+playbook.yml
+roles:					  # ON APPELLE des FILS de 'roles' MODULES
+    common:               # this hierarchy represents a "role"   
+        tasks:            #
+            main.yml      #  <-- tasks file can include smaller files if warranted
+        handlers:         #
+            main.yml      #  <-- handlers file
+        templates:        #  <-- files for use with the template resource
+            ntp.conf.j2   #  <------- templates end in .j2
+        files:            #
+            bar.txt       #  <-- files for use with the copy resource
+            foo.sh        #  <-- script files for use with the script resource
+        vars:             #
+            main.yml      #  <-- variables associated with this role
+        defaults:         #
+            main.yml      #  <-- default lower priority variables for this role
+        meta:             #
+            main.yml      #  <-- role dependencies
+        library:          # roles can also include custom modules
+        module_utils:     # roles can also include custom module_utils
+        lookup_plugins:   # or other types of plugins, like lookup in this case
+
+TIP: creer un facilement la structure d'un role
+
+	ansible-galaxy init myrole
+
+TIP: Running a playbook
+
+	ansible-playbook playbook.yml
 
 
-=== Hosts
+== Modules
+
+NOTE: https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+
+. Cloud: Amazon, cloudStack, Openstack, etc
+. Commands: shell, script, expect, etc 
+. Database: mysql, postgresql, redis, , etc
+. Files: copy, fetch, lineinline, template,
+. Messaging: rabbitmq,
+. Notification: irc, mail, jabber, 
+. Packaging: apt, yum, pip, bower, npm
+. Source control: git, mercurial, svn, etc
+. System: user, group, etc
+. Docker: image, container, etc
+
+== Structure du fichier Playbook.yml  
+=== 1. Hosts
 
 	$ sudo mkdir /etc/ansible
 	$ sudo vim /etc/ansible/hosts
+
+TIP: mettre dans un fichier les hosts
 
 	*[example]*
 	192.0.2.101
 	192.0.2.102
 
-=== Running a playbook
-
-	$ ansible-playbook playbook.yml
-
-=== Tasks
+=== 2. Tasks
 
 	- hosts: all
 	  user: root
@@ -38,18 +92,17 @@ Patsoo08 <patty.randri8@gmail.com>
 	  handlers:
 	    - ...
 
+=== 3. Inclure dans Ansible -> 'Includes'
 
-=== Includes
-
-*tasks:*
+- tasks:
 
 	- include: db.yml
 
-*handlers:*
+- handlers:
 
 	- include: db.yml user=timmy
 
-=== Handlers
+=== 4. Handlers
 
 *handlers:*
 
@@ -73,7 +126,7 @@ Patsoo08 <patty.randri8@gmail.com>
 	      file: state=directory path=${project_root}/home/.ssh/
 	      only_if: "$vm === 0"
 
-=== Roles
+=== 5. Roles
 
 	- host: xxx
 	  roles:
@@ -85,7 +138,7 @@ Patsoo08 <patty.randri8@gmail.com>
 		roles/db/tasks/*.yml
 		roles/db/handlers/*.yml
 
-=== Task: Failures
+=== 5. Task: Failures
 
 	- name: my task
 	  command: ...
@@ -94,7 +147,7 @@ Patsoo08 <patty.randri8@gmail.com>
 	  ignore_errors: yes
 	  changed_when: "result.rc != 2"
 
-=== Env vars
+=== 6. Env vars
 
 	vars:
 	  local_home: "{{ lookup('env','HOME') }}"
