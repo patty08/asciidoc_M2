@@ -1,0 +1,249 @@
+:toc: auto
+:toc-position: left
+:toclevels: 2
+
+= Logs linux
+Patty RANDRIAMBOLOLONA <patty08@github.com>
+
+
+== CPU Info
+Le plus simple (et le plus efficace ?) pour obtenir les informations processeur est de simplement lire le fichier */proc/cpuinfo*
+
+    cat /proc/cpuinfo
+
+La sortie contient beaucoup d'informations :
+
+    processor       : 0
+    vendor_id       : GenuineIntel
+    cpu family      : 6
+    model           : 58
+    model name      : Intel(R) Pentium(R) CPU G2030 @ 3.00GHz
+    stepping        : 9
+    microcode       : 0x15
+    cpu MHz         : 1600.000
+    cache size      : 3072 KB
+    physical id     : 0
+    siblings        : 2
+    core id         : 0
+    cpu cores       : 2
+    apicid          : 0
+    initial apicid  : 0
+    fpu             : yes
+    fpu_exception   : yes
+    cpuid level     : 13
+    wp              : yes
+    flags           : fpu vme de pse tsc msr pae mce cx8 apic ...
+    bogomips        : 5986.82
+    clflush size    : 64
+    cache_alignment : 64
+    address sizes   : 36 bits physical, 48 bits virtual
+
+== power management:
+Avec ce fichier, vous pouvez par exemple connaître le nombre de coeur(s) :
+
+    cat /proc/cpuinfo | grep -i "^processor" | wc -l
+    
+Afficher le nom du modèle :
+
+    cat /proc/cpuinfo | grep -i "^model name" | awk -F": " '{print $2}' | head -1 | sed 's/ \+/ /g'
+    
+Ou encore afficher sa fréquence :
+
+    cat /proc/cpuinfo | grep -i "^cpu MHz" | awk -F": " '{print $2}' | head -1
+    
+Vous l'aurez compris, avec ce /proc/cpuinfo, on peut ressortir les infos comme on le souhaite. D'ailleurs, la plupart des outils / commandes listées ci-dessous l'utilise !
+
+== lscpu
+La commande lscpu permet d'afficher l'architecture du CPU en utilisant sysfs et bien sûr /proc/cpuinfo.
+
+    lscpu
+
+Voici le retour :
+
+    Architecture:          x86_64
+    CPU op-mode(s):        32-bit, 64-bit
+    Byte Order:            Little Endian
+    CPU(s):                2
+    On-line CPU(s) list:   0,1
+    Thread(s) per core:    1
+    Core(s) per socket:    2
+    Socket(s):             1
+    NUMA node(s):          1
+    Vendor ID:             GenuineIntel
+    CPU family:            6
+    Model:                 58
+    Stepping:              9
+    CPU MHz:               1600.000
+    BogoMIPS:              5986.36
+    Virtualization:        VT-x
+    L1d cache:             32K
+    L1i cache:             32K
+    L2 cache:              256K
+    L3 cache:              3072K
+    NUMA node0 CPU(s):     0,1
+
+== dmidecode
+Le programme dmidecode récupère les informations du système grâce au standard SMBIOS/DMI. On y retrouve donc toutes les informations relatives au BIOS, carte mère, processeur,     mémoire, connectiques, ...
+
+    dmidecode --type processor
+
+Voici la sortie pour les informations processeur :
+
+    # dmidecode 2.11
+    SMBIOS 2.7 present.
+
+    Handle 0x000B, DMI type 4, 42 bytes
+    Processor Information
+        Socket Designation: CPUSocket
+        Type: Central Processor
+        Family: Pentium
+        Manufacturer: Intel(R) Corporation
+        ID: A9 06 03 00 FF FB EB BF
+        Signature: Type 0, Family 6, Model 58, Stepping 9
+        Flags:
+            FPU (Floating-point unit on-chip)
+            VME (Virtual mode extension)
+            DE (Debugging extension)
+            PSE (Page size extension)
+            TSC (Time stamp counter)
+            MSR (Model specific registers)
+            PAE (Physical address extension)
+            MCE (Machine check exception)
+            CX8 (CMPXCHG8 instruction supported)
+            APIC (On-chip APIC hardware supported)
+            SEP (Fast system call)
+            MTRR (Memory type range registers)
+            PGE (Page global enable)
+            MCA (Machine check architecture)
+            CMOV (Conditional move instruction supported)
+            PAT (Page attribute table)
+            PSE-36 (36-bit page size extension)
+            CLFSH (CLFLUSH instruction supported)
+            DS (Debug store)
+            ACPI (ACPI supported)
+            MMX (MMX technology supported)
+            FXSR (FXSAVE and FXSTOR instructions supported)
+            SSE (Streaming SIMD extensions)
+            SSE2 (Streaming SIMD extensions 2)
+            SS (Self-snoop)
+            HTT (Multi-threading)
+            TM (Thermal monitor supported)
+            PBE (Pending break enabled)
+        Version: Intel(R) Pentium(R) CPU G2030 @ 3.00GHz
+        Voltage: 5.0 V 2.9 V
+        External Clock: 100 MHz
+        Max Speed: 3800 MHz
+        Current Speed: 3000 MHz
+        Status: Populated, Enabled
+        Upgrade: Socket BGA1155
+        L1 Cache Handle: 0x0008
+        L2 Cache Handle: 0x0007
+        L3 Cache Handle: 0x0009
+        Serial Number: Not Specified
+        Asset Tag: Fill By OEM
+        Part Number: Fill By OEM
+        Core Count: 2
+        Core Enabled: 2
+        Thread Count: 2
+        Characteristics: 64-bit capable
+            
+== lshw
+
+lshw est un programme permettant d'extraire des informations détaillées de la configuration matérielle de la machine. Pratique, il peut en outre exporter le résultat dans
+différents   formats (HTML, XML, JSON, ...).
+
+    lshw -C CPU
+
+Voici la sortie pour la class CPU :
+
+    *-cpu*
+    description: CPU
+    produit: Intel(R) Pentium(R) CPU G2030 @ 3.00GHz
+    fabriquant: Intel Corp.
+    identifiant matériel: b
+    information bus: cpu@0
+    version: Intel(R) Pentium(R) CPU G2030 @ 3.00GHz
+    emplacement: CPUSocket
+    taille: 1600MHz
+    capacité: 3800MHz
+    bits: 64 bits
+    horloge: 100MHz
+    fonctionnalités: x86-64 fpu fpu_exception wp vme ...
+    configuration: cores=2 enabledcores=2 threads=2
+    hwinfo
+    hwinfo permet d'afficher les informations matérielles d'un ordinateur.
+
+    hwinfo --cpu
+
+Résultat des informations du CPU :
+
+    01: None 00.0: 10103 CPU
+      [Created at cpu.304]
+      Unique ID: rdCR.j8NaKXDZtZ6
+      Hardware Class: cpu
+      Arch: X86-64
+      Vendor: "GenuineIntel"
+      Model: 6.58.9 "Intel(R) Pentium(R) CPU G2030 @ 3.00GHz"
+      Features: fpu,vme,de,pse,tsc,msr,pae,...
+      Clock: 1600 MHz
+      BogoMips: 5986.82
+      Cache: 3072 kb
+      Units/Processor: 16
+      Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+
+== cpuid
+Le paquet cpuid doit être installé au préalable. Cette commande permet d'obtenir les informations concernant un CPU x86.
+
+    cpuid
+
+Retour :
+
+    Vendor ID: "GenuineIntel"; CPUID level 13
+
+    Intel-specific functions:
+    Version 000306a9:
+    Type 0 - Original OEM
+    Family 6 - Pentium Pro
+    Model 10 -
+    Stepping 9
+    Reserved 12
+
+    Extended brand string: "        Intel(R) Pentium(R) CPU G2030 @ 3.00GHz"
+    CLFLUSH instruction cache line size: 8
+    Initial APIC ID: 2
+    Hyper threading siblings: 16
+
+    Feature flags bfebfbff:
+    FPU    Floating Point Unit
+    VME    Virtual 8086 Mode Enhancements
+    DE     Debugging Extensions
+    PSE    Page Size Extensions
+    TSC    Time Stamp Counter
+    MSR    Model Specific Registers
+    PAE    Physical Address Extension
+    MCE    Machine Check Exception
+    CX8    COMPXCHG8B Instruction
+    APIC   On-chip Advanced Programmable Interrupt Controller present and enabled
+    SEP    Fast System Call
+    MTRR   Memory Type Range Registers
+    PGE    PTE Global Flag
+    MCA    Machine Check Architecture
+    CMOV   Conditional Move and Compare Instructions
+    FGPAT  Page Attribute Table
+    PSE-36 36-bit Page Size Extension
+    CLFSH  CFLUSH instruction
+    DS     Debug store
+    ACPI   Thermal Monitor and Clock Ctrl
+    MMX    MMX instruction set
+    FXSR   Fast FP/MMX Streaming SIMD Extensions save/restore
+    SSE    Streaming SIMD Extensions instruction set
+    SSE2   SSE2 extensions
+    SS     Self Snoop
+    HT     Hyper Threading
+    TM     Thermal monitor
+    31     reserved
+
+    TLB and cache info:
+    5a: unknown TLB/cache descriptor
+    03: Data TLB: 4KB pages, 4-way set assoc, 64 entries

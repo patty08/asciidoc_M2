@@ -7,6 +7,7 @@ Patty RANDRIAMBOLOLONA <patty08@github.com>
 
 == Informations système
 uname - Identification du système.
+
 -a : toutes les informations.
 	dmesg - Messages du noyau (et ceux du boot).
 	uptime - Durée et charge du système.
@@ -30,13 +31,13 @@ useradd - Ajout d'un utilisateur :
 
 crée un compte linus, avec répertoire personnel et mot de passe vide.
 
-userdel - Suppression d'un compte utilisateur :
+*userdel* - Suppression d'un compte utilisateur :
 
 	userdel -r linus
 
 supprime le compte et le contenu de son répertoire.
+	
 	passwd - Modification d'un mot de passe :
-
 	passwd linus
 
 == Partitions et systèmes de fichiers
@@ -108,12 +109,16 @@ ext2, ext3, msdos, vfat, proc, iso9660, udf, smb.
 	-j : (dé)compresser avec b(un)zip2.
 	tar -czf archive.tar.gz distrib/
 crée une archive compressée du répertoire distrib/,
+	
 	tar -tvf archive.tar
 
 liste le contenu de l'archive,
+	
 	tar -xjf archive.tar.bz2
+
 extrait le contenu d'une archive compressée.
 installation classique
+
 	tar -xzf application-1.01.tar.gz
 	cd application-1.01
 	./configure
@@ -148,14 +153,17 @@ installation classique
 	apt-get upgrade
 
 == Gestion des processus
-- application & lance l'application à l'arrière-plan, ramène à l'avant-plan le job numéro 1,
-(Ctrl-Z) endort l'application à l'avant-plan,
+. application & lance l'application à l'arrière-plan, ramène à l'avant-plan le job numéro 1, (Ctrl-Z) endort l'application à l'avant-plan,
+	
 	bg
+
 - relance à l'arrière-plan un job endormi.
 ps - État des processus :
+
 	ps -ef
 	ou
 	ps -aux
+
 - affichage long de tous les processus du système.
 	top - Affichage continu des processus du système.
 	-d délai de rafraîchissement.
@@ -177,42 +185,56 @@ tue tous les processus accédant à la partition indiquée.
 
 == Utilitaires réseau
 - ifconfig - Configuration des interfaces réseau
+
 	ifconfig -a
 
 - affiche la configuration de toutes les interfaces réseau,
+
 	ifconfig eth0 192.1.1.50
 
 - configure la première interface ethernet.
+
 	route - Gestion de la table de routage du noyau :
 	route add -net 192.1.1.0 eth0
 
 - ajoute une route statique via l'interface eth0,
+
 	route add -net 172.1.1.0 gw 192.1.1.5
 
 - ajoute un réseau accessible par une passerelle,
+
 	route add default eth1
 
 - ajoute une route par défaut,
+
 	route del default
 
 - supprime la route par défaut.
+
 	socklist - Liste des sockets actives.
 
 - netstat - Statistiques réseau :
+
 	netstat -r
 
 - affiche la table de routage du noyau,
+
 	netstat -i
 
 - affiche l'état des différentes interfaces,
+
 	netstat -a
 
 - affiche l'état des sockets du système.
+
 	arp - Gestion de la table ARP du noyau :
+
 -a affiche toutes les entrées dans le cache ARP,
+
 	arp -d hote
 
 - supprime les entrées concernant l'hôte indiqué.
+
 	ping - demande d'écho vers d'autres hôtes :
 	ping -c 1 -w 2 192.1.1.53
 	une seule requête et attend au plus 2 secondes,
@@ -221,6 +243,7 @@ tue tous les processus accédant à la partition indiquée.
 - requête diffusée en broadcast à tous les hôtes du sous-réseau.
 
 - traceroute - Chemin pour joindre un hôte :
+
 	traceroute www.destination.com
 	-n ne pas traduire les adresses numériques en noms.
 	tcpdump - Examen du trafic réseau :
@@ -234,12 +257,15 @@ tue tous les processus accédant à la partition indiquée.
 	telnet mail.isp.com pop-3
 
 - connexion sur port 110 (Pop/3) du serveur de courrier.
-rsh - Exécution d'un shell distant.
-ssh - Exécution sécurisée d'un shell distant.
+
+	rsh - Exécution d'un shell distant.
+	ssh - Exécution sécurisée d'un shell distant.
 	ssh usera@192.168.1.54
 
 - ftp - Transferts de fichiers :
+
 Commandes usuelles :
+
 	open ftp.serveur.org
 	cd /chemin/distant/
 	lcd /chemin/local/
@@ -267,39 +293,50 @@ Commandes usuelles :
 
 == Gestion des modules du noyau
 
-lsmodListe des modules chargés.
-modinfoInformations sur un fichier module.
+. lsmodListe des modules chargés. modinfoInformations sur un fichier module.
+
 	insmod - Insertion d'un module dans le noyau :
 	insmod module.o
 
-rmmod - Suppression d'un modulé chargé :
+.  rmmod - Suppression d'un modulé chargé :
+
 	rmmod module
 
-depmod  - Vérification des dépendances :
+.  depmod  - Vérification des dépendances :
+
 	depmod -an
 
-modprobe - Chargement gérant les dépendances :
+. modprobe - Chargement gérant les dépendances :
+
 	modprobe module.o
 
 == Compilation d'un noyau Linux
-ftp ftp.kernel.org
+
+	ftp ftp.kernel.org
+
 récupérer le noyau désiré (connexion anonymous) depuis le répertoire /pub/linux/kernel/,
+
 	tar -xjf linux-XXXX.tar.bz2
 	cd linux-XXXX
 	make mrproper
 	make menuconfig
 	choisir et sauver la configuration désirée, puis
 	make dep clean bzImage (jusqu'au noyau 2.4)
+
 ou :
+
 make (depuis noyau 2.6)
-Puis, sous compte root :
+	
+	Puis, sous compte root :
+
 make modules && make modules_install
+	
 	cp System.map /boot/System.map-XXXX
 	cd arch/i386/boot/
 	cp bzImage /boot/vmlinuz-XXXX
 	vi /etc/lilo.conf
 	ajouter l'entrée pour le nouveau noyau, puis
 	/sbin/lilo
-	ou
+ou
 	vi /boot/grub/grub.conf
 	/sbin/init 6
