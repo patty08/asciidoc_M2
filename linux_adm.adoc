@@ -42,25 +42,32 @@ supprime le compte et le contenu de son répertoire.
 
 == Partitions et systèmes de fichiers
 .fdisk - Édition de la table des partitions :
+	
 	fdisk /dev/hda
+
 .mkswap - Création d'une zone de swap :
+	
 	mkswap /dev/hda2
 	mkswap /boot/swap_file
 
 .swapon - Activation d'une zone de swap :
+	
 	swapon /dev/hda2
 
 -a active toutes les zones de swap de /etc/fstab.
 
 .swapoff - Désactivation d'une zone de swap :
+	
 	swapoff /dev/hda2
 
 .mkfs - Création d'un système de fichiers :
+	
 	mkfs.ext2 /dev/hda3
 	mkfs.ext3 /dev/hda4
 	mkfs.vfat /dev/hda5
 
 .fsck - Vérification d'un système de fichiers :
+	
 	fsck.ext2 -p /dev/hda3
 
 .réparation automatique d'un système ext2/ext3,
@@ -340,3 +347,42 @@ make modules && make modules_install
 ou
 	vi /boot/grub/grub.conf
 	/sbin/init 6
+
+
+== TRICS
+
+=== Time zone reconfigurer Time Zone
+
+	sudo dpkg-reconfigure tzdata
+
+=== Configurér CLI, clavier avec accents
+
+	sudo apt install locales
+	sudo dpkg-reconfigure localces
+
+=== executer des packets 32 bites sur une machine 64 bites
+
+	dpkg --add-acrhitecture i386
+
+=== sécuriser TOP
+
+pour cacher les informations à d'autres utilisateurs, dans le cas ou la machine est partagé avec d'autres utilisateurs. Il faut lancer la commandes:
+
+	sudo mount -o remount,rw,hidepid=2 /proc
+
+IMPORTANT: et pour le mettre en permanance en cas de reboot, il faut modifier la line dans /etc/fstab
+
+	nano /etc/fstab
+
+modifier la ligne /proc en rajoutant dans la colone 'type'
+
+	defaults,hidepid=2
+
+=== changer paramètre SSH (modification de port, etc...)
+
+	nano /etc/ssh/sshd_config 
+
+. changer le port 22 en port 'xxx'
+. vous pouvez desactiver le 'PermitRootLogin' aussi
+
+	service ssh restart

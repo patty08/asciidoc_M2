@@ -24,7 +24,7 @@ host_vars/
    hostname2.yml
 playbook.yml
 roles:					  # ON APPELLE des FILS de 'roles' MODULES
-    common:               # this hierarchy represents a "role"   
+    common:               # this hierarchy represents a "role"
         tasks:            #
             main.yml      #  <-- tasks file can include smaller files if warranted
         handlers:         #
@@ -58,17 +58,17 @@ TIP: Running a playbook
 NOTE: https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
 
 . Cloud: Amazon, cloudStack, Openstack, etc
-. Commands: shell, script, expect, etc 
+. Commands: shell, script, expect, etc
 . Database: mysql, postgresql, redis, , etc
 . Files: copy, fetch, lineinline, template,
 . Messaging: rabbitmq,
-. Notification: irc, mail, jabber, 
+. Notification: irc, mail, jabber,
 . Packaging: apt, yum, pip, bower, npm
 . Source control: git, mercurial, svn, etc
 . System: user, group, etc
 . Docker: image, container, etc
 
-== Structure du fichier Playbook.yml  
+== Structure du fichier Playbook.yml
 === 1. Hosts
 
 	$ sudo mkdir /etc/ansible
@@ -82,57 +82,57 @@ TIP: mettre dans un fichier les hosts
 
 === 2. Tasks
 
-	- hosts: all
+	 - hosts: all
 	  user: root
 	  sudo: no
 	  vars:
 	    aaa: bbb
 	  tasks:
-	    - ...
+	     - ...
 	  handlers:
-	    - ...
+	     - ...
 
 === 3. Inclure dans Ansible -> 'Includes'
 
-- tasks:
+ - tasks:
 
-	- include: db.yml
+	 - include: db.yml
 
-- handlers:
+ - handlers:
 
-	- include: db.yml user=timmy
+	 - include: db.yml user=timmy
 
 === 4. Handlers
 
 *handlers:*
 
-	  - name: start apache2
+	   - name: start apache2
 	    action: service name=apache2 state=started
 
 *tasks:*
-	  - name: install apache
+	   - name: install apache
 	    action: apt pkg=apache2 state=latest
 	    notify:
-	      - start apache2
+	       - start apache2
 === Vars
 
-	- host: lol
+	 - host: lol
 	  vars_files:
-	    - vars.yml
+	     - vars.yml
 	  vars:
 	    project_root: /etc/xyz
 	  tasks:
-	    - name: Create the SSH directory.
+	     - name: Create the SSH directory.
 	      file: state=directory path=${project_root}/home/.ssh/
 	      only_if: "$vm === 0"
 
 === 5. Roles
 
-	- host: xxx
+	  - host: xxx
 	  roles:
-	    - db
-	    - { role:ruby, sudo_user:$user }
-	    - web
+	     - db
+	     - { role:ruby, sudo_user:$user }
+	     - web
 
 		# Uses:
 		roles/db/tasks/*.yml
@@ -140,7 +140,7 @@ TIP: mettre dans un fichier les hosts
 
 === 5. Task: Failures
 
-	- name: my task
+	 - name: my task
 	  command: ...
 	  register: result
 	  failed_when: "'FAILED' in result.stderr"
