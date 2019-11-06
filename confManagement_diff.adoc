@@ -41,9 +41,6 @@ Ansible - Seul le maître s'exécute sur la machine du serveur, mais aucun agent
 
 Saltstack - Ici, Server est appelé en tant que maître du sel  et les clients sont appelés en tant que serviteurs de sel  qui s'exécutent en tant qu'agents dans la machine cliente.
 
-En dehors de ce blog "Chef vs marionnette vs Ansible vs Saltstack", si vous voulez être formé par des professionnels sur ces technologies, vous pouvez opter pour une formation structurée d'edureka! Cliquez ci-dessous pour en savoir plus.
-
-
 
 == 3. La gestion
 
@@ -85,9 +82,6 @@ Ansible - Ansible supporte aussi les machines Windows mais le serveur Ansible do
 
 Saltstack - Salt Master fonctionne uniquement sous Linux / Unix mais les serviteurs de Salt peuvent aussi travailler sur Windows.
 
-En dehors de ce blog "Chef vs marionnette vs Ansible vs Saltstack", si vous voulez être formé par des professionnels sur ces technologies, vous pouvez opter pour une formation structurée d'edureka! Cliquez ci-dessous pour en savoir plus.
-
-Obtenez la certification maintenant!
 
 == 7. Coût
 

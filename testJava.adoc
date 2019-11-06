@@ -148,3 +148,34 @@ tous les constructeurs d'une Enum sont obligatoirement private.
 	Le mot-clé final est utilisable pour des variables, méthodes, classes, classes internes ou des classes internes statiques.
 	Devant une méthode :
 	On indique que cette méthode ne pourra plus être redéfinie dans une classe fille. Ce qui entraine une certaine optimisation dans les appels à cette méthode.
+
+=== Design pattern en JAVA
+Design Pattern
+
+Patron de conception Creation
+	- Fabrique
+	- Singleton
+	- Builder 
+Patron de conception Structurel 
+	- Adapter
+	- Proxy
+	- Composite
+Patron de conception Comportemetal 
+	- Strategy
+	- Iterator
+	- Template
+
+
+Patron de conception Creation
+	- Fabrique: Creation d'un objet dont le type depend du context
+	- Singleton: Creation sera une seule instance d'objet
+	- Builder: crostruir un objet en fonction de son contexte
+Patron de conception Structurel 
+	- Adapter: adaptation d'un objet à partir d'un autre
+	- Proxy: Representation d'un objet à partir d'un autre
+	- Composite: composition d'objet
+Patron de conception Comportemetal 
+	- Iterator
+	- Template
+	- Strategy
+
