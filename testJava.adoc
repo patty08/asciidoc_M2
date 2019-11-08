@@ -165,7 +165,6 @@ Patron de conception Comportemetal
 	- Iterator
 	- Template
 
-
 Patron de conception Creation
 	- Fabrique: Creation d'un objet dont le type depend du context
 	- Singleton: Creation sera une seule instance d'objet

@@ -127,3 +127,111 @@ Which is my favorite tool here? I would prefer either Splunk or ELK stack. These
 
 === Splunk
 Splunk is a propriety tool (paid tool). But, this also effectively means that working on Splunk is very easy. ELK stack however, is a combination of 3 open-source tools: ElasticSearch, LogStash & Kibana. It maybe free, but setting it up is not as easy as a commercial tool like Splunk. You can try both of them to figure out the better for your organization. You can read more about Splunk here: What is Splunk? 
+
+
+
+== What is DevOps Automation?
+    As we all aware Automation is the ultimate need for doing anything nowadays. In this, we will try to automate each and every step right from code generation till the code eventually gets pushed to code then monitoring it in real-time.
+    In this article, I have divided most widely used DevOps tools based on different categories based on their usage.
+
+=== Continuous Integration continuous deployment Tools
+==== 1)  Jenkins
+
+Perhaps the Most popular open-source continuous integration & continuous delivery servers. It allows continuous integration and continuous delivery of projects, regardless of the platform you are working on. It is a free source that can handle any kind of build or continuous integration. You can integrate Jenkins with a number of testing and deployment technologies.
+
+==== 2)  Travis CI
+Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub and bitbucket.
+
+Open source projects may be tested at no charge via travis-ci.org. Private projects may be tested at travis-ci.com on a fee basis. TravisPro provides custom deployments of a proprietary version on the customer's own hardware.
+
+==== 3)  Hudson
+
+Hudson is a powerful and widely used open-source continuous integration server providing development teams with a reliable way to monitor changes in source control and trigger a variety of builds. Hudson excels at integrating with almost every tool you can think of. Use Apache Maven, Apache Ant or Gradle or anything you can start with a command-line script for builds and send messages via email, SMS, IRC, and Skype for notifications.
+
+==== 4)  TeamCity
+
+It is a Java-based CI server package. TeamCity is a Server-based application that’s very simple and easy to get familiar with and has an absolutely amazing browser-hosted dashboard. TeamCity also provides build progress, drill-down detail, and history information on the projects and configurations.
+
+==== Containers*
+===== 1) Docker
+
+Docker is a container management service. The keywords of Docker are developed, ship and run anywhere. The whole idea of Docker is for developers to easily develop applications, ship them into containers that can then be deployed anywhere.
+
+
+
+
+===== 2) Kubernetes
+
+It is an open-source container-orchestration system for automating application deployment, scaling, and management. It was originally designed by Google and is now maintained by the Cloud Native Computing Foundation. It aims to provide a "platform for automating deployment, scaling, and operations of application containers across clusters of hosts".It works with a range of container tools, including Docker.
+
+==== Configuration Management
+===== 1)  Ansible
+
+
+Ansible is an open-source IT Configuration Management, Deployment & Orchestration tool. It aims to provide large productivity gains to a wide variety of automation challenges. It helps to run tasks in sequence and create a chain of events that must happen on several different servers or devices.
+    
+===== 2)  Chef
+
+Chef is a configuration management technology developed by Opscode to manage infrastructure on physical or virtual machines. It is an open-source developed using Ruby, which helps in managing complex infrastructure on the fly.
+
+===== 3)  Puppet
+
+Puppet is a configuration management tool developed by Puppet Labs in order to automate infrastructure management and configuration. Puppet is a very powerful tool which helps in the concept of Infrastructure as code. This tool is written in Ruby DSL language that helps in converting a complete infrastructure in code format, which can be easily managed and configured.
+
+
+==== Infrastructure provisioning
+===== 1) Terraform
+
+Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.
+Configuration files describe to Terraform the components needed to run a single application or your entire datacenter. Terraform generates an execution plan describing what it will do to reach the desired state, and then executes it to build the described infrastructure. As the configuration changes, Terraform is able to determine what changed and create incremental execution plans which can be applied. 
+
+==== Infrastructure Monitoring
+===== 1) Nagios
+     
+Nagios is free to use open-source software tools for continuous monitoring. It helps you to monitor systems, networks, and infrastructure. It is used for continuous monitoring of systems, applications, service and business Processes in a DevOps culture.
+
+
+Nagios runs plugins stored on the same server. It plugin's connects with a host or another server on your network or the Internet. Therefore, in the case of failure Nagios core can alert the technical staff about the issues. So, your technical team performs the recovery process before outage in the business processes.
+
+
+==== Application monitoring
+===== App Dynamics
+
+AppDynamics is a leading Application Performance Management (APM) product. It is a tool that monitors your Application Infrastructure and gives you code-level visibility. It is supported for all major technologies (Java, .NET, PHP, Node.js, NoSQL, etc) and can be installed either as on-premise or as SaaS (Software As a Service) solution.
+
+A piece of software called Agent is installed in the Application to be monitored. The Agent collects the performance metrics and sends them to a Server process called Controller. The controller processes the metrics and presents them via a Web Browser. A monitoring analyst can configure Alerts and generate reports using the Web Interface.
+
+===== New Relic
+
+New Relic's software analytics product for application performance monitoring (APM) delivers real-time and trending data about your web application's performance and the level of satisfaction that your end-users experience. With end to end transaction tracing and a variety of color-coded charts and reports, APM visualizes your data, down to the deepest code levels.
+
+==== Logs Management
+===== ELK Stack
+
+
+The ELK Stack is a collection of three open-source products —Elasticsearch, Logstash, and Kibana. They are all developed, managed, and maintained by the company Elastic.
+
+E stands for ElasticSearch: used for storing
+L stands for LogStash: used for both shipping as well as the processing and storing logs
+K stands for Kibana: is a visualization tool (a web interface) which is hosted through Nginx or Apache
+ELK Stack is designed to allow users to take to data from any source, in any format, and to search, analyze, and visualize that data in real-time.
+
+===== Splunk
+
+Splunk is used to search and analyze machine data. This machine data can come from web applications, sensors, devices or any data created by the user. It serves the needs of IT infrastructure by analyzing the logs generated in various processes, but it can also analyze any structured or semi-structured data with proper data modeling. It has built-in features to recognize the data types, field separators and optimize the search processes. It also provides data visualization on the search results.
+
+
+==== Cloud Computing platforms
+===== AWS Cloud
+
+Amazon Web Services (AWS) is Amazon’s cloud web hosting platform that offers flexible, reliable, scalable, easy-to-use, and cost-effective solutions. With this cloud, we need not plan for servers and other IT infrastructure which takes up much of time in advance. Instead, these services can instantly spin up hundreds or thousands of servers in minutes and deliver results faster. We pay only for what we use with no up-front expenses and no long-term commitments, which makes AWS cost-efficient.
+
+===== Azure
+
+It is a cloud computing platform, designed by Microsoft to successfully build, deploy, and manage applications and services through a global network of datacenters.
+Cloud computing can be referred to as the storing and accessing of data over the internet rather than your computer's hard drive. This means you don't access the data from either your computer's hard drive or over a dedicated computer network (home or office network)
+
+===== Google Cloud
+
+Google Cloud Platform is a suite of public cloud computing services offered by Google. The platform includes a range of hosted services for compute, storage and application development that run on Google hardware.
+Google Cloud Platform services can be accessed by software developers, cloud administrators and other enterprise IT professionals over the public internet or through a dedicated network connection.
