@@ -133,61 +133,61 @@ Which is my favorite tool here? I would prefer either Splunk or ELK stack. These
 Splunk is a propriety tool (paid tool). But, this also effectively means that working on Splunk is very easy. ELK stack however, is a combination of 3 open-source tools: ElasticSearch, LogStash & Kibana. It maybe free, but setting it up is not as easy as a commercial tool like Splunk. You can try both of them to figure out the better for your organization. You can read more about Splunk here: What is Splunk? 
 
 
-
 == What is DevOps Automation?
-    As we all aware Automation is the ultimate need for doing anything nowadays. In this, we will try to automate each and every step right from code generation till the code eventually gets pushed to code then monitoring it in real-time.
-    In this article, I have divided most widely used DevOps tools based on different categories based on their usage.
+
+As we all aware Automation is the ultimate need for doing anything nowadays. In this, we will try to automate each and every step right from code generation till the code eventually gets pushed to code then monitoring it in real-time.
+In this article, I have divided most widely used DevOps tools based on different categories based on their usage.
 
 === Continuous Integration continuous deployment Tools
-==== 1)  Jenkins
+==== 1.  Jenkins
 
 Perhaps the Most popular open-source continuous integration & continuous delivery servers. It allows continuous integration and continuous delivery of projects, regardless of the platform you are working on. It is a free source that can handle any kind of build or continuous integration. You can integrate Jenkins with a number of testing and deployment technologies.
 
-==== 2)  Travis CI
-Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub and bitbucket.
+==== 2.  Travis CI
 
+Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub and bitbucket.
 Open source projects may be tested at no charge via travis-ci.org. Private projects may be tested at travis-ci.com on a fee basis. TravisPro provides custom deployments of a proprietary version on the customer's own hardware.
 
-==== 3)  Hudson
+==== 3.  Hudson
 
 Hudson is a powerful and widely used open-source continuous integration server providing development teams with a reliable way to monitor changes in source control and trigger a variety of builds. Hudson excels at integrating with almost every tool you can think of. Use Apache Maven, Apache Ant or Gradle or anything you can start with a command-line script for builds and send messages via email, SMS, IRC, and Skype for notifications.
 
-==== 4)  TeamCity
+==== 4.  TeamCity
 
 It is a Java-based CI server package. TeamCity is a Server-based application that’s very simple and easy to get familiar with and has an absolutely amazing browser-hosted dashboard. TeamCity also provides build progress, drill-down detail, and history information on the projects and configurations.
 
 ==== Containers*
-===== 1) Docker
+===== 1. Docker
 
 Docker is a container management service. The keywords of Docker are developed, ship and run anywhere. The whole idea of Docker is for developers to easily develop applications, ship them into containers that can then be deployed anywhere.
 
-===== 2) Kubernetes
+===== 2. Kubernetes
 
 It is an open-source container-orchestration system for automating application deployment, scaling, and management. It was originally designed by Google and is now maintained by the Cloud Native Computing Foundation. It aims to provide a "platform for automating deployment, scaling, and operations of application containers across clusters of hosts".It works with a range of container tools, including Docker.
 
 ==== Configuration Management
-===== 1)  Ansible
+===== 1.  Ansible
 
 
 Ansible is an open-source IT Configuration Management, Deployment & Orchestration tool. It aims to provide large productivity gains to a wide variety of automation challenges. It helps to run tasks in sequence and create a chain of events that must happen on several different servers or devices.
     
-===== 2)  Chef
+===== 2.  Chef
 
 Chef is a configuration management technology developed by Opscode to manage infrastructure on physical or virtual machines. It is an open-source developed using Ruby, which helps in managing complex infrastructure on the fly.
 
-===== 3)  Puppet
+===== 3.  Puppet
 
 Puppet is a configuration management tool developed by Puppet Labs in order to automate infrastructure management and configuration. Puppet is a very powerful tool which helps in the concept of Infrastructure as code. This tool is written in Ruby DSL language that helps in converting a complete infrastructure in code format, which can be easily managed and configured.
 
 
 ==== Infrastructure provisioning
-===== 1) Terraform
+===== 1. Terraform
 
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.
 Configuration files describe to Terraform the components needed to run a single application or your entire datacenter. Terraform generates an execution plan describing what it will do to reach the desired state, and then executes it to build the described infrastructure. As the configuration changes, Terraform is able to determine what changed and create incremental execution plans which can be applied. 
 
 ==== Infrastructure Monitoring
-===== 1) Nagios
+===== 1. Nagios
      
 Nagios is free to use open-source software tools for continuous monitoring. It helps you to monitor systems, networks, and infrastructure. It is used for continuous monitoring of systems, applications, service and business Processes in a DevOps culture.
 
