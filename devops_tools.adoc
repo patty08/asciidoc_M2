@@ -1,3 +1,7 @@
+:toc: auto
+:toc-position: left
+:toclevels: 5
+
 = DevOps Tools
 
 == DevOps
@@ -156,9 +160,6 @@ It is a Java-based CI server package. TeamCity is a Server-based application tha
 ===== 1) Docker
 
 Docker is a container management service. The keywords of Docker are developed, ship and run anywhere. The whole idea of Docker is for developers to easily develop applications, ship them into containers that can then be deployed anywhere.
-
-
-
 
 ===== 2) Kubernetes
 
