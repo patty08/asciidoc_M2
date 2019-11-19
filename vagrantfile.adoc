@@ -1,0 +1,83 @@
+:toc: auto
+:toc-position: left
+:toclevels: 3
+
+= VagrantFile
+== Naming the Vagrant Machine
+Quand on crée un VM on aimerait tout de meme nommer notre VM. Les provisionner tel que VirtualBox par exemple, affichera le nom de la machine, la CLI a son tour sera pareil par defaut il sera nommé 'default' dans le cas contraire on lui donne un nom, avec la ligne `.define`
+
+  Vagrant.configure("2") do |config|
+    config.vm.box = "hashicorp/precise64"
+   config.vm.define "custom_vagrant_name"
+  end
+
+
+== Provider GUI Name
+On peut egalement afficher dans le provisionneur comme ceci:
+
+  Vagrant.configure("2") do |config|
+    config.vm.box = "hashicorp/precise64"
+    config.vm.provider "virtualbox" do |v|
+     v.gui = true
+     v.name = "custom_vm_name"
+    end
+  end
+
+
+== The Hostname
+le nom de hot est aussi necessaire pour ne pas changer le ``/etc/hostname`` il est possible de lui donner directement un nom, comme ceci:
+
+  Vagrant.configure("2") do |config|
+   config.vm.box = "hashicorp/precise64"
+   config.vm.hostname = "my-vagrant-machine"
+  end
+
+
+== Setting Memory and Number of Cores
+Comfigurer les ressources de la VM est aussi très important, en particulier la memoire et le nombre de cores / CPU.
+Par exemple avec Virtualbox, on le configure comme ceci:
+
+  Vagrant.configure("2") do |config|
+    config.vm.box = "hashicorp/precise64"
+   config.vm.provider "virtualbox" do |v|
+     v.gui = true
+     v.memory = 1024
+     v.cpus = 2
+    end
+  end
+
+== Opening / Forwarding Ports
+On peut egalement ouvrir un port et rediriger pour permettre une autre machine d'accèder au données de la VM.
+
+  Vagrant.configure("2") do |config|
+   config.vm.box = "hashicorp/precise64"
+   config.vm.network "forwarded_port", guest: 80, host: 8080
+  end
+
+== Sharing Folders
+le partage de dossier est aussi une possibiité:
+
+  Vagrant.configure("2") do |config|
+   config.vm.box = "hashicorp/precise64"
+   config.vm.synced_folder "local_folder", "/guest/folder"
+  end
+
+== TOUT en UN :)
+
+
+  Vagrant.configure("2") do |config|
+   config.vm.box = "hashicorp/precise64"
+
+   config.vm.network "forwarded_port", guest: 80, host: 8080
+   config.vm.hostname = "my-vagrant-machine"
+   config.vm.define "custom_vagrant_name"
+   config.vm.synced_folder "local_folder", "/guest/folder"
+
+   config.vm.provider "virtualbox" do |v|
+   v.gui = true
+   v.name = "custom_vm_name"
+   v.memory = 1024
+   v.cpus = 2
+   end
+
+  end
