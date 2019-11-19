@@ -64,7 +64,6 @@ le partage de dossier est aussi une possibiité:
 
 == TOUT en UN :)
 
-
   Vagrant.configure("2") do |config|
    config.vm.box = "hashicorp/precise64"
 
