@@ -81,11 +81,11 @@ rpm2cpio
 
 == Q16) Assume the / partition got read only error, what steps has to be take.
 
-Remount –o rw,remount
+	Remount –o rw, remount
 
 == Q17) How to find out whether the particular user locked or not?
 
-/et/passwd (!!)
+/etc/passwd (!!)
 
 == Q18) Please let us know how to stop the ssh service from a particular node.
 
@@ -97,27 +97,27 @@ Chage –l username
 
 == Q20) How to recover if the user deleted by mistake?
 
-# pwunconv     (It creates the users according  /etc/passwd   file and deletes the  /etc/shadow   file)
+	pwunconv     (It creates the users according  /etc/passwd   file and deletes the  /etc/shadow   file)
 
 == Q21) How to put never expiry to a user?
 
-# passwd     -x    -1    <user login name> How to put never expiry to a user?
+	passwd     -x    -1    <user login name> How to put never expiry to a user?
 
-# passwd     -x    -1    <user login name>
+	passwd     -x    -1    <user login name>
 
 == Q22) How to find the users who are login and how to kill them?
 
-# fuser    -cu    (to see who are login)
+	fuser    -cu    (to see who are login)
 
-# fuser    -ck    <user login name>(to kill the specified user)
+	fuser    -ck    <user login name>(to kill the specified user)
 
 == Q23) How can you make a service run automatically after boot?
 
-# chkconfig <service  name>   on
+	chkconfig <service  name>   on
 
 == Q24) How to check whether the ssh is running or not on the remote host?
 
-# nmap   -p  22    <IP address of the remote host>    (to see the ssh is running or not on remote system)
+	nmap   -p  22    <IP address of the remote host>    (to see the ssh is running or not on remote system)
 
 == Q25) How to check the remote server services are running or not?
 
@@ -187,7 +187,7 @@ Crontab –l –u rbtadmin
 
 == Q39) What command use for check IP address?
 
-# ifconfig
+	ifconfig
 
 == Q40) How many type of class and explain?
 
@@ -202,33 +202,33 @@ class c 192-221
 
 == Q42) Expline restart the system?
 
-# systemctl restart network
+	systemctl restart network
 
 == Q43) How to create the use?
 
-# useradd  linux
+	useradd  linux
 
 == Q44) How to assign password the user?
 
-# passwd linux
+	passwd linux
 
 == Q45) How to login the user?
 
-# su linux
+	su linux
 
 == Q46) How to check user list?
 
-# cat /etc/passwd
+	cat /etc/passwd
 
 == Q47) How to create group?
 
-# groupadd my group
+	groupadd my group
 
-# cat /etc/my group
+	cat /etc/my group
 
 == Q48) How to add user the group?
 
-# useradd  -d/root/abi abhi
+	useradd  -d/root/abi abhi
 
 == Q49) Explained date Command?
 
