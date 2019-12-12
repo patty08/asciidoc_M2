@@ -1,0 +1,1321 @@
+:toc: auto
+:toc-position: left
+:toclevels: 3
+
+
+= Linux Interview Question and Answer
+
+== Q1) What is the difference between chmod and chown.
+
+Chmod change  the file/directory permission
+
+The Chown to change the ownership of a file or directory and ownership away to someone else.
+
+== Q2) How to check the default run level.
+
+Cat /etc/inittab or who –r
+
+== Q3) What is the ID for Logical volume management?
+
+LVM Id: 8e
+
+== Q4) What is the steps if the remote server is not connecting?
+
+Ping remote server IP. (to check  alive or not)
+
+Make sure remote server sshd service enabled
+
+If everything is ok, login remote server ILO, open the remote console and check the status
+
+== Q5) Explain how to stop ssh connection for a particular server or network.
+
+nmap
+
+== Q6) How we are giving file permission for the particular user.
+
+Setfacl –m u:username:permission filename
+
+Getfacl username (to check the user permissions)
+
+== Q7) I need to check the particular service opened or not. Please explain.
+
+Netstat –anultp service name or port number
+
+== Q8) How to enable/disable the services in particular run level.
+
+Chkconfig –level 2 off
+
+== Q9) Explain nfs hard and soft mount. :
+
+Hard Mount : After restarting the server keep on search nfs mount partition until found the device, if the device not found server not will not boot,.
+
+Soft mount: if device not found it will skip
+
+== Q10) What is the difference between YUM and rpm.
+
+Rpm: need local rpm file and dependencies
+
+Yum: need repository (collections of rpm) local or internet
+
+== Q11) What is the command to check the size of file or directory?
+
+du –sh <file/dir>
+
+== Q12) Which one is the default sticky bit directory?
+
+/tmp
+
+== Q13) How to check how many files opened in Linux.
+
+Lsof
+
+== Q14) How to find zombie process and how to kill?
+
+ps aux |grep “defunct” and ps aux |grep Z  to Kill: In order to kill these processes, you need to find the parent process first.
+
+pstree –paul and find parent process id, use kill -9
+
+== Q15) What is the command for extract RPM?
+
+rpm2cpio
+
+== Q16) Assume the / partition got read only error, what steps has to be take.
+
+Remount –o rw,remount
+
+== Q17) How to find out whether the particular user locked or not?
+
+/et/passwd (!!)
+
+== Q18) Please let us know how to stop the ssh service from a particular node.
+
+/etc/hosts.deny à sshd: ALL except Node IP
+
+== Q19) What is the command to check password expire information for the particular user.
+
+Chage –l username
+
+== Q20) How to recover if the user deleted by mistake?
+
+# pwunconv     (It creates the users according  /etc/passwd   file and deletes the  /etc/shadow   file)
+
+== Q21) How to put never expiry to a user?
+
+# passwd     -x    -1    <user login name> How to put never expiry to a user?
+
+# passwd     -x    -1    <user login name>
+
+== Q22) How to find the users who are login and how to kill them?
+
+# fuser    -cu    (to see who are login)
+
+# fuser    -ck    <user login name>(to kill the specified user)
+
+== Q23) How can you make a service run automatically after boot?
+
+# chkconfig <service  name>   on
+
+== Q24) How to check whether the ssh is running or not on the remote host?
+
+# nmap   -p  22    <IP address of the remote host>    (to see the ssh is running or not on remote system)
+
+== Q25) How to check the remote server services are running or not?
+
+Nmap servername portname
+
+== Q26) Explain about kernel panic error.
+
+Hardware error, Kernel error
+
+== Q27) Step out if you are facing too many file system while login via ssh?
+
+Lsof |wc –l (list of open files)
+
+If more than 65k, open /etc/sysctl.conf increase the file.mx value and execute below command
+
+Sysctl –p
+
+== Q28) How to disable direct root login?
+
+Using /etc/ssh/sshd_congig
+
+== Q29) Which is default sticky bit directory?
+
+/tmp
+
+== Q30) How to check the integrity of a file system or consistency of the file system?
+
+fsck   <device or partition name>command we can check the integrity of the file system.
+
+The before running the fsck command first unmount that partition and then run fsck command.
+
+== Q31) How many types of disk space issues can we normally get?
+Disk is full.
+Disk is failing or failed.
+File system corrupted or crashed.
+O/S is not recognizing the remote luns when scanning, …etc.,
+== Q32) What is the command to check default run level.
+
+The default run level command is /etc/inittab file in most Linux operating systems.
+
+== Q33) A system is able to ping locally  but not out site. Why?
+May be there is no access to outside.
+May be outside is in a different network from the local.
+May be permission is denied for that system to access outside.
+If there is access, but router or modem or network switch or NIC may not be working to access the outside.
+== Q34) If not able to create the file in any partition, what might be the issue.
+
+Permission check and disk space getting full
+
+== Q35) Explain ping Command?
+
+The ping command is used to determine connectivity between hosts on a network
+
+$ ping google.com
+
+== Q36) Explain how to check cron job particular user.
+
+Crontab –l –u rbtadmin
+
+== Q37) Kernel path
+
+/boot/grub/grub.cong
+
+== Q38) What is linux library file extension,
+
+.so
+
+== Q39) What command use for check IP address?
+
+# ifconfig
+
+== Q40) How many type of class and explain?
+
+There are Three types of class
+
+class A 1-126
+class B 128-191
+class c 192-221
+== Q41) What command use for save and exit?
+
+:wq
+
+== Q42) Expline restart the system?
+
+# systemctl restart network
+
+== Q43) How to create the use?
+
+# useradd  linux
+
+== Q44) How to assign password the user?
+
+# passwd linux
+
+== Q45) How to login the user?
+
+# su linux
+
+== Q46) How to check user list?
+
+# cat /etc/passwd
+
+== Q47) How to create group?
+
+# groupadd my group
+
+# cat /etc/my group
+
+== Q48) How to add user the group?
+
+# useradd  -d/root/abi abhi
+
+== Q49) Explained date Command?
+
+The date command displays/sets the system date and time like this.
+
+$ date
+
+$ date –set=”8 JUN 2017 13:00:00”
+
+== Q50) What is relevance of $?
+
+It reflects the status of previous command
+
+If 0 – Success
+If Non-Zero – Not Success
+== Q51) What happens if #/bin/php as shebang in a script.
+
+It considers the script as a PHP script
+
+== Q52) Whether Nested if-else is possible in bash scripting?
+
+YES
+
+== Q53) Which is the best command that can be used for checking selinux activation status
+
+getenforce
+
+== Q54) If we need to escape single quote (‘) in echo, what is the process
+
+Two ways
+
+echo “‘hi’”
+echo \’hi\’
+== Q55) What is load-average in linux.
+
+It’s the average of the usage of each CPU
+
+It can be found with 4 commands
+
+w
+uptime
+top
+cat /proc/loadavg
+== Q56) How tree format of format listed
+
+pstree -pua
+
+ps ax –forest
+
+== Q57) What is the use of the command top
+
+This command is the task manager of linux. We could able to find load average, memory usage, swap usage, total number of processes, CPU, Memory usage of each processes in sorted format.
+
+== Q58) What is symbolic link or symlink?
+
+It is shortcut of a big command, we can do this using the command ‘ln’
+
+Eg: ln -s /usr/local/redis/bin/redis-cli /usr/bin/redis-cli
+
+We can directly use the command redis-cli
+
+== Q59) What are the features of /proc folder
+
+All process identification is stored in this folder
+
+It will list all process id as folders /proc/12435
+It will show the command used by the process
+It will show the files used by the process
+Memory dump etc
+== Q60) How to find a pattern from a file or command?
+
+Use ‘grep’ command
+
+Eg: cat /proc/meminfo  | grep MemFree
+
+== Q61) Find who all are logged in to the system?
+
+Use command
+
+who -Hu
+
+== Q62) Which Terminal you are working in?
+
+Find it using ‘tty’ command or who command
+
+== Q63) What to do if $PATH is lost, and its output is blank?
+
+Fix it by adding atleast the system binary path, so that basic command
+
+export PATH=/sbin:/usr/bin:/usr/sbin
+
+== Q64) Command ifconfig is not found in my system, how to get my ip address
+
+Use command
+
+ip a
+
+== Q65) What is the method to run a command in background?
+
+command &
+
+== Q66) How to list selinux users?
+
+semanage user -l
+
+== Q67) My command ‘setenforce 0’ is not working, what to do?
+
+Edit /etc/selinux/config anf change the enforcement to disabled and reboot the server.
+
+== Q68) What are the known commands for disk partitioning?
+
+fdisk, parted
+
+== Q69) Can we have dynamicity for my disk?
+
+Yes, use LVM
+
+== Q70) What make LVM different from ext3 and ext4
+
+LVM is a utility for dynamically extent or shrink a volume. ext3, ext4, it is not possible.
+
+== Q71) When I executed ‘vgchange -ay’, I could find another lvm disk attached. How to get it mounted in my system.
+
+Once the above command is executed, the new volgroup will be available to use.
+
+Then mount to a location like
+ mount /dev/mapper/VolGroup/pv /mnt
+
+== Q72) How many primary partitions are created by default?
+
+4
+
+== Q73) Which is the hexadecimal code for LVM
+
+8e
+
+== Q74) A rpm package is owned by some third-party vendor. How to get the vendor details of an rpm?
+
+rpm -qi <package>
+
+== Q75) rpm -qf /sbin/vi : What is the output of this command?
+
+It gives the package in which the provided binary associated.
+
+== Q76) Which command will list the current time source?
+
+ntpd -q
+
+== Q77) Write the command to list all ports added in firewall.
+
+Firewall-cmd –list-ports
+
+== Q78) What does the following command does?
+
+(firewall-cmd –zone external –permanent –add-forward-port port=25:proto=tcp:toaddr=10.10.1.80)
+
+It will forward the inward traffic of SMTP to the IP mentioned.
+
+== Q79) What are the list of sequence of commands to enable Kerberos authentication
+
+kadmin, ktadd, authconfig, kinit
+
+== Q80) What to do for enabling  remote logging?
+Open /etc/rsyslog.conf and add the following line.
+*.* @@IP:514
+systemctl restart rsyslog
+== Q81) Which Directive in Apache Virtualhost defines the path of the web files?
+
+DocumentRoot
+
+== Q82) What is the relevance of DirectoryIndex?
+
+It defines the file to be considered as index file. Eg ‘DirectoryIndex index.php index.html’ : In this it will find index.php first when the URL is accessed, if this file is not available, it will search for index.html as index page.
+
+== Q83) What is the difference between passwd and htpasswd
+Passwd is used for setting the password for a System User.
+Htpasswd is used for setting the password for Apache Web User.
+== Q84) Which SELinux policy is used for Apache WebServer?
+For web files, httpd_sys_content_t is used
+For NFS mount files, httpd_use_nfs
+== Q85) Instead systemctl, which all commands used for handling apache service.
+
+apachectl
+
+apachectl -t : Checks Syntax
+apachectl start/stop/restart : For handling service
+== Q86) How to display all WebSite VirtualHost?
+
+Use command : httpd -D DUMP_VHOSTS
+
+== Q87) How to set the SMTP port for all IPs in the servers? How to do this without editing the configuration in Postfix.
+
+Execute command : postconf -e inet_interfaces=all
+
+== Q88) If we have 2 smtp service installed in the server, how to switch to the required one?
+
+Use : alternatives –config mta (mta is mail transfer agent)
+
+== Q89) What is PTR record in Bind Zone?
+
+Its is Pointer Record for reverse lookup : Inorder to get hostname if IP is queried.
+
+== Q90) Which are two main command in bind inorder to make sure that Bind will work perfectly.
+named-checkzone
+named-checkconf
+== Q91) How to lookup a domain using public DNS?
+
+dig @8.8.8.8 domainname
+
+== Q92) How to reverse lookup for IP address?
+
+dig -x IP-Address
+
+== Q93) How to take backup of my wordpress DB?
+
+Use command : mysqldump -hHOST -uUSER -pPASSWORD DB_NAME > DB_NAME.sql
+
+== Q94) Restore wordpress DB to mySQL
+
+mysql -hHOST -uUSER -pPASSWORD DB_NAME < DB_NAME.sql (Create DB prior using ‘create database db_name’)
+
+== Q95) Instead of using ‘reboot’ or ‘shutdown -r’, which command can be used in Linux to do this.
+
+Use Init command : init 6 (6 option is for reboot in Linux Runlevels)
+
+== Q96) Which attribute is set for executable on group level.
+
+setgid
+
+chmod g+s /usr/bin/wall
+
+== Q97) Mkdir -p can create
+
+A.Both b and c
+
+B.Parent directory
+
+C.Sub directory
+
+D None of above”]
+
+A.Both b and c
+
+== Q98) Changing from  current directory to root directory
+
+A.cd /root
+
+B.cd ..
+
+C.cd /boot
+
+D.cd /”]
+
+B.cd ..
+
+== Q99) Bash shell has inbuilt cmds.
+
+They are
+
+A.pushd
+
+B.Popd
+
+C .both
+
+D.none
+
+C .both
+
+== Q100) What option in touch cmd allows to display Time of our wish.
+
+A.Touch -t 201812190820 file
+
+B.touch -t yyyymmddhrmin file
+
+C.touch file
+
+D.none”]
+
+B.touch -t yyyymmddhrmin file
+
+== Q101) To reduce the risk of accidentally removing file what option must be used.
+
+A.Rm -i
+
+B.Rm -rf
+
+C.Rm
+
+D.none of above”]
+
+A.Rm -i
+
+== Q102) To preserve permission and Time stamp on file while copying.
+
+A.cp -p
+
+B.cp  -s
+
+C.cp -d
+
+D.none of above”]
+
+A.cp -p
+
+== Q103)  how to display cat output in reverse order
+
+A.cat file reverse
+
+B.concate file
+
+C.tac file
+
+D.none”]
+
+C.tac file
+
+== Q104) Dir that contain data which is served by system
+
+A./
+
+B./root
+
+C./srv
+
+D./proc”]
+
+C./srv
+
+== Q105) Cmd to exit current  shell
+
+A.ctrld
+
+B.exit
+
+C.logout
+
+D.all of above”]
+
+D.all of above
+
+== Q106) Cmd to get list of color output
+
+A.Ls – -color
+
+B.Ugoa rwx
+
+C.421 rwx
+
+D.Chmod u=rwx,g+x file name.”]
+
+A.Ls – -color
+
+== Q107) binary form of r-x
+
+A.5
+
+B 101
+
+C.401
+
+D.1001″]
+
+B. 101
+
+== Q108) cmd to find files between 15-20 days
+
+A.find /dirpath -mtime 15-20
+
+B.find /dirpath -mtime +15 -mtime -20
+
+C.find /dirpath |grep mtime 15-20
+
+D.all”]
+
+B.find /dirpath -mtime +15 -mtime -20
+
+== Q109) cmd to view files
+
+A.cat
+
+B.more/less
+
+C. head/tail
+
+D.all”]
+
+D.all
+
+== Q110) Navigating letters inside vi editor
+
+A.dfgp
+
+B.hjkl
+
+C.rpmn
+
+D.none”]
+
+B.hjkl
+
+== Q111) comparing two files cmds.
+
+A.none
+
+B.vimdiff
+
+C.sdiff
+
+D.all”]
+
+D.all
+
+== Q112) what option with grep cmd give the count of  number of occurance in file
+
+A.-i
+
+B. -c
+
+C.-v
+
+D..none of above.”]
+
+B. -c
+
+== Q113) cmd to combine standard error and standard output
+
+A.2>&1
+
+B.2>
+
+C. 1&2>
+
+D.None”]
+
+A.2>&1
+
+== Q114) if 0 to 6 are week  indication in crontab then scheduling
+
+Job in Monday will be”]
+
+A.0
+
+B.2
+
+C.6
+
+D.1″]
+
+D.1
+
+== Q115) su – user. What happen do
+
+A.Setup user login environment similar as that of direct user
+
+B.we need to use because it’s the only format to use su cmd
+
+C.none of above
+
+D.both a &b”]
+
+A.Setup user login environment similar as that of direct user
+
+== Q116) wich of the directory can be. Considered as black hole in Linux
+
+A./Dev/null
+
+B./Dev/tty
+
+C./sbin
+
+D./Mnt”]
+
+B./Dev/tty
+
+== Q117) system user has uid value is
+
+A.0
+
+B.1-499
+
+C.500 to 65534
+
+D.only root user have uid’s”]
+
+B.1-499
+
+== Q118) if source file gets deleted, which one can still access the destination file
+
+A.Hard link
+
+B.Source file cannot be delated
+
+C.Soft link
+
+D.Destination file is independent of source file”]
+
+A.Hard link
+
+== Q119) remote file systems are
+
+A.ext3
+
+B.ext2
+
+C.nfs
+
+D.a&b”]
+
+C.nfs
+
+== Q120) What blocks are created when formatting file system using extend file system in Linux
+
+A.Master and superblock
+
+B.Data and inode block
+
+C.Both a&b
+
+D.None
+
+C.Both a&b
+
+== Q121) option to erase rpm package in Linux.
+
+A.-d
+
+B.-dv
+
+C.-q
+
+D.-ev”]
+
+D.-ev
+
+== Q122) to remove a file system..unmounting is done first
+
+A .ture
+
+B.False”]
+
+A .ture
+
+== Q123) cmd to check ram available space in linux
+
+A .free -ram
+
+B.free -m
+
+C.none
+
+D.both”]
+
+B.free -m
+
+== Q124) Which file in system is responsible for providing sudo access
+
+A./etc/config
+
+B./etc/sudoers
+
+C./etc/proc
+
+D./etc/visudo”]
+
+B./etc/sudoers
+
+== Q125) Cmd to put user password to non-expiry state.
+
+A.Passed user
+
+B.Passwd -x 99999 user
+
+C.Psswwd -e user
+
+D.None”]
+
+B.Passwd -x 99999 user
+
+== Q126) cmd to copy files in between the connected server
+
+A.scp filename user@server:/destination
+
+B.winscp filename user@server:/destination
+
+C.cp -v filename user@server:/destination
+
+D.None”]
+
+A.scp filename user@server:/destination
+
+== Q127) cmd to make ext file systems
+
+A.resize2fs ext
+
+B.mkfs ext
+
+C.pvcreate ext
+
+D.lvcreate ext”]
+
+B.mkfs ext
+
+== Q128) authentication logs are available in
+
+A./Var/log/messages
+
+B./var/log/secure
+
+C./var/log/auth.log
+
+D./var/log/dmseg”]
+
+C./var/log/auth.log
+
+== Q129) rebooting server can be followed by
+
+A.reboot
+
+B.init 6
+
+C.init 0
+
+D.Both a&b”]
+
+D.Both a&b
+
+== Q130) What is the directory name where ssh key pair gets generated( ssh-keygen -t rsa)
+
+A./etc/config
+
+B..ssh
+
+C.ssh
+
+D./etc/security”]
+
+B..ssh
+
+== Q131) which of the below is not a filter cmd
+
+A.sed
+
+B.pipe
+
+C.export
+
+D.cat”]
+
+C.export
+
+== Q132) jobs can be schedule using
+
+A.crontab
+
+B.at cmd
+
+C.both a and b
+
+D.sudoers file”]
+
+C.both a and b
+
+== Q133) which cmd gives info on how long server is running after it starts
+
+A.time
+
+B.server time
+
+C.uptime
+
+D.reboot time”]
+
+C.uptime
+
+== Q134) How to make a file immutable / ubdeletable in linux ?
+
+chattr +i filename
+
+== Q135) which  is network related cmd in lnux
+
+A.Ifconfig
+
+B.traceroute
+
+C.netstat -m
+
+D.all”]
+
+D.all
+
+== Q136) which cmd is used to renice the process or priority
+
+A.nice
+
+B.ps
+
+C.renice
+
+D.all of above”]
+
+C.renice
+
+== Q137) Cmds to see system usage on linux
+
+A.top
+
+B.ps
+
+C.vmstat
+
+D.only a b
+
+E.all”]
+
+E.all
+
+== Q138) troubleshooting tools  in Linux
+
+A.fuser
+
+B.vmstat
+
+C.chroot
+
+D.all”]
+
+D.all
+
+== Q139) The partitioning of disk in primary partition defines under
+
+A.bootloader
+
+B.Master boot record
+
+C.Kernel
+
+D.None of them.”]
+
+B.Master boot record
+
+== Q140) to mark the created swap space as permanent..one must put entry in
+
+A./etc/crontab
+
+B./etc/config
+
+C./etc/fstab
+
+D.None”]
+
+C./etc/fstab
+
+== Q141) Where is rpm database located in linux
+
+A./Var/lib/
+
+B./Var/lib/db/rpm
+
+C./Var/rpm
+
+D.Var/lib/rpm”]
+
+D.Var/lib/rpm
+
+== Q142) cmd to change hostname to Rakesh
+
+A.sysctl kernal.host=Rakesh
+
+B.sysctl kernal.hostname=Rakesh
+
+C.both b and a”]
+
+D.None
+
+B.sysctl kernal.hostname=Rakesh
+
+== Q143) To check the status of  inbuilt firewall  in Linux
+
+A.service iptables status
+
+B.service network status
+
+C.both of them
+
+D.none of them.”]
+
+A.service iptables status
+
+== Q144) cmd to create samba password
+
+A.smbpassword -a user
+
+B.passwd user
+
+C.sambapasswd user
+
+D.None of them.”]
+
+A.smbpassword -a user
+
+== Q145) ssh protocols features  are
+
+A.to provide secure channel
+
+B.no one can intercept the communication
+
+C.authentication info are less secure.
+
+D.a &b”]
+
+D.a &b
+
+== Q146) removing subscriptions cmds in ljnux
+
+A.subscription-manager –remove –serial=serial number
+
+B.subscription-manager remove –serialnumber
+
+C.subscription-manager remove –serial=serial number
+
+D.none”]
+
+C.subscription-manager remove –serial=serial number
+
+== Q147) Explain the softcopy and hard copy and syntax.
+Ls –s <souce > <target>
+Ls <source> <target>
+== Q148) Describe the fields’ ls –lrt fields
+
+It will give 9 fileds file type, dir/file, file permissions, file owner, file group, file size, file access time, file name
+
+== Q149) How to find all the opened files in a dir
+
+By using lsof
+
+== Q150) How to transfer files from ne server to another server
+
+Using ftp, sftp
+
+== Q151) How to get +100 MB files in file system
+
+Find . –type  f -size +100M
+
+== Q152) How to get the count of word in a file
+
+Grep –c “pattern” <fle_name?
+
+== Q153) How to kill the process
+
+Kill -9 , Kill -9 and kill -15 difference
+
+== Q154) How to replace a string
+
+Using sed
+
+== Q155) How to get 90 line form file
+
+Sed –n 90 filename
+
+== Q156) What is the use of scp command in linux ?
+
+SCP command stands for secure copy. It is used to copy/download data from one machine to another machine.
+
+== Q157) What is telnet and what does it do ?
+
+the telnet command is used to check the connectivity to other servers. It helps you to check whether you are able to talk to another server or now. Ex: telnet 192.0.0.1 22 where 22 is the port number.
+
+== Q158) What is a bastion host ?
+
+A bastion host is also known as jump server. It is used to connect from one machine to another machine securely. Bastion hosts are used to connecting to private servers securely.
+
+== Q159) Name some of the text editors that are available in Linux ?
+
+Some of the common text editors that are available in Linux are vi/vim, nano, subl, gedit, atom, emacs. Vi is the default editor that you have in Linux machines.
+
+== Q160) What are the different zip files formats that are available in Linux ?
+
+The different zip formats in Linux are zip, gzip and bzip.
+
+== Q161) What is the difference between cp and mv command ?
+
+cp command stands for copy and is used to copy data from one location to another. mv stands for the move and is used to move data from one location to another.
+
+== Q162) How can you run a process in the background in Linux ?
+
+You can run a process in the background by pressing ctrl+z command.
+
+== Q163) What is the use of ‘chown’ command ?
+
+chown stands for ‘change ownership’ and is used to change the ownership of a file or directory. Eg: chown username.username <filename>.
+
+== Q164) What is Server?
+A server is a tool which does the activity like storing, load balancing, running the application process ( Mobile/laptop which has more memory)
+whatever if accessible in the network, we may name that as differently, But all are servers only. Exam: routers, LDAP, switch, etc
+== Q165) why do we need OS – Operating system?
+OS is supporting between the hardware and the user request in every Application. this will do backround processes
+hardware don’t understand what the user needs
+== Q166) Linux Commands?
+mkdir – create the directory
+cd – to go Path for directory
+rm,rf removing the directory or files
+scp – file moving from one server to another server
+== Q167) how to connect one server from another server?
+using SSH, we can connect
+we have to keep the public k
+ey of A server to B server
+then we can connect A server from B server
+== Q168) What is Memory?
+RAM
+ROM
+Cache
+== Q169) how application works?
+
+for an application (depends on the requirement ) needs below:
+
+Apache
+tomcat
+Database
+Load balancer
+SSO –  Single Sign-On
+LDAP
+== Q170) when user access the application url, it will go to recursive resolver (There it will check the urls end like .org,.com,etc..)then root server from there it will connect with other root servers then will find the IP from DNS (Domaqin name system). DNS will be available between particular regions with interconnection
+After finding the IP address of an Application will search with that
+for that Subnet will help on that
+In this OSI model will come
+== Q171) Tyes of layers
+
+physical,Data(MAC) ,network(IP), transport(TCP/UDP), Session, Presentation, Application
+
+while finding the destination IP Address then it will go to many topics
+
+Firewall
+Types of networks (Private/Public)
+Routers
+Ports, SFTP,FTP,HTTP
+Ethernet
+ISP – Internet Service Provider
+Wi-Fi
+== Q172) Then the request will to user System,vice versa
+
+In the destination server,via Apache, tomcat the request would be analyzed and based on the request that will reply to the user
+
+== Q173) In the Windows we can Check the logs from the Event viewer, Linux under Server logs,Catalina.out,nohup.out
+
+nohup would be useful to run the process when the user logged off
+
+== Q174) what is the commnd to check the free memory in server
+
+free -m
+
+== Q175) file to check the O.S user,home directory details
+
+/etc/passwd
+
+== Q176) file to check the group and groupid detaiks
+
+/etc/groups
+
+== Q177) command to display filesystems
+
+df -h
+
+== Q178) command to check interface/ip details
+
+ifconfig
+
+== Q179) file to check/change the hosname details
+
+/etc/hosts
+
+== Q180) commsnd to securely login to server
+
+ssh
+
+== Q181) which user in server has all the administrative privileges
+
+root
+
+== Q182) how do a normal user executed the highly root privileges
+
+using SUDO
+
+== Q183) command to check all the process running on the server
+
+ps -ef
+
+== Q184) frequently used editor in linux
+
+vi
+
+== Q185) command to search the files for required pattern
+
+grep
+
+== Q186) command to check the top process,CPU utilizatio,swap utilization
+
+top
+
+== Q187) command to list the volumes attached to the server
+
+lsblk
+
+== Q188) how to you create a soft link for the file
+
+ln -s
+
+== Q189) command to delete the file
+
+rm
+
+== Q190) command to change the permission of the file
+
+chmod
+
+== Q191) command to create user
+
+useradd
+
+== Q192) command to create directory
+
+mkdir
+
+== Q193) command to create a file
+
+cat
+
+== Q194) command to create a file with 0 bytes
+
+touch
+
+== Q195) command to view the file page/page
+
+more
+
+== Q196) command to reboot the server
+
+reboot
+
+== Q197) command to install updates in silent
+
+yum update -y
+
+== Q198) command to install http
+
+yum install -y httpd
+
+== Q199) command to start apache
+
+srvctl start http
+
+== Q200) how do you switch user
+
+su – <username>
+
+== Q201) where do tempfiles stored
+
+/tmp
+
+== Q202) how to configure passwordless login between servers
+
+generate the ssh keys and store it in .ssh/Authorizedkeys
+
+== Q203) Do commands in linux are case sensitive
+
+Yes
+
+== Q204) how to redirect output to the file
+
+cat test >> output.log
+
+== Q205) command to overwrite the logfile
+
+logfile
+
+== Q206) Command to append to the logfile
+
+>
+
+== Q207) file to enter the filesystem information so that they will be mounted automatically after reboot
+
+/etc/fstab
+
+== Q208) command to know the logged in username
+whoami
+<OR>
+id
+== Q209) Command to change ownership of the file
+
+chown
