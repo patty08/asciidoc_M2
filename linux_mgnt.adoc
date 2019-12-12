@@ -1057,6 +1057,7 @@ C.subscription-manager remove –serial=serial number
 == Q147) Explain the softcopy and hard copy and syntax.
 Ls –s <souce > <target>
 Ls <source> <target>
+
 == Q148) Describe the fields’ ls –lrt fields
 
 It will give 9 fileds file type, dir/file, file permissions, file owner, file group, file size, file access time, file name
@@ -1122,25 +1123,34 @@ You can run a process in the background by pressing ctrl+z command.
 chown stands for ‘change ownership’ and is used to change the ownership of a file or directory. Eg: chown username.username <filename>.
 
 == Q164) What is Server?
+
 A server is a tool which does the activity like storing, load balancing, running the application process ( Mobile/laptop which has more memory)
 whatever if accessible in the network, we may name that as differently, But all are servers only. Exam: routers, LDAP, switch, etc
+
 == Q165) why do we need OS – Operating system?
+
 OS is supporting between the hardware and the user request in every Application. this will do backround processes
 hardware don’t understand what the user needs
+
 == Q166) Linux Commands?
+
 mkdir – create the directory
 cd – to go Path for directory
 rm,rf removing the directory or files
 scp – file moving from one server to another server
+
 == Q167) how to connect one server from another server?
 using SSH, we can connect
 we have to keep the public k
 ey of A server to B server
 then we can connect A server from B server
+
 == Q168) What is Memory?
+
 RAM
 ROM
 Cache
+
 == Q169) how application works?
 
 for an application (depends on the requirement ) needs below:
@@ -1151,10 +1161,12 @@ Database
 Load balancer
 SSO –  Single Sign-On
 LDAP
+
 == Q170) when user access the application url, it will go to recursive resolver (There it will check the urls end like .org,.com,etc..)then root server from there it will connect with other root servers then will find the IP from DNS (Domaqin name system). DNS will be available between particular regions with interconnection
 After finding the IP address of an Application will search with that
 for that Subnet will help on that
 In this OSI model will come
+
 == Q171) Tyes of layers
 
 physical,Data(MAC) ,network(IP), transport(TCP/UDP), Session, Presentation, Application
@@ -1168,6 +1180,7 @@ Ports, SFTP,FTP,HTTP
 Ethernet
 ISP – Internet Service Provider
 Wi-Fi
+
 == Q172) Then the request will to user System,vice versa
 
 In the destination server,via Apache, tomcat the request would be analyzed and based on the request that will reply to the user
