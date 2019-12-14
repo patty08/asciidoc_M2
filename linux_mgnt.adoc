@@ -150,10 +150,12 @@ fsck   <device or partition name>command we can check the integrity of the file 
 The before running the fsck command first unmount that partition and then run fsck command.
 
 == Q31) How many types of disk space issues can we normally get?
+
 Disk is full.
 Disk is failing or failed.
 File system corrupted or crashed.
 O/S is not recognizing the remote luns when scanning, …etc.,
+
 == Q32) What is the command to check default run level.
 
 The default run level command is /etc/inittab file in most Linux operating systems.
@@ -163,6 +165,7 @@ May be there is no access to outside.
 May be outside is in a different network from the local.
 May be permission is denied for that system to access outside.
 If there is access, but router or modem or network switch or NIC may not be working to access the outside.
+
 == Q34) If not able to create the file in any partition, what might be the issue.
 
 Permission check and disk space getting full
@@ -183,7 +186,7 @@ Crontab –l –u rbtadmin
 
 == Q38) What is linux library file extension,
 
-.so
+	'.so'
 
 == Q39) What command use for check IP address?
 
@@ -196,6 +199,7 @@ There are Three types of class
 class A 1-126
 class B 128-191
 class c 192-221
+
 == Q41) What command use for save and exit?
 
 :wq
@@ -262,6 +266,7 @@ Two ways
 
 echo “‘hi’”
 echo \’hi\’
+
 == Q55) What is load-average in linux.
 
 It’s the average of the usage of each CPU
@@ -272,6 +277,7 @@ w
 uptime
 top
 cat /proc/loadavg
+
 == Q56) How tree format of format listed
 
 pstree -pua
@@ -298,6 +304,7 @@ It will list all process id as folders /proc/12435
 It will show the command used by the process
 It will show the files used by the process
 Memory dump etc
+
 == Q60) How to find a pattern from a file or command?
 
 Use ‘grep’ command
@@ -392,9 +399,11 @@ It will forward the inward traffic of SMTP to the IP mentioned.
 kadmin, ktadd, authconfig, kinit
 
 == Q80) What to do for enabling  remote logging?
+
 Open /etc/rsyslog.conf and add the following line.
 *.* @@IP:514
 systemctl restart rsyslog
+
 == Q81) Which Directive in Apache Virtualhost defines the path of the web files?
 
 DocumentRoot
@@ -406,15 +415,19 @@ It defines the file to be considered as index file. Eg ‘DirectoryIndex index.p
 == Q83) What is the difference between passwd and htpasswd
 Passwd is used for setting the password for a System User.
 Htpasswd is used for setting the password for Apache Web User.
+
 == Q84) Which SELinux policy is used for Apache WebServer?
+
 For web files, httpd_sys_content_t is used
 For NFS mount files, httpd_use_nfs
+
 == Q85) Instead systemctl, which all commands used for handling apache service.
 
 apachectl
 
 apachectl -t : Checks Syntax
 apachectl start/stop/restart : For handling service
+
 == Q86) How to display all WebSite VirtualHost?
 
 Use command : httpd -D DUMP_VHOSTS
@@ -432,8 +445,10 @@ Use : alternatives –config mta (mta is mail transfer agent)
 Its is Pointer Record for reverse lookup : Inorder to get hostname if IP is queried.
 
 == Q90) Which are two main command in bind inorder to make sure that Bind will work perfectly.
+
 named-checkzone
 named-checkconf
+
 == Q91) How to lookup a domain using public DNS?
 
 dig @8.8.8.8 domainname
@@ -1163,6 +1178,7 @@ SSO –  Single Sign-On
 LDAP
 
 == Q170) when user access the application url, it will go to recursive resolver (There it will check the urls end like .org,.com,etc..)then root server from there it will connect with other root servers then will find the IP from DNS (Domaqin name system). DNS will be available between particular regions with interconnection
+
 After finding the IP address of an Application will search with that
 for that Subnet will help on that
 In this OSI model will come
