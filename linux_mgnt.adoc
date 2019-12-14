@@ -1342,9 +1342,11 @@ logfile
 /etc/fstab
 
 == Q208) command to know the logged in username
+
 whoami
 <OR>
 id
+
 == Q209) Command to change ownership of the file
 
 chown
