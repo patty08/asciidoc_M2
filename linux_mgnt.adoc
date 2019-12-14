@@ -7,14 +7,14 @@
 
 == Q1) What is the difference between chmod and chown.
 
-'Chmod' change  the file/directory permission
+Chmod change  the file/directory permission
 
 The Chown to change the ownership of a file or directory and ownership away to someone else.
 
 == Q2) How to check the default run level.
 
-'Cat /etc/inittab or who –r
-'
+Cat /etc/inittab or who –r
+
 == Q3) What is the ID for Logical volume management?
 
 LVM Id: 8e
@@ -29,22 +29,22 @@ If everything is ok, login remote server ILO, open the remote console and check 
 
 == Q5) Explain how to stop ssh connection for a particular server or network.
 
-'nmap
-'
+nmap
+
 == Q6) How we are giving file permission for the particular user.
 
-'Setfacl –m u:username:permission filename
-'
-'Getfacl username (to check the user permissions)
-'
+Setfacl –m u:username:permission filename
+
+Getfacl username (to check the user permissions)
+
 == Q7) I need to check the particular service opened or not. Please explain.
 
-'Netstat –anultp service name or port number
-'
+Netstat –anultp service name or port number
+
 == Q8) How to enable/disable the services in particular run level.
 
-'Chkconfig –level 2 off
-'
+Chkconfig –level 2 off
+
 == Q9) Explain nfs hard and soft mount. :
 
 Hard Mount : After restarting the server keep on search nfs mount partition until found the device, if the device not found server not will not boot,.
@@ -53,51 +53,51 @@ Soft mount: if device not found it will skip
 
 == Q10) What is the difference between YUM and rpm.
 
-'Rpm': need local rpm file and dependencies
+Rpm: need local rpm file and dependencies
 
-'Yum': need repository (collections of rpm) local or internet
+Yum: need repository (collections of rpm) local or internet
 
 == Q11) What is the command to check the size of file or directory?
 
-'du –sh <file/dir>
-'
+du –sh <file/dir>
+
 == Q12) Which one is the default sticky bit directory?
 
-'/tmp
-'
+/tmp
+
 == Q13) How to check how many files opened in Linux.
 
-'Lsof
-'
+Lsof
+
 == Q14) How to find zombie process and how to kill?
 
-'ps aux |grep “defunct” and ps aux |grep Z  to Kill: In order to kill these processes, you need to find the parent process first.
-'
-'pstree –paul and find parent process id, use kill -9
-'
+ps aux |grep “defunct” and ps aux |grep Z  to Kill: In order to kill these processes, you need to find the parent process first.
+
+pstree –paul and find parent process id, use kill -9
+
 == Q15) What is the command for extract RPM?
 
-'rpm2cpio
-'
+rpm2cpio
+
 == Q16) Assume the / partition got read only error, what steps has to be take.
 
 	Remount –o rw, remount
 
 == Q17) How to find out whether the particular user locked or not?
 
-'/etc/passwd (!!)
-'
+/etc/passwd (!!)
+
 == Q18) Please let us know how to stop the ssh service from a particular node.
 
-'/etc/hosts.deny à sshd: ALL except Node IP
-'
+/etc/hosts.deny à sshd: ALL except Node IP
+
 == Q19) What is the command to check password expire information for the particular user.
 
-'Chage –l username
-'
+Chage –l username
+
 == Q20) How to recover if the user deleted by mistake?
 
-	pwunconv     (It creates the users according  '/etc/passwd'   file and deletes the  /etc/shadow   file)
+	pwunconv     (It creates the users according  /etc/passwd   file and deletes the  /etc/shadow   file)
 
 == Q21) How to put never expiry to a user?
 
@@ -371,11 +371,11 @@ Then mount to a location like
 
 == Q73) Which is the hexadecimal code for LVM
 
-'8e'
+8e
 
 == Q74) A rpm package is owned by some third-party vendor. How to get the vendor details of an rpm?
 
-'rpm -qi <package>'
+rpm -qi <package>
 
 == Q75) rpm -qf /sbin/vi : What is the output of this command?
 
@@ -383,11 +383,11 @@ It gives the package in which the provided binary associated.
 
 == Q76) Which command will list the current time source?
 
-'ntpd -q'
+ntpd -q
 
 == Q77) Write the command to list all ports added in firewall.
 
-'Firewall-cmd –list-ports'
+Firewall-cmd –list-ports
 
 == Q78) What does the following command does?
 
