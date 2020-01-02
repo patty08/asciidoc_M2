@@ -7,6 +7,7 @@
 
 == Logback file
 
+== Logback file
 - Logback (Logback est l'un des frameworks de journalisation les plus utilisés dans la communauté Java. Il remplace son prédécesseur, Log4j. Logback offre une implémentation plus rapide que Log4j, offre plus d'options de configuration et plus de flexibilité dans l'archivage des anciens fichiers journaux.)
 
 Les niveaux possibles sont, par ordre de priorité: TRACE, DEBUG, INFO, WARN et ERROR.
