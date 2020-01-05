@@ -3,11 +3,17 @@
 :toclevels: 3
 
 
-= LOG RECU
+= LOG 
+
+== Command Cheat
+
+	 cat tonFichier | awk '{gsub("\[|:.* ","",$4) tab[$4" - "$1]++} END {for(i in tab) print i "occurence: "tab[i]}'
+
+gsub("\[|:.* ","",$4) : je substitus [ :. en RIEN et j'affiche $4
+je crée un tableau et j'affiche les resultats sans duplication avec leur occurence sur l'ensemble des sorties
 
 == Logback file
 
-== Logback file
 - Logback (Logback est l'un des frameworks de journalisation les plus utilisés dans la communauté Java. Il remplace son prédécesseur, Log4j. Logback offre une implémentation plus rapide que Log4j, offre plus d'options de configuration et plus de flexibilité dans l'archivage des anciens fichiers journaux.)
 
 Les niveaux possibles sont, par ordre de priorité: TRACE, DEBUG, INFO, WARN et ERROR.
@@ -25,6 +31,7 @@ Nous voyons ces messages lorsque nous exécutons cet extrait:
 	20:44:44.243 [main] ERROR monWorkspace.logback - This is logged.
 
 == Catalina.out file
+
 - Catalina.out
 fichier générer par catalina.sh, script pour le lancer Tomcat. Catalina.out contient juste tous les ecritures de sortie standard java system.out et system.err.
 
@@ -47,12 +54,10 @@ CE QU'ON VEUT: Digeste sans tag Debug
 ATTENDU
 	- une format de sortie Minfi et ELK
 
-
-
-
 RESULTAT
 
 == Rotation et Archivage des LOG?
+
 === Rotation
 
 Utiliser service *logrotate* (linux):
@@ -101,7 +106,9 @@ Point faible
 	    rotate 1
 	}
 
+
 	# system-specific logs may be configured here
+
 
 
 === Archivage de log
