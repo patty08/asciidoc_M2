@@ -16,6 +16,14 @@ je crée un tableau et j'affiche les resultats sans duplication avec leur occure
 
 	awk '/.err>/ {print}' /var/log/auth.log
 
+Commande Linux:
+
+Manipulation de text : cut et awk
+
+	cut -f 1 -d : /etc/passwd
+	awk -F : {'print $1' } /etc/passwd 
+> les deux commandes renvoi le même resultat
+
 
 == Logback file
 
