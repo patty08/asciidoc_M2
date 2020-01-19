@@ -5,7 +5,7 @@
 = Aide-mémoire administrateur Linux
 Patty RANDRIAMBOLOLONA <patty08@github.com>
 
-== Informations système
+== section 1- Informations système
 uname - Identification du système.
 
 -a : toutes les informations.
@@ -24,8 +24,9 @@ uname - Identification du système.
 5 : multi-utilisateurs mode graphique,
 6 : redémarrer.
 
-== Utilisateurs
-useradd - Ajout d'un utilisateur :
+== section 2- Utilisateurs
+
+*useradd* - Ajout d'un utilisateur :
 
 	useradd -m -p "" linus
 
@@ -40,49 +41,58 @@ supprime le compte et le contenu de son répertoire.
 	passwd - Modification d'un mot de passe :
 	passwd linus
 
-== Partitions et systèmes de fichiers
-.fdisk - Édition de la table des partitions :
+== section 3 - Partitions et systèmes de fichiers
+
+fdisk - Édition de la table des partitions :
 	
 	fdisk /dev/hda
 
-.mkswap - Création d'une zone de swap :
+mkswap - Création d'une zone de swap :
 	
 	mkswap /dev/hda2
 	mkswap /boot/swap_file
 
-.swapon - Activation d'une zone de swap :
+swapon - Activation d'une zone de swap :
 	
 	swapon /dev/hda2
 
 -a active toutes les zones de swap de /etc/fstab.
 
-.swapoff - Désactivation d'une zone de swap :
+swapoff - Désactivation d'une zone de swap :
 	
 	swapoff /dev/hda2
 
-.mkfs - Création d'un système de fichiers :
+mkfs - Création d'un système de fichiers :
 	
 	mkfs.ext2 /dev/hda3
 	mkfs.ext3 /dev/hda4
 	mkfs.vfat /dev/hda5
 
-.fsck - Vérification d'un système de fichiers :
+fsck - Vérification d'un système de fichiers :
 	
 	fsck.ext2 -p /dev/hda3
 
-.réparation automatique d'un système ext2/ext3,
+réparation automatique d'un système ext2/ext3,
+
 	fsck.vfat /dev/hda4
 
-.vérification d'une partition Windows.
-	mount - Insertion de partition dans le système :
-	mount -t vfat /dev/hda4 /mnt/dos/
-	monter une partition Windows,
-	mount -a
-.monter toutes les partitions de /etc/fstab,
-	mount 192.1.1.254:/home /home/users/
+vérification d'une partition Windows.
 
-.Montage d'un répertoire distant par NFS.
+mount - Insertion de partition dans le système :
+
+	mount -t vfat /dev/hda4 /mnt/dos/
+	
+monter une partition Windows,
+
+	mount -a
+
+monter toutes les partitions de /etc/fstab,
+	*mount* 192.1.1.254:/home /home/users/
+
+Montage d'un répertoire distant par NFS.
+
 	Options avec -o ou dans /etc/fstab :
+
 default : rw,suid,dev,exec,auto,nouser,async,
 
 remount : changer les attributs d'un système monté,
@@ -97,16 +107,21 @@ user : peut être monté par un utilisateur.
 Types de systèmes de fichiers courants :
 ext2, ext3, msdos, vfat, proc, iso9660, udf, smb.
 
-.umount - Démontage d'un système de fichiers :
+umount - Démontage d'un système de fichiers :
+
 -a : démonte tous les systèmes dans /etc/mtab.
+	
 	umount /dev/hda4
 	umount /mnt/dos
 	umount -a
 
 .df - Taux d'occupation des systèmes de fichiers montés.
 
-== Distribution/installation de logiciel
-.tar - Gestion d'archives :
+	df -h
+
+== section 4- Distribution/installation de logiciel
+
+*tar* - Gestion d'archives :
 	-c : création d'archive,
 	-x : extraction d'archive,
 	-t : consultation d'archive,
@@ -115,6 +130,7 @@ ext2, ext3, msdos, vfat, proc, iso9660, udf, smb.
 	-z : (dé)compresser avec g(un)zip,
 	-j : (dé)compresser avec b(un)zip2.
 	tar -czf archive.tar.gz distrib/
+
 crée une archive compressée du répertoire distrib/,
 	
 	tar -tvf archive.tar
@@ -132,54 +148,85 @@ installation classique
 	make && make install
 
 .rpm - Gestion des paquetages RedHat :
+
 	-h : affichage de la progression du travail.
 	rpm -ivh paquet.rpm
 
 - installation d'un paquetage,
+
 	rpm -Uvh paquet.rpm
+
 - mise à jour/installation d'un paquetage,
+
 	rpm -Fvh paquet.rpm
+
 - mise à jour d'un paquetage déjà installé,
+
 	rpm -e paquet
+
 - désinstallation d'un paquetage,
+
 	rpm -qa
+
 - liste de tous les paquetages installés,
+
 	rpm -qf /chemin/fichier
+
 - recherche du paquetage auquel appartient le fichier,
+
 	rpm -qip paquet.rpm
+
 - informations sur un paquetage,
+
 	rpm -qlp paquet.rpm
+
 - liste des fichiers contenus dans le paquetage.
+
 	apt - Gestion des paquetages Debian :
 	apt-get install application
+
 -	installation de l'application et ressources éventuelles,
+
 	apt-get remove application
+
 -	suppression application et dépendances éventuelles,
+
 	apt-get update
+
 -	mise à jour de la base de données interne,
+
 	apt-get upgrade
 
-== Gestion des processus
+== section 5 - Gestion des processus
+
 . application & lance l'application à l'arrière-plan, ramène à l'avant-plan le job numéro 1, (Ctrl-Z) endort l'application à l'avant-plan,
 	
 	bg
 
 - relance à l'arrière-plan un job endormi.
-ps - État des processus :
+
+	ps - État des processus :
 
 	ps -ef
 	ou
 	ps -aux
 
 - affichage long de tous les processus du système.
+	
 	top - Affichage continu des processus du système.
+
 	-d délai de rafraîchissement.
 
 - renice - Changer la courtoisie d'un processus :
+
 	renice +5 12857
+
 - augmente la courtoisie du processus 12857 de 5 unités,
+	
 	renice -5 -u root
+
 - diminue de 5 la courtoisie de tous les processus de root.
+
 	kill - Envoyer un signal à un processus :
 	kill -15 12857
 	-l (lettre l) : liste des signaux disponibles.
@@ -187,10 +234,13 @@ ps - État des processus :
 	killall -9 boucle_fork
 
 - fuser - Liste des processus accédant à un fichier :
+
 	fuser -k -m /dev/hda5
+
 tue tous les processus accédant à la partition indiquée.
 
-== Utilitaires réseau
+== section 6 - Utilitaires réseau
+
 - ifconfig - Configuration des interfaces réseau
 
 	ifconfig -a
@@ -289,7 +339,7 @@ Commandes usuelles :
 	-l niveau maximal de récursion,
 	-k convertir les liens en pointeurs locaux.
 
-== Signaux fréquemment utilisés
+== section 7 - Signaux fréquemment utilisés
 
 	0 : pseudo signal vérifiant la présence d'un processus,
 	1 (SIGHUP) : fin de connexion,
@@ -298,7 +348,7 @@ Commandes usuelles :
 	9 (SIGKILL) : fin obligatoire et immédiate,
 	15 (SIGTERM) : fin normale.
 
-== Gestion des modules du noyau
+== section 8 - Gestion des modules du noyau
 
 . lsmodListe des modules chargés. modinfoInformations sur un fichier module.
 
@@ -317,7 +367,7 @@ Commandes usuelles :
 
 	modprobe module.o
 
-== Compilation d'un noyau Linux
+== section 9 - Compilation d'un noyau Linux
 
 	ftp ftp.kernel.org
 
@@ -349,7 +399,86 @@ ou
 	/sbin/init 6
 
 
-== TRICS
+== section 10 - CHEAT
+
+=== Reseaux
+
+	netstat -nat | awk '{print $6}' | sort | uniq -c | sort -r
+
+==== Liste processus en ECOUTE
+
+	netstat -apn | grep LISTEN | awk '{ print $7 }' | sort | uniq -c | sort -nr | head -n 10
+
+Info: 
+
+*ESTABLISHED*                                                                                                                                    
+
+     The socket has an established connection.                                                                                               
+
+*SYN_SENT*                                                                                                                                       
+
+     The socket is actively attempting to establish a connection.                                                                            
+
+*SYN_RECV*                                                                                                                                       
+
+     A connection request has been received from the network.                                                                                
+
+*FIN_WAIT1*                                                                                                                                      
+
+    The socket is closed, and the connection is shutting down.                                                                              
+
+*FIN_WAIT2*                                                                                                                                      
+
+    Connection is closed, and the socket is waiting for a shutdown
+    from the remote end.                                                     
+
+*TIME_WAIT*                                                                                                                                      
+
+    The socket is waiting after close to handle packets still in 
+    the network.                                                               
+
+*CLOSE* 
+
+	The socket is not being used.                                                                                                           
+
+*CLOSE_WAIT*                                                                                                                                     
+
+    The remote end has shut down, waiting for the socket to close.                                                                          
+
+*LAST_ACK*                                                                                                                                    
+
+    The remote end has shut down, and the socket is closed.
+     Waiting for acknowledgement.                                                    
+
+*LISTEN* The  socket  is  listening for incoming connections.
+
+        Such sockets are not included in the output unless you 
+        specify the --listening    
+        (-l) or --all (-a) option.                                                                                                              
+
+*CLOSING*                                                                                                                                        
+	
+	   Both sockets are shut down but we still don't have all our 
+	   data sent.                                                                   
+
+*UNKNOWN*
+    
+	The state of the socket is unknown.
+
+
+script:
+
+	\#!/bin/bash
+	\#  
+	\#    vvvv vvvv-- the code from above
+	RED='\033[0;31m'
+	NC='\033[0m' # No Color
+	echo ""
+	echo -en "${RED} ALL TCP Connections Count: ${NC}\n"
+	netstat -nat | awk '{print $6}' | sort | uniq -c | sort -r
+	echo ""
+	echo -en "${RED} Top CLOSE_WAIT state TCP Connections: ${NC}\n"
+	netstat -apn | grep CLOSE_WAIT | awk '{ print $7 }' | sort | uniq -c | sort -nr | head -n 10
 
 === Time zone reconfigurer Time Zone
 
@@ -370,7 +499,7 @@ pour cacher les informations à d'autres utilisateurs, dans le cas ou la machine
 
 	sudo mount -o remount,rw,hidepid=2 /proc
 
-IMPORTANT: et pour le mettre en permanance en cas de reboot, il faut modifier la line dans /etc/fstab
+[IMPORTANT]: et pour le mettre en permanance en cas de reboot, il faut modifier la line dans /etc/fstab
 
 	nano /etc/fstab
 
