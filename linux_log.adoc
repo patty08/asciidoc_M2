@@ -59,3 +59,9 @@ Les fichiers standard logs et son rôle:
 '/var/log/secure' or '/var/log/auth.log' : Journaux des authentications
 '/var/log/utmp' or '/var/log/wtmp' : Journaux des accès Logins
 '/var/log/yum.log' : Journaux de la commande Yum.
+
+== 5. Astuces avec AWK sur les LOGs
+
+` cat log | awk'{gsub("\[ | :.* ","", $4) tab[$4" - "$1]++} END {for(i in tab) print i" nb de fois: " tab[i]}'`
+
+` cat log | awk'{gsub("\[","", $4) tab[$4" - "$1]++} END {for(i in tab) print i" nb de fois: " tab[i]}'`
