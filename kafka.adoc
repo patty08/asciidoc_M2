@@ -7,7 +7,7 @@ Patsoo08 <patty.randri8@gmail.com>
 
 image::./img/kafkaProducer_1.png[Producer,1024,480,pdfwidth=50%,scaledwidth=50%,float="right",align="center"]
 
-== 
+== EXPORT variable
 
 export ZOO=
 
@@ -35,7 +35,6 @@ Vous pouvez trouver plus de détails sur un sujet nommé cc_payments comme suit:
 Vous pouvez voir les partitions sous-répliquées pour tous les topics comme suit:
 
 	kafka-topics --zookeeper localhost: 2181 / kafka-cluster --describe --under-replicated-partitions
-
 
 == Producteurs
 Vous pouvez produire des messages à partir d'une entrée standard comme suit:
@@ -136,4 +135,5 @@ Vous pouvez entrer dans le shell zookeeper comme suit:
 == TOOLS:
 
 CMAK: https://github.com/linkedin/Burrow
+
 Burrow : https://github.com/linkedin/Burrow
