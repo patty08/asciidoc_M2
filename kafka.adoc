@@ -5,6 +5,129 @@
 = Kafka
 Patsoo08 <patty.randri8@gmail.com>
 
-== Producer
-
 image::./img/kafkaProducer_1.png[Producer,1024,480,pdfwidth=50%,scaledwidth=50%,float="right",align="center"]
+
+== 
+
+export ZOO=
+
+== les topics
+Vous pouvez créer un nouveau sujet Kafka nommé my-topic comme suit:
+
+	kafka-topics --create --zookeeper localhost: 2181 --replication-factor 1 --partitions 3 --topic my-topic
+
+Vous pouvez vérifier que le sujet my-topic a été créé avec succès en répertoriant tous les topics disponibles:
+
+	kafka-topics --list --zookeeper localhost: 2181
+
+Vous pouvez ajouter plus de partitions comme suit:
+
+	kafka-topics --zookeeper localhost: 2181 --alter --topic my-topic --partitions 16
+
+Vous pouvez supprimer un sujet nommé my-topic comme suit:
+
+	kafka-topics --zookeeper localhost: 2181 --delete --topic my-topic
+
+Vous pouvez trouver plus de détails sur un sujet nommé cc_payments comme suit:
+
+	kafka-topics --describe --zookeeper localhost: 2181 --topic cc_payments
+
+Vous pouvez voir les partitions sous-répliquées pour tous les topics comme suit:
+
+	kafka-topics --zookeeper localhost: 2181 / kafka-cluster --describe --under-replicated-partitions
+
+
+== Producteurs
+Vous pouvez produire des messages à partir d'une entrée standard comme suit:
+
+	kafka-console-producteur --broker-list localhost: 9092 --topic my-topic
+
+Vous pouvez produire de nouveaux messages à partir d'un fichier existant nommé messages.txt comme suit:
+
+	kafka-console-producteur --broker-list localhost: 9092 - test de sujet <messages.txt
+
+Vous pouvez produire des messages Avro comme suit:
+	
+kafka-avro-console-producteur --broker-list localhost: 9092 --topic my.Topic --property value.schema = '{"type": "record", "name": "myrecord", "fields": [{"nom": "f1", "type": "chaîne"}]} '--property 
+schema.registry.url = http: // localhost: 8081
+Vous pouvez entrer quelques nouvelles valeurs à partir de la console comme suit:
+
+{"f1": "value1"}
+
+
+== Consumers
+
+Consommer des messages
+Vous pouvez commencer un consommateur depuis le début du journal comme suit:
+
+	kafka-console-consumer --bootstrap-server localhost: 9092 --topic my-topic --from-begin
+
+Vous pouvez consommer un seul message comme suit:
+
+	kafka-console-consumer --bootstrap-server localhost: 9092 --topic my-topic --max-messages 1
+
+Vous pouvez consommer un seul message de __consumer_offsets comme suit:
+
+	kafka-console-consumer --bootstrap-server localhost: 9092 --topic __consumer_offsets --formatter 'kafka.coordinator.GroupMetadataManager $ OffsetsMessageFormatter' --max-messages 1
+
+Vous pouvez consommer et spécifier un groupe de consommateurs comme suit:
+
+	kafka-console-consumer --topic my-topic --new-consumer --bootstrap-server localhost: 9092 --consumer-property group.id = my-group
+
+Consommer des messages Avro
+Vous pouvez utiliser 10 messages Avro à partir d'un sujet nommé position-reports comme suit:
+
+	kafka-avro-console-consumer - rapports de position du sujet --new-consumer --bootstrap-server localhost: 9092 --from-starting --property schema.registry.url = localhost: 8081 --max-messages 10
+
+Vous pouvez consommer tous les messages Avro existants à partir d'un sujet nommé position-reports comme suit:
+
+	kafka-avro-console-consumer - rapports de position de sujet --new-consumer --bootstrap-server localhost: 9092 --from-starting --property schema.registry.url = localhost: 8081
+
+Opérations d'administration des consommateurs
+Vous pouvez répertorier tous les groupes comme suit:
+
+	kafka-consumer-groups --new-consumer --list --bootstrap-server localhost: 9092
+
+Vous pouvez décrire un groupe nommé testgroup comme suit:
+
+	kafka-consumer-groups --bootstrap-server localhost: 9092 --describe --group testgroup
+
+
+== Config
+Vous pouvez définir la rétention d'un sujet comme suit:
+
+	kafka-configs --zookeeper localhost: 2181 --alter - rubriques de type entité - nom-entité my-topic --add-config retention.ms = 3600000
+
+Vous pouvez imprimer tous les remplacements de configuration pour un sujet nommé my-topic comme suit:
+
+	kafka-configs --zookeeper localhost: 2181 --describe --entity-type topics --entity-name my-topic
+
+Vous pouvez supprimer un remplacement de configuration pour retention.ms pour un sujet nommé my-topic comme suit:
+
+	kafka-configs --zookeeper localhost: 2181 --alter - rubriques de type entité - nom-entité my-topic --delete-config retention.ms
+
+Performance
+Bien que Kafka soit assez rapide par conception, il est bon de pouvoir tester ses performances. Vous pouvez vérifier les performances de production de Kafka comme suit:
+
+	kafka-producteur-perf-test - rapports de position des topics - débit 10000 - taille d'enregistrement 300 - nombre d'enregistrements 20000 - accessoires de production bootstrap.servers = "localhost: 9092"
+
+
+
+== ACL
+Vous pouvez ajouter une nouvelle ACL de consommateur à un sujet existant comme suit:
+
+	kafka-acls --authorizer-properties zookeeper.connect = localhost: 2181 --add --allow-principal Utilisateur: Bob --consumer - topic topicA --group groupA
+
+Vous pouvez ajouter une nouvelle ACL de producteur à un sujet existant comme suit:
+
+	kafka-acls --authorizer-properties zookeeper.connect = localhost: 2181 --add --allow-principal User: Bob --producer --topic topicA
+
+Vous pouvez répertorier les ACL d'un sujet nommé topicA comme suit:
+
+	kafka-acls --authorizer-properties zookeeper.connect = localhost: 2181 --list --topic topicA
+
+
+== Zookeeper
+Vous pouvez entrer dans le shell zookeeper comme suit:
+
+	zookeeper-shell localhost: 2182 ls
