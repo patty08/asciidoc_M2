@@ -1,0 +1,10 @@
+:toc: auto
+:toc-position: left
+:toclevels: 3
+
+= Kafka
+Patsoo08 <patty.randri8@gmail.com>
+
+== Producer
+
+image::./img/kafkaProducer_1.png[Producer,1024,480,pdfwidth=50%,scaledwidth=50%,float="right",align="center"]
