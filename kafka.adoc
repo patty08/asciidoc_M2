@@ -134,7 +134,7 @@ Vous pouvez entrer dans le shell zookeeper comme suit:
 
 == TOOLS:
 
-CMAK: https://github.com/linkedin/Burrow
+CMAK: https://github.com/yahoo/CMAK
 
 Burrow : https://github.com/linkedin/Burrow
 
@@ -224,6 +224,6 @@ Faites attention au port JMX exposé. Vous pouvez choisir n'importe quel port. J
 
 == tricks
 
-https://dev.to/thegroo/one-to-run-them-all-1mg6
+	https://dev.to/thegroo/one-to-run-them-all-1mg6
 
-https://jrblog.pentaidea.com/john/2019/03/29/build-3-nodes-1-cluster-kafka-zookeeper-kafka-manager-envirnment-by-docker-compose/
+	https://jrblog.pentaidea.com/john/2019/03/29/build-3-nodes-1-cluster-kafka-zookeeper-kafka-manager-envirnment-by-docker-compose/
