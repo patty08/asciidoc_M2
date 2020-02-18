@@ -11,6 +11,10 @@ image::./img/kafkaProducer_1.png[Producer,1024,480,pdfwidth=50%,scaledwidth=50%,
 
 export ZOO=
 
+Tester ZOOKEEPER:
+
+nc -vz [zookeper:port]
+
 == les topics
 Vous pouvez créer un nouveau sujet Kafka nommé my-topic comme suit:
 
@@ -60,6 +64,8 @@ Consommer des messages
 Vous pouvez commencer un consommateur depuis le début du journal comme suit:
 
 	kafka-console-consumer --bootstrap-server localhost: 9092 --topic my-topic --from-begin
+
+> Commande important après avoir supprimer un topic pour le reinitialiser par la suite
 
 Vous pouvez consommer un seul message comme suit:
 
