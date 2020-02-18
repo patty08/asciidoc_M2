@@ -221,12 +221,17 @@ Faites attention au port JMX exposé. Vous pouvez choisir n'importe quel port. J
 	      - kafka
 	      - zookeeper
 	    command: -Dconfig.file=/kafka-manager/conf/application.conf -Dapplication.home=/kafkamanager
+	    ou 
+	    command: -Dpidfile.path=/dev/null
 	    environment:
 	      - ZK_HOSTS=${EXPOSED_HOSTNAME}
 	      - APPLICATION_SECRET=letmein
 	    ports:
 	      - "9000:9000"
 	    network_mode: "host"
+
+
+	https://www.playframework.com/documentation/2.7.x/ProductionConfiguration#Changing-the-path-of-RUNNING_PID
 
 == tricks
 
