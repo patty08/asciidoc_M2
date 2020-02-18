@@ -137,3 +137,93 @@ Vous pouvez entrer dans le shell zookeeper comme suit:
 CMAK: https://github.com/linkedin/Burrow
 
 Burrow : https://github.com/linkedin/Burrow
+
+
+== Docker
+
+	docker run -it --rm  -p 9000:9000 -e ZK_HOSTS="your-zk.domain:2181" -e APPLICATION_SECRET=letmein -e KM_ARGS=-Djava.net.preferIPv4Stack=true sheepkiller/kafka-manager 
+
+ou
+
+	docker run -d --name kafka-manager -p 9000:9000 \
+	-e ZK_HOSTS="alpha:2181,beta:2181,gamma:2181" \
+	--restart always \
+	--log-driver json-file --log-opt max-size=10m \
+	sheepkiller/kafka-manager -Djava.net.preferIPv4Stack=true
+
+
+=== Activer JMX
+JMX doit être activé pour les afficher dans kafka-manager.
+
+
+	KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote \
+	  -Dcom.sun.management.jmxremote.authenticate = false \
+	  -Dcom.sun.management.jmxremote.ssl = false \
+	  -Djava.rmi.server.hostname = {{ansible_hostname}} \
+	  -Dcom.sun.management.jmxremote.rmi.port = 9099 "
+	JMX_PORT: 9099
+
+Faites attention au port JMX exposé. Vous pouvez choisir n'importe quel port. Je pense que le port 9099 convient, car le port exposé par défaut est 9092.
+
+
+== Docker compose
+
+	version: '3.1'
+	
+	services:
+	  zookeeper:
+	    container_name: zookeeper
+	    image: zookeeper:3.4
+	    restart: on-failure
+	    volumes:
+	      - "./zookeeper/data:/data"
+	      - "./zookeeper/logs:/datalog"
+	    ports:
+	      - "2181:2181"
+	    network_mode: "host"
+	
+	  kafka:
+	    container_name: kafka
+	    image: wurstmeister/kafka:1.0.0
+	    restart: on-failure
+	    depends_on:
+	      - zookeeper
+	    volumes:
+	      - /var/run/docker.sock:/var/run/docker.sock
+	    environment:
+	      - KAFKA_ZOOKEEPER_CONNECT=${EXPOSED_HOSTNAME}:2181
+	      - KAFKA_ADVERTISED_HOST_NAME=${EXPOSED_HOSTNAME}
+	      - JMX_PORT=9093
+	      - KAFKA_ADVERTISED_PORT=9092
+	      - KAFKA_DELETE_TOPIC_ENABLE=true
+	      - KAFKA_LOG_RETENTION_HOURS=1
+	      - KAFKA_MESSAGE_MAX_BYTES=10000000
+	      - KAFKA_REPLICA_FETCH_MAX_BYTES=10000000
+	      - KAFKA_GROUP_MAX_SESSION_TIMEOUT_MS=60000
+	      - KAFKA_NUM_PARTITIONS=2
+	      - KAFKA_DELETE_RETENTION_MS=1000
+	    ports:
+	      - "9092:9092"
+	      - "9093:9093"
+	    network_mode: "host"
+	
+	  kafka-manager:
+	    container_name: kafka-manager
+	    image: hlebalbau/kafka-manager:1.3.3.16
+	    restart: on-failure
+	    depends_on:
+	      - kafka
+	      - zookeeper
+	    command: -Dconfig.file=/kafka-manager/conf/application.conf -Dapplication.home=/kafkamanager
+	    environment:
+	      - ZK_HOSTS=${EXPOSED_HOSTNAME}
+	      - APPLICATION_SECRET=letmein
+	    ports:
+	      - "9000:9000"
+	    network_mode: "host"
+
+== tricks
+
+https://dev.to/thegroo/one-to-run-them-all-1mg6
+
+https://jrblog.pentaidea.com/john/2019/03/29/build-3-nodes-1-cluster-kafka-zookeeper-kafka-manager-envirnment-by-docker-compose/
