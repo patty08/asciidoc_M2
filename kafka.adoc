@@ -292,6 +292,7 @@ Faites attention au port JMX exposé. Vous pouvez choisir n'importe quel port. J
 
 === section  Docker compose
 
+. Kafka exemple
 ****
 	version: '3.1'
 	
