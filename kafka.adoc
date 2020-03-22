@@ -20,7 +20,7 @@ Consommateurs: qui lisent les données du cluster.
 	
 	nohup ./$kfkBIN/zookeeper-server-start.sh ../config/zookeeper.properties &
 
-# start ZOO configuration with 4 broker
+# start ZOO configuration with 4 brokers
 	nohup ./$kfkBIN/kafka-server-start.sh ../config/server_1.properties &
 	nohup ./$kfkBIN/kafka-server-start.sh ../config/server_2.properties &
 	nohup ./$kfkBIN/kafka-server-start.sh ../config/server_3.properties &
@@ -67,8 +67,7 @@ docker run -d \
 
 .`Dockercompose`
 
-****
-version: '3'
+****version: '3'
 services: 
 
   kafka-schema:
