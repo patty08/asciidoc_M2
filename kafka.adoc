@@ -66,7 +66,6 @@ docker run -d \
 ****
 
 .`Dockercompose`
-
 ****
 version: '3'
 services: 
@@ -129,12 +128,12 @@ services:
     ports:
       - "9000:9000"
     network_mode: "host"
-
 ****
 
 == KAFKA Commandes
 
 === section  les topics
+
 Vous pouvez créer un nouveau sujet Kafka nommé my-topic comme suit:
 
 	kafka-topics --create --zookeeper localhost: 2181 --replication-factor 1 --partitions 3 --topic my-topic
