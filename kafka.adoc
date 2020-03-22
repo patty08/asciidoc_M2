@@ -42,7 +42,7 @@ Consommateurs: qui lisent les données du cluster.
 
 == KAFKA REST proxy
 
-.`DOCKERFILE`
+.`Dockerfile`
 ****
 docker run -d \
   --net=host \
@@ -292,7 +292,7 @@ Faites attention au port JMX exposé. Vous pouvez choisir n'importe quel port. J
 
 === section  Docker compose
 
-. Kafka exemple
+.`Kafka exemple`
 ****
 	version: '3.1'
 	
